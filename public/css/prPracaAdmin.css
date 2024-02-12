@@ -1,0 +1,29 @@
+
+#prPraca {}
+    #prPraca h2 { line-height: 50px; font-weight: 500; font-size: 23px; color: #464646; }
+    #prPraca .cf:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+    * html #prPraca .cf             { zoom: 1; } /* IE6 */
+    *:first-child+html #prPraca .cf { zoom: 1; } /* IE7 */
+    #prPraca .pr-icon32 { float: left; margin: 7px 8px 0 0; width: 36px; height: 34px; background-image: url(../img/icons.png); background-repeat: no-repeat; }
+
+    /** settings form **/
+    #prPracaSettings { }
+        #prPracaSettings h2 .pr-icon32 { background-position: -492px -5px; }
+
+        #prPracaSettings .checkbox-list { padding: 0px 10px; }
+            #prPracaSettings .checkbox-list label { display: inline-block; margin: 2px 5px; width: 300px; }
+            #prPracaSettings .checkbox-list input[type="checkbox"] { margin-right: 3px; }
+            #prPracaSettings .checkbox-list .pr-region-main { margin-bottom: 15px; }
+        #prPracaSettings .submit-box {  }
+            #prPracaSettings .submit-box input { margin: 10px 0; }
+
+    /** widget settings form **/
+    #prPraca .widget-settings {}
+    #prPracaWidgetSettings {}
+        #prPracaWidgetSettings .checkbox-list { margin: 10px 0; }
+        #prPracaWidgetSettings .checkbox-list label { display: block; margin: 3px 5px; }
+        #prPracaWidgetSettings .checkbox-list input[type="checkbox"] { margin-right: 3px; }
+        #prPracaWidgetSettings input[type="text"] { width: 100%; }
+        #prPracaWidgetSettings input.count { width: 50px; }
+
+    #prPraca .prPracaInfoBox { margin: 4px 15px; padding: 10px 15px; border: 1px solid #90EE90; font-size: 14px; }

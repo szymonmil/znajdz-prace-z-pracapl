@@ -1,0 +1,647 @@
+# Translation of 3.6.x in Polish
+# This file is distributed under the same license as the 3.6.x package.
+msgid ""
+msgstr ""
+"Project-Id-Version: 3.6.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-18 13:26+0100\n"
+"PO-Revision-Date: 2013-12-18 13:27+0100\n"
+"Last-Translator: Tomasz Tomczyk\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;__\n"
+"X-Poedit-Basepath: "
+"plugins/\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: prPraca\n"
+
+# Jobs
+#: prPraca/prPraca.php:29
+msgid "Jobs offerts"
+msgstr "Oferty pracy z Praca.pl"
+
+# Search jobs
+#: prPraca/prPraca.php:36
+msgid "Jobs Finder"
+msgstr "Oferty pracy z Praca.pl"
+
+#: prPraca/prPraca.php:48 prPraca/lib/WpView.php:53
+msgid "Settings"
+msgstr "Ustawienia"
+
+#: prPraca/prPraca.php:83 prPraca/prPraca.php:84
+msgid "PrPraca"
+msgstr "Oferty pracy z Praca.pl"
+
+#: prPraca/lib/WpView.php:54
+msgid ""
+"To display the plugin on your website, go to the \"Appearance\" bookmark and "
+"then click on \"Widgets\".  Activate the \"Jobs from Praca.pl\" wigdet, for "
+"example by dragging and dropping it in the Sidebar."
+msgstr ""
+"Aby wyświetlać wtyczkę na swojej stronie Wordpress, przejdź do zakładki "
+"\"Wygląd\", a następnie wybierz \"Widgety\" i aktywuj widget \"Oferty pracy "
+"z Praca.pl\", na przykład przenosząc go do Sidebar'u."
+
+#: prPraca/lib/WpView.php:58
+msgid "Search params"
+msgstr "Parametry wyszukiwania"
+
+#: prPraca/lib/WpView.php:60
+msgid "Phrase:"
+msgstr "Fraza:"
+
+#: prPraca/lib/WpView.php:63
+msgid "City:"
+msgstr "Miejscowość:"
+
+#: prPraca/lib/WpView.php:66
+msgid "Company ID from site Praca.pl:"
+msgstr "ID firmy z Praca.pl"
+
+#: prPraca/lib/WpView.php:68 prPraca/lib/WpView.php:72
+msgid "You can enter multiple values ​​separated by semicolons"
+msgstr "Możesz wpisać wiele wartości rozdzielając je średnikami"
+
+#: prPraca/lib/WpView.php:70
+msgid "Excluded Company ID from site Praca.pl:"
+msgstr "ID firmy wykluczonej z Praca.pl"
+
+#: prPraca/lib/WpView.php:76
+msgid "Category:"
+msgstr "Obszar zawodowy:"
+
+#: prPraca/lib/WpView.php:84
+msgid "Region:"
+msgstr "Region:"
+
+#: prPraca/lib/WpView.php:104
+msgid "Country:"
+msgstr "Kraj:"
+
+#: prPraca/lib/WpView.php:116 prPraca/lib/WpView.php:162
+msgid "Display:"
+msgstr "Wyświetlaj:"
+
+#: prPraca/lib/WpView.php:117 prPraca/lib/WpView.php:163
+msgid "job date"
+msgstr "datę ogłoszenia"
+
+#: prPraca/lib/WpView.php:118 prPraca/lib/WpView.php:164
+msgid "employer's name"
+msgstr "nazwę pracodawcy"
+
+#: prPraca/lib/WpView.php:119 prPraca/lib/WpView.php:165
+msgid "city"
+msgstr "miasto"
+
+#: prPraca/lib/WpView.php:120 prPraca/lib/WpView.php:166
+msgid "region"
+msgstr "region"
+
+#: prPraca/lib/WpView.php:124 prPraca/lib/WpView.php:170
+msgid "Number of displayed jobs:"
+msgstr "Liczba wyświetlanych ogłoszeń:"
+
+#: prPraca/lib/WpView.php:129
+msgid "Save settings"
+msgstr "Zapisz zmiany"
+
+#: prPraca/lib/WpView.php:154
+msgid "Title:"
+msgstr "Tytuł:"
+
+#: prPraca/lib/WpView.php:190 prPraca/lib/WpView.php:238
+msgid "Offers come from service"
+msgstr "Oferty pochodzą z serwisu"
+
+#: prPraca/lib/WpView.php:200 prPraca/lib/WpView.php:247
+msgid "regions"
+msgstr "regiony"
+
+#: prPraca/lib/WpView.php:218 prPraca/lib/WpView.php:264
+msgid "There are no job offers"
+msgstr "Brak ofert pracy"
+
+#: prPraca/i18n/static.php:3
+msgid "Admin - secretarial jobs"
+msgstr "Administracja biurowa"
+
+#: prPraca/i18n/static.php:4
+msgid "Public Administration / Civil Service"
+msgstr "Administracja publiczna / Służba cywilna"
+
+#: prPraca/i18n/static.php:5
+msgid "Architecture"
+msgstr "Architektura"
+
+#: prPraca/i18n/static.php:6
+msgid "Research and development"
+msgstr "Badania i rozwój"
+
+#: prPraca/i18n/static.php:7
+msgid "Bulding / Geodesy"
+msgstr "Budownictwo / Geodezja"
+
+#: prPraca/i18n/static.php:8
+msgid "Consulting"
+msgstr "Doradztwo / Konsulting"
+
+#: prPraca/i18n/static.php:9
+msgid "Education / Science / Trainings"
+msgstr "Edukacja / Nauka / Szkolenia"
+
+#: prPraca/i18n/static.php:10
+msgid "Power industry / Electronics"
+msgstr "Energetyka / Elektronika"
+
+#: prPraca/i18n/static.php:11
+msgid "Pharmacy / Biotechnology"
+msgstr "Farmaceutyka / Biotechnologia"
+
+#: prPraca/i18n/static.php:12
+msgid "Finance / Banking"
+msgstr "Finanse / Bankowość"
+
+#: prPraca/i18n/static.php:13
+msgid "Franchising"
+msgstr "Franczyza"
+
+#: prPraca/i18n/static.php:14
+msgid "Gastronomy / Catering"
+msgstr "Gastronomia / Catering"
+
+#: prPraca/i18n/static.php:15
+msgid "Graphics / Photography / Design"
+msgstr "Grafika / Fotografia / Kreacja"
+
+#: prPraca/i18n/static.php:16
+msgid "Human Resources"
+msgstr "Human Resources / Kadry"
+
+#: prPraca/i18n/static.php:17
+msgid "IT / Administration"
+msgstr "Informatyka  / Administracja"
+
+#: prPraca/i18n/static.php:18
+msgid "IT / Programming"
+msgstr "Informatyka / Programowanie"
+
+#: prPraca/i18n/static.php:19
+msgid "Internet / E-commerce"
+msgstr "Internet / e-commerce"
+
+#: prPraca/i18n/static.php:20
+msgid "Engineering / Design"
+msgstr "Inżynieria / Projektowanie"
+
+#: prPraca/i18n/static.php:21
+msgid "Management"
+msgstr "Kadra zarządzająca"
+
+#: prPraca/i18n/static.php:22
+msgid "Quality Control"
+msgstr "Kontrola jakości"
+
+#: prPraca/i18n/static.php:23
+msgid "Cosmetics / Caring"
+msgstr "Kosmetyka / Pielęgnacja"
+
+#: prPraca/i18n/static.php:24
+msgid "Accounting / Audit / Taxes"
+msgstr "Księgowość / Audyt / Podatki"
+
+#: prPraca/i18n/static.php:25
+msgid "Logistics / Distribution"
+msgstr "Logistyka / Dystrybucja"
+
+#: prPraca/i18n/static.php:26
+msgid "Marketing / Advertising / PR"
+msgstr "Marketing / Reklama / PR"
+
+#: prPraca/i18n/static.php:27
+msgid "Media / Art / Entertainment"
+msgstr "Media / Sztuka / Rozrywka"
+
+#: prPraca/i18n/static.php:28
+msgid "Medicine / Healthcare"
+msgstr "Medycyna / Opieka zdrowotna"
+
+#: prPraca/i18n/static.php:29
+msgid "Motorization"
+msgstr "Motoryzacja"
+
+#: prPraca/i18n/static.php:30
+msgid "Real estates"
+msgstr "Nieruchomości"
+
+#: prPraca/i18n/static.php:31
+msgid "Security"
+msgstr "Ochrona osób i mienia"
+
+#: prPraca/i18n/static.php:32
+msgid "NGOs / Volunteer jobs"
+msgstr "Organizacje pozarządowe / Wolontariat"
+
+#: prPraca/i18n/static.php:33
+msgid "Phisical job"
+msgstr "Praca fizyczna"
+
+#: prPraca/i18n/static.php:34
+msgid "Practice / Trainings"
+msgstr "Praktyki / Staż"
+
+#: prPraca/i18n/static.php:35
+msgid "Law"
+msgstr "Prawo"
+
+#: prPraca/i18n/static.php:36
+msgid "Industry / Production"
+msgstr "Przemysł / Produkcja"
+
+#: prPraca/i18n/static.php:37
+msgid "Agriculture / Environmental Protection"
+msgstr "Rolnictwo / Ochrona środowiska"
+
+#: prPraca/i18n/static.php:38
+msgid "Maintenance / Technology / Installation"
+msgstr "Serwis / Technika / Montaż"
+
+#: prPraca/i18n/static.php:39
+msgid "Sport / Recreation"
+msgstr "Sport / Rekreacja"
+
+#: prPraca/i18n/static.php:40
+msgid "Sales / Customer Service"
+msgstr "Sprzedaż / Obsługa klienta"
+
+#: prPraca/i18n/static.php:41
+msgid "Telecommunication"
+msgstr "Telekomunikacja"
+
+#: prPraca/i18n/static.php:42
+msgid "Translation"
+msgstr "Tłumaczenia"
+
+#: prPraca/i18n/static.php:43
+msgid "Transport / Spedition"
+msgstr "Transport / Spedycja"
+
+#: prPraca/i18n/static.php:44
+msgid "Tourism / Hotels"
+msgstr "Turystyka / Hotelarstwo"
+
+#: prPraca/i18n/static.php:45
+msgid "Insurance"
+msgstr "Ubezpieczenia"
+
+#: prPraca/i18n/static.php:46
+msgid "Purchasing"
+msgstr "Zakupy"
+
+#: prPraca/i18n/static.php:48 prPraca/i18n/static.php:128
+msgid "Poland"
+msgstr "Polska"
+
+#: prPraca/i18n/static.php:49
+msgid "Other countries than Poland"
+msgstr "Inne kraje niż Polska"
+
+#: prPraca/i18n/static.php:52
+msgid "Afghanistan"
+msgstr "Afganistan"
+
+#: prPraca/i18n/static.php:53
+msgid "Albania"
+msgstr "Albania"
+
+#: prPraca/i18n/static.php:54
+msgid "Algeria"
+msgstr "Alegira"
+
+#: prPraca/i18n/static.php:55
+msgid "Saudi Arabia"
+msgstr "Arabia Saudyjska"
+
+#: prPraca/i18n/static.php:56
+msgid "Argentina"
+msgstr "Argentyna"
+
+#: prPraca/i18n/static.php:57
+msgid "Australia"
+msgstr "Australia"
+
+#: prPraca/i18n/static.php:58
+msgid "Austria"
+msgstr "Austria"
+
+#: prPraca/i18n/static.php:59
+msgid "Belgium"
+msgstr "Belgia"
+
+#: prPraca/i18n/static.php:60
+msgid "Belarus"
+msgstr "Białoruś"
+
+#: prPraca/i18n/static.php:61
+msgid "Bosnia and Herzegovina"
+msgstr "Bośnia i Hercegowina"
+
+#: prPraca/i18n/static.php:62
+msgid "Brazil"
+msgstr "Brazylia"
+
+#: prPraca/i18n/static.php:63
+msgid "Bulgaria"
+msgstr "Bułgaria"
+
+#: prPraca/i18n/static.php:64
+msgid "Chile"
+msgstr "Chile"
+
+#: prPraca/i18n/static.php:65
+msgid "China"
+msgstr "Chiny"
+
+#: prPraca/i18n/static.php:66
+msgid "Croatia"
+msgstr "Chorwacja"
+
+#: prPraca/i18n/static.php:67
+msgid "Czech"
+msgstr "Czechy"
+
+#: prPraca/i18n/static.php:68
+msgid "Denmark"
+msgstr "Dania"
+
+#: prPraca/i18n/static.php:69
+msgid "Egypt"
+msgstr "Egipt"
+
+#: prPraca/i18n/static.php:70
+msgid "Ecuador"
+msgstr "Ekwador"
+
+#: prPraca/i18n/static.php:71
+msgid "Estonia"
+msgstr "Estonia"
+
+#: prPraca/i18n/static.php:72
+msgid "Philippines"
+msgstr "Filipiny"
+
+#: prPraca/i18n/static.php:73
+msgid "Finland"
+msgstr "Finlandia"
+
+#: prPraca/i18n/static.php:74
+msgid "France"
+msgstr "Francja"
+
+#: prPraca/i18n/static.php:75
+msgid "Greece"
+msgstr "Grecja"
+
+#: prPraca/i18n/static.php:76
+msgid "Spain"
+msgstr "Hiszpania"
+
+#: prPraca/i18n/static.php:77
+msgid "Netherlands"
+msgstr "Holandia"
+
+#: prPraca/i18n/static.php:78
+msgid "India"
+msgstr "Idie"
+
+#: prPraca/i18n/static.php:79
+msgid "Indonesia"
+msgstr "Indonezja"
+
+#: prPraca/i18n/static.php:80
+msgid "Ireland"
+msgstr "Irlandia"
+
+#: prPraca/i18n/static.php:81
+msgid "Israel"
+msgstr "Izrael"
+
+#: prPraca/i18n/static.php:82
+msgid "Japan"
+msgstr "Japonia"
+
+#: prPraca/i18n/static.php:83
+msgid "Jordan"
+msgstr "Jordan"
+
+#: prPraca/i18n/static.php:84
+msgid "Canada"
+msgstr "Kanada"
+
+#: prPraca/i18n/static.php:85
+msgid "Colombia"
+msgstr "Kolumbia"
+
+#: prPraca/i18n/static.php:86
+msgid "South Korea"
+msgstr "Korea Południowa"
+
+#: prPraca/i18n/static.php:87
+msgid "Costa Rica"
+msgstr "Kostaryka"
+
+#: prPraca/i18n/static.php:88
+msgid "Lebanon"
+msgstr "Liban"
+
+#: prPraca/i18n/static.php:89
+msgid "Lithuania"
+msgstr "Litwa"
+
+#: prPraca/i18n/static.php:90
+msgid "Latvia"
+msgstr "Łotwa"
+
+#: prPraca/i18n/static.php:91
+msgid "Malaysia"
+msgstr "Malezja"
+
+#: prPraca/i18n/static.php:92
+msgid "Morocco"
+msgstr "Maroko"
+
+#: prPraca/i18n/static.php:93
+msgid "Mexico"
+msgstr "Meksyk"
+
+#: prPraca/i18n/static.php:94
+msgid "Germany"
+msgstr "Niemcy"
+
+#: prPraca/i18n/static.php:95
+msgid "Norway"
+msgstr "Norwegia"
+
+#: prPraca/i18n/static.php:96
+msgid "New Zealand"
+msgstr "Nowa Zelandia"
+
+#: prPraca/i18n/static.php:97
+msgid "Pakistan"
+msgstr "Pakistan"
+
+#: prPraca/i18n/static.php:98
+msgid "Peru"
+msgstr "Peru"
+
+#: prPraca/i18n/static.php:99
+msgid "Portugal"
+msgstr "Portugalia"
+
+#: prPraca/i18n/static.php:100
+msgid "South Africa"
+msgstr "RPA"
+
+#: prPraca/i18n/static.php:101
+msgid "Russia"
+msgstr "Rosja"
+
+#: prPraca/i18n/static.php:102
+msgid "Romania"
+msgstr "Romunia"
+
+#: prPraca/i18n/static.php:103
+msgid "El Salvador"
+msgstr "Salwador"
+
+#: prPraca/i18n/static.php:104
+msgid "Singapore"
+msgstr "Singapur"
+
+#: prPraca/i18n/static.php:105
+msgid "Slovakia"
+msgstr "Słowacja"
+
+#: prPraca/i18n/static.php:106
+msgid "Slovenia"
+msgstr "Słowenia"
+
+#: prPraca/i18n/static.php:107
+msgid "United States"
+msgstr "Stany Zjednoczone"
+
+#: prPraca/i18n/static.php:108
+msgid "Switzerland"
+msgstr "Szwajcaria"
+
+#: prPraca/i18n/static.php:109
+msgid "Sweden"
+msgstr "Szwecja"
+
+#: prPraca/i18n/static.php:110
+msgid "Thailand"
+msgstr "Tajlandia"
+
+#: prPraca/i18n/static.php:111
+msgid "Taiwan"
+msgstr "Tajwan"
+
+#: prPraca/i18n/static.php:112
+msgid "Tunisia"
+msgstr "Tunezja"
+
+#: prPraca/i18n/static.php:113
+msgid "Turkey"
+msgstr "Turcja"
+
+#: prPraca/i18n/static.php:114
+msgid "Ukraine"
+msgstr "Ukraina"
+
+#: prPraca/i18n/static.php:115
+msgid "Venezuela"
+msgstr "Wenezuela"
+
+#: prPraca/i18n/static.php:116
+msgid "Hungary"
+msgstr "Węgry"
+
+#: prPraca/i18n/static.php:117
+msgid "United Kingdom"
+msgstr "Wielka Brytania"
+
+#: prPraca/i18n/static.php:118
+msgid "Italy"
+msgstr "Włochy"
+
+#: prPraca/i18n/static.php:119
+msgid "United Arab Emirates"
+msgstr "Zjednoczone Emiraty Arabskie"
+
+#: prPraca/i18n/static.php:120
+msgid "Other/World"
+msgstr "Pozostałe"
+
+#: prPraca/i18n/static.php:121
+msgid "Cyprus"
+msgstr "Cypr"
+
+#: prPraca/i18n/static.php:122
+msgid "Iceland"
+msgstr "Islandia"
+
+#: prPraca/i18n/static.php:123
+msgid "Luxembourg"
+msgstr "Luksemburg"
+
+#: prPraca/i18n/static.php:124
+msgid "Kuwait"
+msgstr "Kuwejt"
+
+#: prPraca/i18n/static.php:125
+msgid "Serbia"
+msgstr "Serbia"
+
+#: prPraca/i18n/static.php:126
+msgid "Moldova"
+msgstr "Mołdawia"
+
+#: prPraca/i18n/static.php:127
+msgid "Andorra"
+msgstr "Andora"
+
+#: prPraca/i18n/static.php:129
+msgid "Liechtenstein"
+msgstr "Liechtenstien"
+
+# Offer comes from
+#, fuzzy
+#~ msgid "Offer come from service"
+#~ msgstr "Oferta pochodzi z serwisu"
+
+# Offer cannot be found
+#, fuzzy
+#~ msgid "Offer can not be found"
+#~ msgstr "Oferta nie może być znaleziona"
+
+#~ msgid "Company ID:"
+#~ msgstr "ID firmy:"
+
+#~ msgid "region/city"
+#~ msgstr "region/miasto"
+
+#~ msgctxt "text direction"
+#~ msgid "ltr"
+#~ msgstr "ltr"
+
+#~ msgid "Embed Media Player"
+#~ msgstr "Osadź odtwarzacz mediów"
+
+#~ msgid "Length:"
+#~ msgstr "Długość:"
