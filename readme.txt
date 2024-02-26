@@ -1,9 +1,9 @@
 ==== Oferty pracy z Praca.pl ====
-Contributors: Tomasz Tomczyk
+Contributors: Praca.pl sp. z o.o.
 Tags: praca, oferty pracy, job, jobs
 Requires at least: 3.0.1
-Tested up to: 4.9
-Stable tag: 1.0.10
+Tested up to: 6.4
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -94,6 +94,9 @@ Pomoc znajdziesz pisząc na adres biuro@praca.pl
 Pomoc znajdziesz pisząc na adres biuro@praca.pl
 
 == Changelog ==
+
+= 1.1.0 =
+* Dodanie wsparcia dla Wordpress > 4.9
 
 = 1.0.10 =
 * Dodanie wsparcia dla Wordpress 4.9

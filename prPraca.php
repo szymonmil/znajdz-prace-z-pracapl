@@ -4,8 +4,8 @@
  * Plugin URI: http://wordpress.org/plugins/oferty-pracy-z-pracapl/
  * Description: Oferty pracy z Praca.pl to idealny sposób na wzbogacenie Twojej strony internetowej aktualnymi ofertami pracy pochodzącymi z portalu Praca.pl.
  * Version: 1.0.10
- * Author: T. Tomczyk
- * Author URI: http://ttomczyk.pl
+ * Author: Praca.pl sp. z o.o.
+ * Author URI: https://www.praca.pl
  * Text Domain: prPraca
 */
 
@@ -107,7 +107,7 @@ function prPraca_widget_show($args) {
     $prOptions = get_option('prPraca');
     $title = $prOptions['sidebarWidgetTitle'];
 
-    unset($prOptions['sidebarWidgetTitle']);
+//    unset($prOptions['sidebarWidgetTitle']);
     $pracaClient = new PrPracaClient();
     $prAds = $pracaClient->getPrAds($prOptions);
     $output = PrPracaView::get()->renderSidebarWidget($prAds, $prOptions);

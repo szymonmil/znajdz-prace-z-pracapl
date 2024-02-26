@@ -12,7 +12,6 @@ class HttpCurl implements iHttp {
     private $_cookieSavePrefixFile = 'co_';
 
     public function __construct() {
-
         $this->_cookieSaveFile = tempnam($this->_cookieSaveDir, $this->_cookieSavePrefixFile);
     }
 

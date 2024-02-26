@@ -187,7 +187,7 @@ class PrPracaWpView implements PrPracaViewInterface {
         }
 
         $output = '<div id="prWidgetSitebar">';
-            $output .= '<div>'.$this->_('Offers come from service').' <a href="http://www.praca.pl">Praca.pl</a></div>';
+            $output .= '<div>'.$this->_('Offers come from service').' <a href="https://www.praca.pl">Praca.pl</a></div>';
             $output .= '<ul>';
                 if(is_array($prAds) && count($prAds)) {
                     foreach($prAds as $ad) {
@@ -235,7 +235,7 @@ class PrPracaWpView implements PrPracaViewInterface {
         $mainClass = empty($prOptions['class']) ? '' : 'class="'.$prOptions['class'].'"';
 
         $output = '<div id="prPracaJobsShortcode" '.$mainClass.'>';
-            $output .= '<div>'.$this->_('Offers come from service').' <a href="http://www.praca.pl">Praca.pl</a></div>';
+            $output .= '<div>'.$this->_('Offers come from service').' <a href="https://www.praca.pl">Praca.pl</a></div>';
             if(is_array($prAds) && count($prAds)) {
                 foreach($prAds as $ad) {
                     $output .= '<div>';
