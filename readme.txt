@@ -94,6 +94,8 @@ Pomoc znajdziesz pisząc na adres biuro@praca.pl
 Pomoc znajdziesz pisząc na adres biuro@praca.pl
 
 == Changelog ==
+= 1.2.0 =
+* Dodanie UTM oraz linku "Dowiedz się więcej"
 
 = 1.1.0 =
 * Dodanie wsparcia dla Wordpress > 4.9

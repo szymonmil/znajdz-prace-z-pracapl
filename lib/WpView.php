@@ -192,7 +192,7 @@ class PrPracaWpView implements PrPracaViewInterface {
                 if(is_array($prAds) && count($prAds)) {
                     foreach($prAds as $ad) {
                         $output .= '<li>';
-                            $output .= '<strong><a href="'.$ad['url'].'">'.$ad['title'].'</a></strong>';
+                            $output .= '<strong><a href="'.$ad['url'].'?rf=widget&utm_source=widget&utm_medium=plugin">'.$ad['title'].'</a></strong>';
                             $output .= '<div style="margin-left: 15px">';
                                 if($showCompany && !empty($ad['company'])) $output .= '<span>'.$ad['company'].'</span>, ';
 
