@@ -218,6 +218,7 @@ class PrPracaWpView implements PrPracaViewInterface {
                     $output .= '<li>'.$this->_('There are no job offers').'</li>';
                 }
             $output .= '</ul>';
+		$output .= '<a href="https://www.praca.pl/dodatki.html">' . $this->_('Find out more') . '</a>';
         $output .= '</div>';
 
         return $output;

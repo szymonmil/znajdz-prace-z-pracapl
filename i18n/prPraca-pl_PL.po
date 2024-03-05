@@ -128,6 +128,10 @@ msgstr "regiony"
 msgid "There are no job offers"
 msgstr "Brak ofert pracy"
 
+# lib/WpView.php:221
+msgid "Find out more"
+msgstr "Dowiedz się więcej"
+
 #: prPraca/i18n/static.php:3
 msgid "Admin - secretarial jobs"
 msgstr "Administracja biurowa"
