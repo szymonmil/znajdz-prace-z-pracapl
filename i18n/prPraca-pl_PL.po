@@ -53,24 +53,39 @@ msgid "Search params"
 msgstr "Parametry wyszukiwania"
 
 #: prPraca/lib/WpView.php:60
-msgid "Phrase:"
-msgstr "Fraza:"
+msgid "Phrase (optional):"
+msgstr "Fraza (opcjonalne):"
 
 #: prPraca/lib/WpView.php:63
-msgid "City:"
-msgstr "Miejscowość:"
+msgid "City (optional):"
+msgstr "Miasto (opcjonalne):"
 
 #: prPraca/lib/WpView.php:66
-msgid "Company ID from site Praca.pl:"
-msgstr "ID firmy z Praca.pl"
+msgid "Company ID from site Praca.pl (optional):"
+msgstr "ID firmy (opcjonalne):"
 
 #: prPraca/lib/WpView.php:68 prPraca/lib/WpView.php:72
-msgid "You can enter multiple values ​​separated by semicolons"
-msgstr "Możesz wpisać wiele wartości rozdzielając je średnikami"
+# msgid "You can enter multiple values ​​separated by semicolons"
+# msgstr "Możesz wpisać wiele wartości rozdzielając je średnikami"
+
+msgid "Position, company, keyword."
+msgstr "Stanowisko, firma, słowo kluczowe."
+
+msgid "Enter name of the city."
+msgstr "Podaj nazwę miasta."
+
+msgid "Currently published job offers of provided employer will be displayed."
+msgstr "Będą wyświetlane aktualne oferty pracy wskazanego pracodawcy z serwisu Praca.pl."
+
+msgid "Currently published job offers of provided employer won't be displayed."
+msgstr "Nie będą wyświetlane oferty pracy wskazanego pracodawcy z serwisu Praca.pl."
+
+msgid "Do you need help with plugin installation? Contact us via:"
+msgstr "Potrzebujesz pomocy technicznej w instalacji wtyczki? Napisz na nas na adres:"
 
 #: prPraca/lib/WpView.php:70
-msgid "Excluded Company ID from site Praca.pl:"
-msgstr "ID firmy wykluczonej z Praca.pl"
+msgid "Excluded Company ID from site Praca.pl (optional):"
+msgstr "ID firmy do wykluczenia"
 
 #: prPraca/lib/WpView.php:76
 msgid "Category:"
@@ -117,7 +132,7 @@ msgid "Title:"
 msgstr "Tytuł:"
 
 #: prPraca/lib/WpView.php:190 prPraca/lib/WpView.php:238
-msgid "Offers come from service"
+msgid "Job offers from service"
 msgstr "Oferty pochodzą z serwisu"
 
 #: prPraca/lib/WpView.php:200 prPraca/lib/WpView.php:247
@@ -129,7 +144,7 @@ msgid "There are no job offers"
 msgstr "Brak ofert pracy"
 
 # lib/WpView.php:221
-msgid "Find out more"
+msgid "More on Praca.pl"
 msgstr "Dowiedz się więcej"
 
 #: prPraca/i18n/static.php:3

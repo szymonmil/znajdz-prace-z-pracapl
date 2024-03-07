@@ -57,19 +57,21 @@ class PrPracaWpView implements PrPracaViewInterface {
                             $html .= '<div>
                                 <h3>'.$this->_('Search params').'</h3>
 
-                                    <h4>'.$this->_('Phrase:').'</h4>
+                                    <h4>'.$this->_('Phrase (optional):').'</h4>
                                     <label><input type="text" value="'.$searchPhrase.'" name="prPraca[phrase]"></label>
+                                    <div>'.$this->_('Position, company, keyword.').'</div>
 
-                                    <h4>'.$this->_('City:').'</h4>
+                                    <h4>'.$this->_('City (optional):').'</h4>
                                     <label><input type="text" value="'.$searchCity.'" name="prPraca[city]"></label>
+                                    <div>'.$this->_('Enter name of the city.').'</div>
 
-                                    <h4>'.$this->_('Company ID from site Praca.pl:').'</h4>
+                                    <h4>'.$this->_('Company ID from site Praca.pl (optional):').'</h4>
                                     <label><input type="text" value="'.$searchCompany.'" name="prPraca[company]"></label>
-                                    <div>'.$this->_('You can enter multiple values ​​separated by semicolons').'</div>
+                                    <div>'.$this->_('Currently published job offers of provided employer will be displayed.').'</div>
 
-                                    <h4>'.$this->_('Excluded Company ID from site Praca.pl:').'</h4>
+                                    <h4>'.$this->_('Excluded Company ID from site Praca.pl (optional):').'</h4>
                                     <label><input type="text" value="'.$searchECompany.'" name="prPraca[ecompany]"></label>
-                                    <div>'.$this->_('You can enter multiple values ​​separated by semicolons').'</div>
+                                    <div>'.$this->_('Currently published job offers of provided employer won\'t be displayed.').'</div>
                                 </div>';
 
                             $html .= '<div class="checkbox-list">
@@ -131,6 +133,7 @@ class PrPracaWpView implements PrPracaViewInterface {
 
                         $html .= '</form>
                     </div>
+                    <div><p>' . $this->_('Do you need help with plugin installation? Contact us via:') . ' xyz@praca.pl</p></div>
                 </div>';
 
         return $html;
@@ -187,7 +190,7 @@ class PrPracaWpView implements PrPracaViewInterface {
         }
 
         $output = '<div id="prWidgetSitebar">';
-            $output .= '<div>'.$this->_('Offers come from service').' <a href="https://www.praca.pl">Praca.pl</a></div>';
+            $output .= '<div>'.$this->_('Job offers from service').' <a href="https://www.praca.pl">Praca.pl</a></div>';
             $output .= '<ul>';
                 if(is_array($prAds) && count($prAds)) {
                     foreach($prAds as $ad) {
@@ -218,7 +221,7 @@ class PrPracaWpView implements PrPracaViewInterface {
                     $output .= '<li>'.$this->_('There are no job offers').'</li>';
                 }
             $output .= '</ul>';
-		$output .= '<a href="https://www.praca.pl/dodatki.html">' . $this->_('Find out more') . '</a>';
+		$output .= '<a href="https://www.praca.pl/dodatki.html">' . $this->_('More on Praca.pl') . '</a>';
         $output .= '</div>';
 
         return $output;
@@ -236,7 +239,7 @@ class PrPracaWpView implements PrPracaViewInterface {
         $mainClass = empty($prOptions['class']) ? '' : 'class="'.$prOptions['class'].'"';
 
         $output = '<div id="prPracaJobsShortcode" '.$mainClass.'>';
-            $output .= '<div>'.$this->_('Offers come from service').' <a href="https://www.praca.pl">Praca.pl</a></div>';
+            $output .= '<div>'.$this->_('Job offers from service').' <a href="https://www.praca.pl">Praca.pl</a></div>';
             if(is_array($prAds) && count($prAds)) {
                 foreach($prAds as $ad) {
                     $output .= '<div>';

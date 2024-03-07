@@ -112,8 +112,8 @@ msgid "Title:"
 msgstr ""
 
 #: prPraca/lib/WpView.php:190 prPraca/lib/WpView.php:238
-msgid "Offers come from service"
-msgstr "Jobs come from"
+msgid "Job offers from service"
+msgstr "Job offers from service"
 
 #: prPraca/lib/WpView.php:200 prPraca/lib/WpView.php:247
 msgid "regions"
