@@ -63,19 +63,21 @@ class PrPracaWpView implements PrPracaViewInterface {
 
                                     <h4>'.$this->_('City (optional):').'</h4>
                                     <label><input type="text" value="'.$searchCity.'" name="prPraca[city]"></label>
-                                    <div>'.$this->_('Enter name of the city.').'</div>
+                                    <div>'.$this->_('Provide the name of the city.').'</div>
 
-                                    <h4>'.$this->_('Company ID from site Praca.pl (optional):').'</h4>
+                                    <h4>'.$this->_('Company ID (optional):').'</h4>
                                     <label><input type="text" value="'.$searchCompany.'" name="prPraca[company]"></label>
-                                    <div>'.$this->_('Currently published job offers of provided employer will be displayed.').'</div>
+                                    <div>'.$this->_('Current job offers from the specified employer on Praca.pl will be displayed.').'</div>
+                                    <div>'.$this->_('You can provide several company IDs, separating them with a semicolon, e.g. 1234;1234').'</div>
 
-                                    <h4>'.$this->_('Excluded Company ID from site Praca.pl (optional):').'</h4>
+                                    <h4>'.$this->_('Company ID to exclude (optional):').'</h4>
                                     <label><input type="text" value="'.$searchECompany.'" name="prPraca[ecompany]"></label>
-                                    <div>'.$this->_('Currently published job offers of provided employer won\'t be displayed.').'</div>
+                                    <div>'.$this->_('Job offers from the specified employer on Praca.pl will not be displayed.').'</div>
+                                    <div>'.$this->_('You can provide several company IDs, separating them with a semicolon, e.g. 1234;1234').'</div>
                                 </div>';
 
                             $html .= '<div class="checkbox-list">
-                                <h3>'.$this->_('Category:').'</h3>';
+                                <h3>'.$this->_('Category (optional):').'</h3>';
                                 foreach(PrPracaViewJobCategory::$ITEMS as $jcKey => $jcValue) {
                                     $checked = in_array($jcKey, $jobCategory) ? 'checked="checked"' : '';
                                     $html .= '<label><input type="checkbox" value="'.$jcKey.'" name="prPraca[jobcategory][]" '.$checked.'>'.$this->_($jcValue).'</label>';
@@ -83,7 +85,7 @@ class PrPracaWpView implements PrPracaViewInterface {
                             $html .= '</div>';
 
                             $html .= '<div class="checkbox-list">
-                                <h3>'.$this->_('Region:').'</h3>';
+                                <h3>'.$this->_('Region (optional):').'</h3>';
                                 $html .= '<div class="pr-region-main">';
                                     foreach(PrPracaViewRegions::$ITEMS as $rKey => $rValue) {
                                         if($rKey > 16 || $rKey == 0) {
@@ -103,7 +105,7 @@ class PrPracaWpView implements PrPracaViewInterface {
                             $html .= '</div>';
 
                             $html .= '<div class="checkbox-list">
-                                <h3>'.$this->_('Country:').'</h3>';
+                                <h3>'.$this->_('Country (optional):').'</h3>';
                                 foreach(PrPracaViewCountry::$ITEMS as $cKey => $cValue) {
                                     $checked = in_array($cKey, $country) ? 'checked="checked"' : '';
                                     $html .= '<label><input type="checkbox" value="'.$cKey.'" name="prPraca[country][]" '.$checked.'>'.$this->_($cValue).'</label>';
@@ -133,7 +135,7 @@ class PrPracaWpView implements PrPracaViewInterface {
 
                         $html .= '</form>
                     </div>
-                    <div><p>' . $this->_('Do you need help with plugin installation? Contact us via:') . ' xyz@praca.pl</p></div>
+                    <div><p>' . $this->_('Need technical support with plugin installation? Contact us at:') . ' xyz@praca.pl</p></div>
                 </div>';
 
         return $html;
@@ -180,6 +182,7 @@ class PrPracaWpView implements PrPracaViewInterface {
     }
 
     public function renderSidebarWidget($prAds, $prOptions) {
+	    $infoIconPath = plugins_url('/public/img/info.png', __DIR__ . '/../prPraca.php');
 
         $showCompany = $showRegion = $showCity = $showDate = false;
         if(!empty($prOptions['show'])) {
@@ -190,7 +193,7 @@ class PrPracaWpView implements PrPracaViewInterface {
         }
 
         $output = '<div id="prWidgetSitebar">';
-            $output .= '<div>'.$this->_('Job offers from service').' <a href="https://www.praca.pl">Praca.pl</a></div>';
+            $output .= '<div>'.$this->_('Job offers from service').' <a href="https://www.praca.pl" title="Praca.pl">Praca.pl</a></div>';
             $output .= '<ul>';
                 if(is_array($prAds) && count($prAds)) {
                     foreach($prAds as $ad) {
@@ -221,7 +224,9 @@ class PrPracaWpView implements PrPracaViewInterface {
                     $output .= '<li>'.$this->_('There are no job offers').'</li>';
                 }
             $output .= '</ul>';
-		$output .= '<a href="https://www.praca.pl/dodatki.html">' . $this->_('More on Praca.pl') . '</a>';
+		$output .= '<div id="prWidgetSidebar-moreInfo">
+						<a href="https://www.praca.pl/dodatki.html"><img src="' . $infoIconPath . '" title="Oferty pracy z Praca.pl" alt="Portal Praca.pl" /></a>
+					</div>';
         $output .= '</div>';
 
         return $output;
@@ -239,7 +244,7 @@ class PrPracaWpView implements PrPracaViewInterface {
         $mainClass = empty($prOptions['class']) ? '' : 'class="'.$prOptions['class'].'"';
 
         $output = '<div id="prPracaJobsShortcode" '.$mainClass.'>';
-            $output .= '<div>'.$this->_('Job offers from service').' <a href="https://www.praca.pl">Praca.pl</a></div>';
+            $output .= '<div>'.$this->_('Job offers from service').' <a href="https://www.praca.pl" title="Praca.pl">Praca.pl</a></div>';
             if(is_array($prAds) && count($prAds)) {
                 foreach($prAds as $ad) {
                     $output .= '<div>';

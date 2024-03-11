@@ -3,7 +3,7 @@
  * Plugin Name: Oferty pracy z Praca.pl
  * Plugin URI: http://wordpress.org/plugins/oferty-pracy-z-pracapl/
  * Description: Oferty pracy z Praca.pl to idealny sposób na wzbogacenie Twojej strony internetowej aktualnymi ofertami pracy pochodzącymi z portalu Praca.pl.
- * Version: 1.2.1
+ * Version: 1.2.2
  * Author: Praca.pl sp. z o.o.
  * Author URI: https://www.praca.pl
  * Text Domain: prPraca
@@ -65,8 +65,8 @@ add_action('wp_enqueue_scripts', 'prPraca_scripts');
 
 // akacja osadzenia styli css (uzwyamy tej samej akcji do rejestracji naszej funkcji osadzajacej co przy js)
 function prPraca_styles() {
-  //wp_register_style('prPraca', plugins_url('css/prPraca.css', __FILE__));
-  //wp_enqueue_style('prPraca');
+  wp_register_style('prPraca', plugins_url('public/css/prPraca.css', __FILE__));
+  wp_enqueue_style('prPraca');
 }
 add_action('wp_enqueue_scripts', 'prPraca_styles');
 

@@ -61,7 +61,7 @@ msgid "City (optional):"
 msgstr "Miasto (opcjonalne):"
 
 #: prPraca/lib/WpView.php:66
-msgid "Company ID from site Praca.pl (optional):"
+msgid "Company ID (optional):"
 msgstr "ID firmy (opcjonalne):"
 
 #: prPraca/lib/WpView.php:68 prPraca/lib/WpView.php:72
@@ -71,33 +71,36 @@ msgstr "ID firmy (opcjonalne):"
 msgid "Position, company, keyword."
 msgstr "Stanowisko, firma, słowo kluczowe."
 
-msgid "Enter name of the city."
+msgid "Provide the name of the city."
 msgstr "Podaj nazwę miasta."
 
-msgid "Currently published job offers of provided employer will be displayed."
+msgid "Current job offers from the specified employer on Praca.pl will be displayed."
 msgstr "Będą wyświetlane aktualne oferty pracy wskazanego pracodawcy z serwisu Praca.pl."
 
-msgid "Currently published job offers of provided employer won't be displayed."
+msgid "Job offers from the specified employer on Praca.pl will not be displayed."
 msgstr "Nie będą wyświetlane oferty pracy wskazanego pracodawcy z serwisu Praca.pl."
 
-msgid "Do you need help with plugin installation? Contact us via:"
+msgid "Need technical support with plugin installation? Contact us at:"
 msgstr "Potrzebujesz pomocy technicznej w instalacji wtyczki? Napisz na nas na adres:"
 
+msgid "You can provide several company IDs, separating them with a semicolon, e.g. 1234;1234"
+msgstr "Możesz podać kilka ID, oddzielając je średnikiem np.: 1234;1234"
+
 #: prPraca/lib/WpView.php:70
-msgid "Excluded Company ID from site Praca.pl (optional):"
-msgstr "ID firmy do wykluczenia"
+msgid "Company ID to exclude (optional):"
+msgstr "ID firmy do wykluczenia (opcjonalne):"
 
 #: prPraca/lib/WpView.php:76
-msgid "Category:"
-msgstr "Obszar zawodowy:"
+msgid "Category (optional):"
+msgstr "Obszar zawodowy (opcjonalne):"
 
 #: prPraca/lib/WpView.php:84
-msgid "Region:"
-msgstr "Region:"
+msgid "Region (optional):"
+msgstr "Region (opcjonalne):"
 
 #: prPraca/lib/WpView.php:104
-msgid "Country:"
-msgstr "Kraj:"
+msgid "Country (optional):"
+msgstr "Kraj (opcjonalne):"
 
 #: prPraca/lib/WpView.php:116 prPraca/lib/WpView.php:162
 msgid "Display:"

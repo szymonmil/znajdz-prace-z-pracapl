@@ -3,7 +3,7 @@ Contributors: Praca.pl sp. z o.o.
 Tags: praca, oferty pracy, job, jobs
 Requires at least: 3.0.1
 Tested up to: 6.4
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -94,6 +94,10 @@ Pomoc znajdziesz pisząc na adres biuro@praca.pl
 Pomoc znajdziesz pisząc na adres biuro@praca.pl
 
 == Changelog ==
+= 1.2.2 =
+* Zmiana tekstów i tłumaczeń w ustawieniach pluginu
+* Dodanie w widget'cie ikony do strony Dodatki na Praca.pl
+
 = 1.2.1 =
 * Zmiana tekstów i tłumaczeń w ustawieniach pluginu
 

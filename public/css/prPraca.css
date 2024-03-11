@@ -1,0 +1,13 @@
+#prWidgetSitebar img {
+    width: 32px;
+}
+
+#prWidgetSitebar ul {
+    margin-bottom: 0;
+    list-style: none;
+}
+
+#prWidgetSidebar-moreInfo {
+    width: 100%;
+    text-align: end;
+}
