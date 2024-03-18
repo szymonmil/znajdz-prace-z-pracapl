@@ -106,6 +106,9 @@ msgstr "Kraj (opcjonalne):"
 msgid "Display:"
 msgstr "Wyświetlaj:"
 
+msgid "Show credentials:"
+msgstr "Wyświetlaj informacje o autorze pluginu:"
+
 #: prPraca/lib/WpView.php:117 prPraca/lib/WpView.php:163
 msgid "job date"
 msgstr "datę ogłoszenia"

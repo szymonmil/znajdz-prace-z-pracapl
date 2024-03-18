@@ -129,6 +129,17 @@ class PrPracaWpView implements PrPracaViewInterface {
                                 <input type="text" value="'.$searchCount.'" name="prPraca[count]">
                             </div>';
 
+						    $showCredentials = false;
+						    if(isset($options['showCredentials'])) {
+							    $showCredentials = (bool) $options['showCredentials'];
+						    }
+
+	                        $showCredentialsChecked = $showCredentials ? 'checked="checked"' : '';
+                            $html .= '<div>
+                                <h3>'.$this->_('Show credentials:').' <input type="checkbox" name="prPraca[showCredentials]" ' . $showCredentialsChecked . '></h3>
+                               
+                            </div>';
+
                             $html .= '<div class="submit-box">
                                 <input type="submit" name="submit" id="submit" class="button button-primary" value="'.$this->_('Save settings').'">
                             </div>';
@@ -192,8 +203,15 @@ class PrPracaWpView implements PrPracaViewInterface {
             $showDate = in_array('date', $prOptions['show']) ? true : false;
         }
 
+	    $showCredentials = false;
+	    if(isset($prOptions['showCredentials'])) {
+		    $showCredentials = (bool) $prOptions['showCredentials'];
+	    }
+
         $output = '<div id="prWidgetSitebar">';
-            $output .= '<div>'.$this->_('Job offers from service').' <a href="https://www.praca.pl" title="Praca.pl">Praca.pl</a></div>';
+			if ($showCredentials) {
+				$output .= '<div>'.$this->_('Job offers from service').' <a href="https://www.praca.pl" title="Praca.pl">Praca.pl</a></div>';
+			}
             $output .= '<ul>';
                 if(is_array($prAds) && count($prAds)) {
                     foreach($prAds as $ad) {
@@ -224,9 +242,11 @@ class PrPracaWpView implements PrPracaViewInterface {
                     $output .= '<li>'.$this->_('There are no job offers').'</li>';
                 }
             $output .= '</ul>';
-		$output .= '<div id="prWidgetSidebar-moreInfo">
-						<a href="https://www.praca.pl/dodatki.html"><img src="' . $infoIconPath . '" title="Oferty pracy z Praca.pl" alt="Portal Praca.pl" /></a>
-					</div>';
+			if ($showCredentials) {
+				$output .= '<div id="prWidgetSidebar-moreInfo">
+					<a href="https://www.praca.pl/dodatki/plugin-wordpress.html"><img src="' . $infoIconPath . '" title="Oferty pracy z Praca.pl" alt="Portal Praca.pl" /></a>
+				</div>';
+			}
         $output .= '</div>';
 
         return $output;
@@ -243,8 +263,15 @@ class PrPracaWpView implements PrPracaViewInterface {
         }
         $mainClass = empty($prOptions['class']) ? '' : 'class="'.$prOptions['class'].'"';
 
+	    $showCredentials = false;
+	    if(isset($prOptions['showCredentials'])) {
+		    $showCredentials = (bool) $prOptions['showCredentials'];
+	    }
+
         $output = '<div id="prPracaJobsShortcode" '.$mainClass.'>';
-            $output .= '<div>'.$this->_('Job offers from service').' <a href="https://www.praca.pl" title="Praca.pl">Praca.pl</a></div>';
+			if ($showCredentials) {
+				$output .= '<div>'.$this->_('Job offers from service').' <a href="https://www.praca.pl" title="Praca.pl">Praca.pl</a></div>';
+			}
             if(is_array($prAds) && count($prAds)) {
                 foreach($prAds as $ad) {
                     $output .= '<div>';
