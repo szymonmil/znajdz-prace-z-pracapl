@@ -146,7 +146,7 @@ class PrPracaWpView implements PrPracaViewInterface {
 
                         $html .= '</form>
                     </div>
-                    <div><p>' . $this->_('Need technical support with plugin installation? Contact us at:') . ' xyz@praca.pl</p></div>
+                    <div><p>' . $this->_('Need technical support with plugin installation? Contact us at:') . ' plugin-wp@praca.pl</p></div>
                 </div>';
 
         return $html;
@@ -193,7 +193,7 @@ class PrPracaWpView implements PrPracaViewInterface {
     }
 
     public function renderSidebarWidget($prAds, $prOptions) {
-	    $infoIconPath = plugins_url('/public/img/info.png', __DIR__ . '/../prPraca.php');
+	    $infoIconPath = plugins_url('/public/img/info.png', __DIR__ . '/../znajdz-prace-z-pracapl.php');
 
         $showCompany = $showRegion = $showCity = $showDate = false;
         if(!empty($prOptions['show'])) {

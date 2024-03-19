@@ -1,11 +1,11 @@
 <?php
 /*
- * Plugin Name: Oferty pracy z Praca.pl
- * Description: Oferty pracy z Praca.pl to idealny sposób na wzbogacenie Twojej strony internetowej aktualnymi ofertami pracy pochodzącymi z portalu Praca.pl.
+ * Plugin Name: Znajdż Pracę z Praca.pl
+ * Description: Twoja strona internetowa może być jeszcze bardziej przyjazna dla użytkownika i nowoczesna dzięki wtyczce Wordpress Znajdź Pracę z Praca.pl. Atrakcyjny wizualnie plugin wzbogaci wygląd Twojej witryny, a wyświetlane informacje z rynku pracy uzupełnią publikowane przez Ciebie treści o nową, aktualną perspektywą.
  * Version: 2.0
  * Author: Praca.pl sp. z o.o.
  * Author URI: https://www.praca.pl
- * Text Domain: prPraca
+ * Text Domain: znajdz-prace-z-pracapl
 */
 
 // aktywacja pluginu
@@ -64,7 +64,7 @@ add_action('wp_enqueue_scripts', 'prPraca_scripts');
 
 // akacja osadzenia styli css (uzwyamy tej samej akcji do rejestracji naszej funkcji osadzajacej co przy js)
 function prPraca_styles() {
-  wp_register_style('prPraca', plugins_url('public/css/prPraca.css', __FILE__));
+  wp_register_style('prPraca', plugins_url('public/css/prPraca.css', __FILE__), [], '2.0');
   wp_enqueue_style('prPraca');
 }
 add_action('wp_enqueue_scripts', 'prPraca_styles');
@@ -72,8 +72,8 @@ add_action('wp_enqueue_scripts', 'prPraca_styles');
 // osadzanie styli w adminie
 function prPraca_adminStyles() {
     $pluginDir = basename(dirname(__FILE__));
-    wp_register_style( 'prPracaAdmin', plugins_url($pluginDir.'/public/css/prPracaAdmin.css'), false, '1.0.1' );
-    wp_enqueue_style( 'prPracaAdmin' );
+    wp_register_style('prPracaAdmin', plugins_url($pluginDir.'/public/css/prPracaAdmin.css'), false, '2.0');
+    wp_enqueue_style('prPracaAdmin');
 }
 add_action( 'admin_enqueue_scripts', 'prPraca_adminStyles' );
 

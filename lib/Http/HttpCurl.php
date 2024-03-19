@@ -16,7 +16,7 @@ class HttpCurl implements iHttp {
     }
 
     public function __destruct() {
-        unlink($this->_cookieSaveFile);
+	    wp_delete_file($this->_cookieSaveFile);
     }
 
     public function goToUrl($url, array $httpParams = array()) {
