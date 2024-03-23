@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.6.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-12-18 13:27+0100\n"
+"POT-Creation-Date: 2013-12-18 13:26+0100\n"
 "PO-Revision-Date: 2013-12-18 13:27+0100\n"
 "Last-Translator: Tomasz Tomczyk\n"
 "Language-Team: \n"
@@ -18,23 +18,25 @@ msgstr ""
 "X-Poedit-Basepath: "
 "plugins/\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-SearchPath-0: prPraca\n"
+"X-Poedit-SearchPath-0: znajdz-prace-z-pracapl\n"
 
+# Jobs
 #: prPraca/prPraca.php:29
-msgid "Jobs offerts"
-msgstr "Jobs from Praca.pl"
+msgid "Job offers"
+msgstr "Znajdź pracę z Praca.pl"
 
+# Search jobs
 #: prPraca/prPraca.php:36
 msgid "Jobs Finder"
-msgstr "Jobs from Praca.pl"
+msgstr "Znajdź pracę z Praca.pl"
 
 #: prPraca/prPraca.php:48 prPraca/lib/WpView.php:53
 msgid "Settings"
-msgstr ""
+msgstr "Ustawienia"
 
 #: prPraca/prPraca.php:83 prPraca/prPraca.php:84
-msgid "PrPraca"
-msgstr "Jobs from Praca.pl"
+msgid "Find job offers with Praca.pl"
+msgstr "Znajdź pracę z Praca.pl"
 
 #: prPraca/lib/WpView.php:54
 msgid ""
@@ -42,578 +44,622 @@ msgid ""
 "then click on \"Widgets\".  Activate the \"Jobs from Praca.pl\" wigdet, for "
 "example by dragging and dropping it in the Sidebar."
 msgstr ""
+"Aby wyświetlać wtyczkę na swojej stronie Wordpress, przejdź do zakładki "
+"\"Wygląd\", a następnie wybierz \"Widgety\" i aktywuj widget \"Oferty pracy "
+"z Praca.pl\", na przykład przenosząc go do Sidebar'u."
 
 #: prPraca/lib/WpView.php:58
 msgid "Search params"
-msgstr "Search parameters"
+msgstr "Parametry wyszukiwania"
 
 #: prPraca/lib/WpView.php:60
-msgid "Phrase:"
-msgstr ""
+msgid "Phrase (optional):"
+msgstr "Fraza (opcjonalne):"
 
 #: prPraca/lib/WpView.php:63
-msgid "City:"
-msgstr ""
+msgid "City (optional):"
+msgstr "Miasto (opcjonalne):"
 
 #: prPraca/lib/WpView.php:66
-msgid "Company ID from site Praca.pl:"
-msgstr "Company ID from Praca.pl"
+msgid "Company ID (optional):"
+msgstr "ID firmy (opcjonalne):"
 
 #: prPraca/lib/WpView.php:68 prPraca/lib/WpView.php:72
-msgid "You can enter multiple values ​​separated by semicolons"
-msgstr ""
+# msgid "You can enter multiple values ​​separated by semicolons"
+# msgstr "Możesz wpisać wiele wartości rozdzielając je średnikami"
+
+msgid "Position, company, keyword."
+msgstr "Stanowisko, firma, słowo kluczowe."
+
+msgid "Provide the name of the city."
+msgstr "Podaj nazwę miasta."
+
+msgid "Current job offers from the specified employer on Praca.pl will be displayed."
+msgstr "Będą wyświetlane aktualne oferty pracy wskazanego pracodawcy z serwisu Praca.pl."
+
+msgid "Job offers from the specified employer on Praca.pl will not be displayed."
+msgstr "Nie będą wyświetlane oferty pracy wskazanego pracodawcy z serwisu Praca.pl."
+
+msgid "Need technical support with plugin installation? Contact us at:"
+msgstr "Potrzebujesz pomocy technicznej w instalacji wtyczki? Napisz na nas na adres:"
+
+msgid "You can provide several company IDs, separating them with a semicolon, e.g. 1234;1234"
+msgstr "Możesz podać kilka ID, oddzielając je średnikiem np.: 1234;1234"
 
 #: prPraca/lib/WpView.php:70
-msgid "Excluded Company ID from site Praca.pl:"
-msgstr "Excluded company IDs (IDs from Praca.pl)"
+msgid "Company ID to exclude (optional):"
+msgstr "ID firmy do wykluczenia (opcjonalne):"
 
 #: prPraca/lib/WpView.php:76
-msgid "Category:"
-msgstr ""
+msgid "Category (optional):"
+msgstr "Obszar zawodowy (opcjonalne):"
 
 #: prPraca/lib/WpView.php:84
-msgid "Region:"
-msgstr ""
+msgid "Region (optional):"
+msgstr "Region (opcjonalne):"
 
 #: prPraca/lib/WpView.php:104
-msgid "Country:"
-msgstr ""
+msgid "Country (optional):"
+msgstr "Kraj (opcjonalne):"
 
 #: prPraca/lib/WpView.php:116 prPraca/lib/WpView.php:162
 msgid "Display:"
-msgstr ""
+msgstr "Wyświetlaj:"
+
+msgid "Show credentials:"
+msgstr "Wyświetlaj informacje o autorze pluginu:"
 
 #: prPraca/lib/WpView.php:117 prPraca/lib/WpView.php:163
 msgid "job date"
-msgstr ""
+msgstr "datę ogłoszenia"
 
 #: prPraca/lib/WpView.php:118 prPraca/lib/WpView.php:164
 msgid "employer's name"
-msgstr ""
+msgstr "nazwę pracodawcy"
 
 #: prPraca/lib/WpView.php:119 prPraca/lib/WpView.php:165
 msgid "city"
-msgstr ""
+msgstr "miasto"
 
 #: prPraca/lib/WpView.php:120 prPraca/lib/WpView.php:166
 msgid "region"
-msgstr ""
+msgstr "region"
 
 #: prPraca/lib/WpView.php:124 prPraca/lib/WpView.php:170
 msgid "Number of displayed jobs:"
-msgstr ""
+msgstr "Liczba wyświetlanych ogłoszeń:"
 
 #: prPraca/lib/WpView.php:129
 msgid "Save settings"
-msgstr ""
+msgstr "Zapisz zmiany"
 
 #: prPraca/lib/WpView.php:154
 msgid "Title:"
-msgstr ""
+msgstr "Tytuł:"
 
 #: prPraca/lib/WpView.php:190 prPraca/lib/WpView.php:238
 msgid "Job offers from service"
-msgstr "Job offers from service"
+msgstr "Oferty pochodzą z serwisu"
 
 #: prPraca/lib/WpView.php:200 prPraca/lib/WpView.php:247
 msgid "regions"
-msgstr ""
+msgstr "regiony"
 
 #: prPraca/lib/WpView.php:218 prPraca/lib/WpView.php:264
 msgid "There are no job offers"
-msgstr "There are no jobs"
+msgstr "Brak ofert pracy"
+
+# lib/WpView.php:221
+msgid "More on Praca.pl"
+msgstr "Dowiedz się więcej"
 
 #: prPraca/i18n/static.php:3
 msgid "Admin - secretarial jobs"
-msgstr ""
+msgstr "Administracja biurowa"
 
 #: prPraca/i18n/static.php:4
 msgid "Public Administration / Civil Service"
-msgstr ""
+msgstr "Administracja publiczna / Służba cywilna"
 
 #: prPraca/i18n/static.php:5
 msgid "Architecture"
-msgstr ""
+msgstr "Architektura"
 
 #: prPraca/i18n/static.php:6
 msgid "Research and development"
-msgstr ""
+msgstr "Badania i rozwój"
 
 #: prPraca/i18n/static.php:7
 msgid "Bulding / Geodesy"
-msgstr "Building / Geodesy"
+msgstr "Budownictwo / Geodezja"
 
 #: prPraca/i18n/static.php:8
 msgid "Consulting"
-msgstr ""
+msgstr "Doradztwo / Konsulting"
 
 #: prPraca/i18n/static.php:9
 msgid "Education / Science / Trainings"
-msgstr ""
+msgstr "Edukacja / Nauka / Szkolenia"
 
 #: prPraca/i18n/static.php:10
 msgid "Power industry / Electronics"
-msgstr ""
+msgstr "Energetyka / Elektronika"
 
 #: prPraca/i18n/static.php:11
 msgid "Pharmacy / Biotechnology"
-msgstr ""
+msgstr "Farmaceutyka / Biotechnologia"
 
 #: prPraca/i18n/static.php:12
 msgid "Finance / Banking"
-msgstr ""
+msgstr "Finanse / Bankowość"
 
 #: prPraca/i18n/static.php:13
 msgid "Franchising"
-msgstr ""
+msgstr "Franczyza"
 
 #: prPraca/i18n/static.php:14
 msgid "Gastronomy / Catering"
-msgstr ""
+msgstr "Gastronomia / Catering"
 
 #: prPraca/i18n/static.php:15
 msgid "Graphics / Photography / Design"
-msgstr ""
+msgstr "Grafika / Fotografia / Kreacja"
 
 #: prPraca/i18n/static.php:16
 msgid "Human Resources"
-msgstr ""
+msgstr "Human Resources / Kadry"
 
 #: prPraca/i18n/static.php:17
 msgid "IT / Administration"
-msgstr ""
+msgstr "Informatyka  / Administracja"
 
 #: prPraca/i18n/static.php:18
 msgid "IT / Programming"
-msgstr ""
+msgstr "Informatyka / Programowanie"
 
 #: prPraca/i18n/static.php:19
 msgid "Internet / E-commerce"
-msgstr ""
+msgstr "Internet / e-commerce"
 
 #: prPraca/i18n/static.php:20
 msgid "Engineering / Design"
-msgstr ""
+msgstr "Inżynieria / Projektowanie"
 
 #: prPraca/i18n/static.php:21
 msgid "Management"
-msgstr ""
+msgstr "Kadra zarządzająca"
 
 #: prPraca/i18n/static.php:22
 msgid "Quality Control"
-msgstr ""
+msgstr "Kontrola jakości"
 
 #: prPraca/i18n/static.php:23
 msgid "Cosmetics / Caring"
-msgstr ""
+msgstr "Kosmetyka / Pielęgnacja"
 
 #: prPraca/i18n/static.php:24
 msgid "Accounting / Audit / Taxes"
-msgstr ""
+msgstr "Księgowość / Audyt / Podatki"
 
 #: prPraca/i18n/static.php:25
 msgid "Logistics / Distribution"
-msgstr ""
+msgstr "Logistyka / Dystrybucja"
 
 #: prPraca/i18n/static.php:26
 msgid "Marketing / Advertising / PR"
-msgstr ""
+msgstr "Marketing / Reklama / PR"
 
 #: prPraca/i18n/static.php:27
 msgid "Media / Art / Entertainment"
-msgstr ""
+msgstr "Media / Sztuka / Rozrywka"
 
 #: prPraca/i18n/static.php:28
 msgid "Medicine / Healthcare"
-msgstr ""
+msgstr "Medycyna / Opieka zdrowotna"
 
 #: prPraca/i18n/static.php:29
 msgid "Motorization"
-msgstr ""
+msgstr "Motoryzacja"
 
 #: prPraca/i18n/static.php:30
 msgid "Real estates"
-msgstr ""
+msgstr "Nieruchomości"
 
 #: prPraca/i18n/static.php:31
 msgid "Security"
-msgstr ""
+msgstr "Ochrona osób i mienia"
 
 #: prPraca/i18n/static.php:32
 msgid "NGOs / Volunteer jobs"
-msgstr ""
+msgstr "Organizacje pozarządowe / Wolontariat"
 
 #: prPraca/i18n/static.php:33
 msgid "Phisical job"
-msgstr ""
+msgstr "Praca fizyczna"
 
 #: prPraca/i18n/static.php:34
 msgid "Practice / Trainings"
-msgstr ""
+msgstr "Praktyki / Staż"
 
 #: prPraca/i18n/static.php:35
 msgid "Law"
-msgstr ""
+msgstr "Prawo"
 
 #: prPraca/i18n/static.php:36
 msgid "Industry / Production"
-msgstr ""
+msgstr "Przemysł / Produkcja"
 
 #: prPraca/i18n/static.php:37
 msgid "Agriculture / Environmental Protection"
-msgstr ""
+msgstr "Rolnictwo / Ochrona środowiska"
 
 #: prPraca/i18n/static.php:38
 msgid "Maintenance / Technology / Installation"
-msgstr ""
+msgstr "Serwis / Technika / Montaż"
 
 #: prPraca/i18n/static.php:39
 msgid "Sport / Recreation"
-msgstr ""
+msgstr "Sport / Rekreacja"
 
 #: prPraca/i18n/static.php:40
 msgid "Sales / Customer Service"
-msgstr ""
+msgstr "Sprzedaż / Obsługa klienta"
 
 #: prPraca/i18n/static.php:41
 msgid "Telecommunication"
-msgstr ""
+msgstr "Telekomunikacja"
 
 #: prPraca/i18n/static.php:42
 msgid "Translation"
-msgstr ""
+msgstr "Tłumaczenia"
 
 #: prPraca/i18n/static.php:43
 msgid "Transport / Spedition"
-msgstr ""
+msgstr "Transport / Spedycja"
 
 #: prPraca/i18n/static.php:44
 msgid "Tourism / Hotels"
-msgstr ""
+msgstr "Turystyka / Hotelarstwo"
 
 #: prPraca/i18n/static.php:45
 msgid "Insurance"
-msgstr ""
+msgstr "Ubezpieczenia"
 
 #: prPraca/i18n/static.php:46
 msgid "Purchasing"
-msgstr ""
+msgstr "Zakupy"
 
 #: prPraca/i18n/static.php:48 prPraca/i18n/static.php:128
 msgid "Poland"
-msgstr ""
+msgstr "Polska"
 
 #: prPraca/i18n/static.php:49
 msgid "Other countries than Poland"
-msgstr ""
+msgstr "Inne kraje niż Polska"
 
 #: prPraca/i18n/static.php:52
 msgid "Afghanistan"
-msgstr ""
+msgstr "Afganistan"
 
 #: prPraca/i18n/static.php:53
 msgid "Albania"
-msgstr ""
+msgstr "Albania"
 
 #: prPraca/i18n/static.php:54
 msgid "Algeria"
-msgstr ""
+msgstr "Alegira"
 
 #: prPraca/i18n/static.php:55
 msgid "Saudi Arabia"
-msgstr ""
+msgstr "Arabia Saudyjska"
 
 #: prPraca/i18n/static.php:56
 msgid "Argentina"
-msgstr ""
+msgstr "Argentyna"
 
 #: prPraca/i18n/static.php:57
 msgid "Australia"
-msgstr ""
+msgstr "Australia"
 
 #: prPraca/i18n/static.php:58
 msgid "Austria"
-msgstr ""
+msgstr "Austria"
 
 #: prPraca/i18n/static.php:59
 msgid "Belgium"
-msgstr ""
+msgstr "Belgia"
 
 #: prPraca/i18n/static.php:60
 msgid "Belarus"
-msgstr ""
+msgstr "Białoruś"
 
 #: prPraca/i18n/static.php:61
 msgid "Bosnia and Herzegovina"
-msgstr ""
+msgstr "Bośnia i Hercegowina"
 
 #: prPraca/i18n/static.php:62
 msgid "Brazil"
-msgstr ""
+msgstr "Brazylia"
 
 #: prPraca/i18n/static.php:63
 msgid "Bulgaria"
-msgstr ""
+msgstr "Bułgaria"
 
 #: prPraca/i18n/static.php:64
 msgid "Chile"
-msgstr ""
+msgstr "Chile"
 
 #: prPraca/i18n/static.php:65
 msgid "China"
-msgstr ""
+msgstr "Chiny"
 
 #: prPraca/i18n/static.php:66
 msgid "Croatia"
-msgstr ""
+msgstr "Chorwacja"
 
 #: prPraca/i18n/static.php:67
 msgid "Czech"
-msgstr ""
+msgstr "Czechy"
 
 #: prPraca/i18n/static.php:68
 msgid "Denmark"
-msgstr ""
+msgstr "Dania"
 
 #: prPraca/i18n/static.php:69
 msgid "Egypt"
-msgstr ""
+msgstr "Egipt"
 
 #: prPraca/i18n/static.php:70
 msgid "Ecuador"
-msgstr ""
+msgstr "Ekwador"
 
 #: prPraca/i18n/static.php:71
 msgid "Estonia"
-msgstr ""
+msgstr "Estonia"
 
 #: prPraca/i18n/static.php:72
 msgid "Philippines"
-msgstr ""
+msgstr "Filipiny"
 
 #: prPraca/i18n/static.php:73
 msgid "Finland"
-msgstr ""
+msgstr "Finlandia"
 
 #: prPraca/i18n/static.php:74
 msgid "France"
-msgstr ""
+msgstr "Francja"
 
 #: prPraca/i18n/static.php:75
 msgid "Greece"
-msgstr ""
+msgstr "Grecja"
 
 #: prPraca/i18n/static.php:76
 msgid "Spain"
-msgstr ""
+msgstr "Hiszpania"
 
 #: prPraca/i18n/static.php:77
 msgid "Netherlands"
-msgstr ""
+msgstr "Holandia"
 
 #: prPraca/i18n/static.php:78
 msgid "India"
-msgstr ""
+msgstr "Idie"
 
 #: prPraca/i18n/static.php:79
 msgid "Indonesia"
-msgstr ""
+msgstr "Indonezja"
 
 #: prPraca/i18n/static.php:80
 msgid "Ireland"
-msgstr ""
+msgstr "Irlandia"
 
 #: prPraca/i18n/static.php:81
 msgid "Israel"
-msgstr ""
+msgstr "Izrael"
 
 #: prPraca/i18n/static.php:82
 msgid "Japan"
-msgstr ""
+msgstr "Japonia"
 
 #: prPraca/i18n/static.php:83
 msgid "Jordan"
-msgstr ""
+msgstr "Jordan"
 
 #: prPraca/i18n/static.php:84
 msgid "Canada"
-msgstr ""
+msgstr "Kanada"
 
 #: prPraca/i18n/static.php:85
 msgid "Colombia"
-msgstr ""
+msgstr "Kolumbia"
 
 #: prPraca/i18n/static.php:86
 msgid "South Korea"
-msgstr ""
+msgstr "Korea Południowa"
 
 #: prPraca/i18n/static.php:87
 msgid "Costa Rica"
-msgstr ""
+msgstr "Kostaryka"
 
 #: prPraca/i18n/static.php:88
 msgid "Lebanon"
-msgstr ""
+msgstr "Liban"
 
 #: prPraca/i18n/static.php:89
 msgid "Lithuania"
-msgstr ""
+msgstr "Litwa"
 
 #: prPraca/i18n/static.php:90
 msgid "Latvia"
-msgstr ""
+msgstr "Łotwa"
 
 #: prPraca/i18n/static.php:91
 msgid "Malaysia"
-msgstr ""
+msgstr "Malezja"
 
 #: prPraca/i18n/static.php:92
 msgid "Morocco"
-msgstr ""
+msgstr "Maroko"
 
 #: prPraca/i18n/static.php:93
 msgid "Mexico"
-msgstr ""
+msgstr "Meksyk"
 
 #: prPraca/i18n/static.php:94
 msgid "Germany"
-msgstr ""
+msgstr "Niemcy"
 
 #: prPraca/i18n/static.php:95
 msgid "Norway"
-msgstr ""
+msgstr "Norwegia"
 
 #: prPraca/i18n/static.php:96
 msgid "New Zealand"
-msgstr ""
+msgstr "Nowa Zelandia"
 
 #: prPraca/i18n/static.php:97
 msgid "Pakistan"
-msgstr ""
+msgstr "Pakistan"
 
 #: prPraca/i18n/static.php:98
 msgid "Peru"
-msgstr ""
+msgstr "Peru"
 
 #: prPraca/i18n/static.php:99
 msgid "Portugal"
-msgstr ""
+msgstr "Portugalia"
 
 #: prPraca/i18n/static.php:100
 msgid "South Africa"
-msgstr ""
+msgstr "RPA"
 
 #: prPraca/i18n/static.php:101
 msgid "Russia"
-msgstr ""
+msgstr "Rosja"
 
 #: prPraca/i18n/static.php:102
 msgid "Romania"
-msgstr ""
+msgstr "Romunia"
 
 #: prPraca/i18n/static.php:103
 msgid "El Salvador"
-msgstr ""
+msgstr "Salwador"
 
 #: prPraca/i18n/static.php:104
 msgid "Singapore"
-msgstr ""
+msgstr "Singapur"
 
 #: prPraca/i18n/static.php:105
 msgid "Slovakia"
-msgstr ""
+msgstr "Słowacja"
 
 #: prPraca/i18n/static.php:106
 msgid "Slovenia"
-msgstr ""
+msgstr "Słowenia"
 
 #: prPraca/i18n/static.php:107
 msgid "United States"
-msgstr ""
+msgstr "Stany Zjednoczone"
 
 #: prPraca/i18n/static.php:108
 msgid "Switzerland"
-msgstr ""
+msgstr "Szwajcaria"
 
 #: prPraca/i18n/static.php:109
 msgid "Sweden"
-msgstr ""
+msgstr "Szwecja"
 
 #: prPraca/i18n/static.php:110
 msgid "Thailand"
-msgstr ""
+msgstr "Tajlandia"
 
 #: prPraca/i18n/static.php:111
 msgid "Taiwan"
-msgstr ""
+msgstr "Tajwan"
 
 #: prPraca/i18n/static.php:112
 msgid "Tunisia"
-msgstr ""
+msgstr "Tunezja"
 
 #: prPraca/i18n/static.php:113
 msgid "Turkey"
-msgstr ""
+msgstr "Turcja"
 
 #: prPraca/i18n/static.php:114
 msgid "Ukraine"
-msgstr ""
+msgstr "Ukraina"
 
 #: prPraca/i18n/static.php:115
 msgid "Venezuela"
-msgstr ""
+msgstr "Wenezuela"
 
 #: prPraca/i18n/static.php:116
 msgid "Hungary"
-msgstr ""
+msgstr "Węgry"
 
 #: prPraca/i18n/static.php:117
 msgid "United Kingdom"
-msgstr ""
+msgstr "Wielka Brytania"
 
 #: prPraca/i18n/static.php:118
 msgid "Italy"
-msgstr ""
+msgstr "Włochy"
 
 #: prPraca/i18n/static.php:119
 msgid "United Arab Emirates"
-msgstr ""
+msgstr "Zjednoczone Emiraty Arabskie"
 
 #: prPraca/i18n/static.php:120
 msgid "Other/World"
-msgstr ""
+msgstr "Pozostałe"
 
 #: prPraca/i18n/static.php:121
 msgid "Cyprus"
-msgstr ""
+msgstr "Cypr"
 
 #: prPraca/i18n/static.php:122
 msgid "Iceland"
-msgstr ""
+msgstr "Islandia"
 
 #: prPraca/i18n/static.php:123
 msgid "Luxembourg"
-msgstr ""
+msgstr "Luksemburg"
 
 #: prPraca/i18n/static.php:124
 msgid "Kuwait"
-msgstr ""
+msgstr "Kuwejt"
 
 #: prPraca/i18n/static.php:125
 msgid "Serbia"
-msgstr ""
+msgstr "Serbia"
 
 #: prPraca/i18n/static.php:126
 msgid "Moldova"
-msgstr ""
+msgstr "Mołdawia"
 
 #: prPraca/i18n/static.php:127
 msgid "Andorra"
-msgstr ""
+msgstr "Andora"
 
 #: prPraca/i18n/static.php:129
 msgid "Liechtenstein"
-msgstr ""
+msgstr "Liechtenstien"
+
+# Offer comes from
+#, fuzzy
+#~ msgid "Offer come from service"
+#~ msgstr "Oferta pochodzi z serwisu"
+
+# Offer cannot be found
+#, fuzzy
+#~ msgid "Offer can not be found"
+#~ msgstr "Oferta nie może być znaleziona"
+
+#~ msgid "Company ID:"
+#~ msgstr "ID firmy:"
+
+#~ msgid "region/city"
+#~ msgstr "region/miasto"
 
 #~ msgctxt "text direction"
 #~ msgid "ltr"

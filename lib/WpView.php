@@ -53,25 +53,25 @@ class PrPracaWpView implements PrPracaViewInterface {
                         <h2><div class="pr-icon32"> </div>'.$this->_('Settings').'</h2>
                         <p class="prPracaInfoBox">'.$this->_('To display the plugin on your website, go to the "Appearance" bookmark and then click on "Widgets".  Activate the "Jobs from Praca.pl" wigdet, for example by dragging and dropping it in the Sidebar.').'</p>
                         <form method="post" action="#" id="widgetSettings">
-                            <input type="hidden" value="'.$prPracaSidebarWidgetTitle.'" name="prPraca[sidebarWidgetTitle]">';
+                            <input type="hidden" value="'.$prPracaSidebarWidgetTitle.'" name="znajdz-prace-z-pracapl[sidebarWidgetTitle]">';
                             $html .= '<div>
                                 <h3>'.$this->_('Search params').'</h3>
 
                                     <h4>'.$this->_('Phrase (optional):').'</h4>
-                                    <label><input type="text" value="'.$searchPhrase.'" name="prPraca[phrase]"></label>
+                                    <label><input type="text" value="'.$searchPhrase.'" name="znajdz-prace-z-pracapl[phrase]"></label>
                                     <div>'.$this->_('Position, company, keyword.').'</div>
 
                                     <h4>'.$this->_('City (optional):').'</h4>
-                                    <label><input type="text" value="'.$searchCity.'" name="prPraca[city]"></label>
+                                    <label><input type="text" value="'.$searchCity.'" name="znajdz-prace-z-pracapl[city]"></label>
                                     <div>'.$this->_('Provide the name of the city.').'</div>
 
                                     <h4>'.$this->_('Company ID (optional):').'</h4>
-                                    <label><input type="text" value="'.$searchCompany.'" name="prPraca[company]"></label>
+                                    <label><input type="text" value="'.$searchCompany.'" name="znajdz-prace-z-pracapl[company]"></label>
                                     <div>'.$this->_('Current job offers from the specified employer on Praca.pl will be displayed.').'</div>
                                     <div>'.$this->_('You can provide several company IDs, separating them with a semicolon, e.g. 1234;1234').'</div>
 
                                     <h4>'.$this->_('Company ID to exclude (optional):').'</h4>
-                                    <label><input type="text" value="'.$searchECompany.'" name="prPraca[ecompany]"></label>
+                                    <label><input type="text" value="'.$searchECompany.'" name="znajdz-prace-z-pracapl[ecompany]"></label>
                                     <div>'.$this->_('Job offers from the specified employer on Praca.pl will not be displayed.').'</div>
                                     <div>'.$this->_('You can provide several company IDs, separating them with a semicolon, e.g. 1234;1234').'</div>
                                 </div>';
@@ -80,7 +80,7 @@ class PrPracaWpView implements PrPracaViewInterface {
                                 <h3>'.$this->_('Category (optional):').'</h3>';
                                 foreach(PrPracaViewJobCategory::$ITEMS as $jcKey => $jcValue) {
                                     $checked = in_array($jcKey, $jobCategory) ? 'checked="checked"' : '';
-                                    $html .= '<label><input type="checkbox" value="'.$jcKey.'" name="prPraca[jobcategory][]" '.$checked.'>'.$this->_($jcValue).'</label>';
+                                    $html .= '<label><input type="checkbox" value="'.$jcKey.'" name="znajdz-prace-z-pracapl[jobcategory][]" '.$checked.'>'.$this->_($jcValue).'</label>';
                                 }
                             $html .= '</div>';
 
@@ -90,7 +90,7 @@ class PrPracaWpView implements PrPracaViewInterface {
                                     foreach(PrPracaViewRegions::$ITEMS as $rKey => $rValue) {
                                         if($rKey > 16 || $rKey == 0) {
                                             $checked = in_array($rKey, $regions) ? 'checked="checked"' : '';
-                                            $html .= '<label><input type="checkbox" value="'.$rKey.'" name="prPraca[region][]" '.$checked.'>'.$this->_($rValue).'</label>';
+                                            $html .= '<label><input type="checkbox" value="'.$rKey.'" name="znajdz-prace-z-pracapl[region][]" '.$checked.'>'.$this->_($rValue).'</label>';
                                         }
                                     }
                                 $html .= '</div>';
@@ -98,7 +98,7 @@ class PrPracaWpView implements PrPracaViewInterface {
                                     foreach(PrPracaViewRegions::$ITEMS as $rKey => $rValue) {
                                         if($rKey > 0 && $rKey <= 16) {
                                             $checked = in_array($rKey, $regions) ? 'checked="checked"' : '';
-                                            $html .= '<label><input type="checkbox" value="'.$rKey.'" name="prPraca[region][]" '.$checked.'>'.$this->_($rValue).'</label>';
+                                            $html .= '<label><input type="checkbox" value="'.$rKey.'" name="znajdz-prace-z-pracapl[region][]" '.$checked.'>'.$this->_($rValue).'</label>';
                                         }
                                     }
                                 $html .= '</div>';
@@ -108,7 +108,7 @@ class PrPracaWpView implements PrPracaViewInterface {
                                 <h3>'.$this->_('Country (optional):').'</h3>';
                                 foreach(PrPracaViewCountry::$ITEMS as $cKey => $cValue) {
                                     $checked = in_array($cKey, $country) ? 'checked="checked"' : '';
-                                    $html .= '<label><input type="checkbox" value="'.$cKey.'" name="prPraca[country][]" '.$checked.'>'.$this->_($cValue).'</label>';
+                                    $html .= '<label><input type="checkbox" value="'.$cKey.'" name="znajdz-prace-z-pracapl[country][]" '.$checked.'>'.$this->_($cValue).'</label>';
                                 }
                             $html .= '</div>';
 
@@ -118,15 +118,15 @@ class PrPracaWpView implements PrPracaViewInterface {
                             $checkedShowRegion = in_array('region', $show) ? 'checked="checked"' : '';
                             $html .= '<div class="checkbox-list">
                                 <h3>'.$this->_('Display:').'</h3>
-                                <label><input type="checkbox" value="date" name="prPraca[show][]" '.$checkedShowDate.'>'.$this->_('job date').'</label>
-                                <label><input type="checkbox" value="company" name="prPraca[show][]" '.$checkedShowCompany.'>'.$this->_('employer\'s name').'</label>
-                                <label><input type="checkbox" value="city" name="prPraca[show][]" '.$checkedShowCity.'>'.$this->_('city').'</label>
-                                <label><input type="checkbox" value="region" name="prPraca[show][]" '.$checkedShowRegion.'>'.$this->_('region').'</label>
+                                <label><input type="checkbox" value="date" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowDate.'>'.$this->_('job date').'</label>
+                                <label><input type="checkbox" value="company" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowCompany.'>'.$this->_('employer\'s name').'</label>
+                                <label><input type="checkbox" value="city" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowCity.'>'.$this->_('city').'</label>
+                                <label><input type="checkbox" value="region" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowRegion.'>'.$this->_('region').'</label>
                             </div>';
 
                             $html .= '<div>
                                 <h3>'.$this->_('Number of displayed jobs:').'</h3>
-                                <input type="text" value="'.$searchCount.'" name="prPraca[count]">
+                                <input type="text" value="'.$searchCount.'" name="znajdz-prace-z-pracapl[count]">
                             </div>';
 
 						    $showCredentials = false;
@@ -136,7 +136,7 @@ class PrPracaWpView implements PrPracaViewInterface {
 
 	                        $showCredentialsChecked = $showCredentials ? 'checked="checked"' : '';
                             $html .= '<div>
-                                <h3>'.$this->_('Show credentials:').' <input type="checkbox" name="prPraca[showCredentials]" ' . $showCredentialsChecked . '></h3>
+                                <h3>'.$this->_('Show credentials:').' <input type="checkbox" name="znajdz-prace-z-pracapl[showCredentials]" ' . $showCredentialsChecked . '></h3>
                                
                             </div>';
 
@@ -168,7 +168,7 @@ class PrPracaWpView implements PrPracaViewInterface {
                 <div id="prPracaWidgetSettings">';
                     $html .= '<div>
                         <div>'.$this->_('Title:').'</div>
-                        <input type="text" value="'.$prPracaSidebarWidgetTitle.'" name="prPraca[sidebarWidgetTitle]">
+                        <input type="text" value="'.$prPracaSidebarWidgetTitle.'" name="znajdz-prace-z-pracapl[sidebarWidgetTitle]">
                     </div>';
                     $checkedShowDate = in_array('date', $show) ? 'checked="checked"' : '';
                     $checkedShowCompany = in_array('company', $show) ? 'checked="checked"' : '';
@@ -176,15 +176,15 @@ class PrPracaWpView implements PrPracaViewInterface {
                     $checkedShowRegion = in_array('region', $show) ? 'checked="checked"' : '';
                     $html .= '<div class="checkbox-list">
                         <span>'.$this->_('Display:').'</span>
-                        <label><input type="checkbox" value="date" name="prPraca[show][]" '.$checkedShowDate.'>'.$this->_('job date').'</label>
-                        <label><input type="checkbox" value="company" name="prPraca[show][]" '.$checkedShowCompany.'>'.$this->_('employer\'s name').'</label>
-                        <label><input type="checkbox" value="city" name="prPraca[show][]" '.$checkedShowCity.'>'.$this->_('city').'</label>
-                        <label><input type="checkbox" value="region" name="prPraca[show][]" '.$checkedShowRegion.'>'.$this->_('region').'</label>
+                        <label><input type="checkbox" value="date" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowDate.'>'.$this->_('job date').'</label>
+                        <label><input type="checkbox" value="company" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowCompany.'>'.$this->_('employer\'s name').'</label>
+                        <label><input type="checkbox" value="city" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowCity.'>'.$this->_('city').'</label>
+                        <label><input type="checkbox" value="region" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowRegion.'>'.$this->_('region').'</label>
                     </div>';
 
                     $html .= '<div>
                         <span>'.$this->_('Number of displayed jobs:').'</span>
-                        <input class="count" type="text" value="'.$searchCount.'" name="prPraca[count]">
+                        <input class="count" type="text" value="'.$searchCount.'" name="znajdz-prace-z-pracapl[count]">
                     </div>';
                 $html .= '</div>
             </div>';

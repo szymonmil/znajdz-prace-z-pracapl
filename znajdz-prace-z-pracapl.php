@@ -9,43 +9,43 @@
 */
 
 // aktywacja pluginu
-function prPraca_activation() {}
-register_activation_hook(__FILE__, 'prPraca_activation');
+function znajdz_prace_z_pracapl_activation() {}
+register_activation_hook(__FILE__, 'znajdz_prace_z_pracapl_activation');
 
 // deaktywacja pluginu
-function prPraca_deactivation() {}
-register_deactivation_hook(__FILE__, 'prPraca_deactivation');
+function znajdz_prace_z_pracapl_deactivation() {}
+register_deactivation_hook(__FILE__, 'znajdz_prace_z_pracapl_deactivation');
 
 // odpalane w chwili uruchamiania pluginu
-function prPraca_init() {
+function znajdz_prace_z_pracapl_init() {
     $pluginDir = basename(dirname(__FILE__));
-    load_plugin_textdomain('prPraca', false, $pluginDir.'/i18n' );
+    load_plugin_textdomain('znajdz-prace-z-pracapl', false, $pluginDir.'/i18n' );
 
     // inicjalizowanie pluginiu
     require_once 'initWordpress.php';
 
     wp_register_sidebar_widget(
-        'prPraca',                      // your unique widget id
-        __('Jobs offerts', 'prPraca'),  // widget name
-        'prPraca_widget_show',          // callback function
+        'znajdz-prace-z-pracapl',                      // your unique widget id
+        __('Job offers', 'znajdz-prace-z-pracapl'),  // widget name
+        'znajdz_prace_z_pracapl_widget_show',          // callback function
         array()                         // options
     );
 
     wp_register_widget_control(
-        'prPraca',
-        __('Jobs Finder', 'prPraca'),
-        'prPraca_widget_control'
+        'znajdz-prace-z-pracapl',
+        __('Jobs Finder', 'znajdz-prace-z-pracapl'),
+        'znajdz_prace_z_pracapl_widget_control'
     );
 
 }
-add_action('plugins_loaded', 'prPraca_init');
+add_action('plugins_loaded', 'znajdz_prace_z_pracapl_init');
 
 
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'plugin_settings_link');
 
 function plugin_settings_link($links) {
-    $url = get_admin_url().'admin.php?page=prPraca_settings';
-    $settings_link = '<a href="'.$url.'">'.__('Settings', 'prPraca').'</a>';
+    $url = get_admin_url().'admin.php?page=znajdz-prace-z-pracapl_settings';
+    $settings_link = '<a href="'.$url.'">'.__('Settings', 'znajdz-prace-z-pracapl').'</a>';
     array_push($links, $settings_link);
     return $links;
 }
@@ -53,48 +53,48 @@ function plugin_settings_link($links) {
 
 
 // akacja osadzenia bibliotej js
-function prPraca_scripts() {
+function znajdz_prace_z_pracapl_scripts() {
     // uzycie biblioteki juz ostadzonej w wordpresie
     //wp_enqueue_script('jquery');
     // uzycie bibioteki zewnetrznej, zaleznej od jquery
     //wp_register_script('slidesjs_core', plugins_url('js/jquery.slides.min.js', __FILE__),array("jquery"));
     //wp_enqueue_script('slidesjs_core');
 }
-add_action('wp_enqueue_scripts', 'prPraca_scripts');
+add_action('wp_enqueue_scripts', 'znajdz_prace_z_pracapl_scripts');
 
 // akacja osadzenia styli css (uzwyamy tej samej akcji do rejestracji naszej funkcji osadzajacej co przy js)
-function prPraca_styles() {
-  wp_register_style('prPraca', plugins_url('public/css/prPraca.css', __FILE__), [], '2.0');
-  wp_enqueue_style('prPraca');
+function znajdz_prace_z_pracapl_styles() {
+  wp_register_style('znajdz_prace_z_pracapl_widget', plugins_url('public/css/znajdz_prace_z_pracapl_widget.css', __FILE__), [], '2.0');
+  wp_enqueue_style('znajdz_prace_z_pracapl_widget');
 }
-add_action('wp_enqueue_scripts', 'prPraca_styles');
+add_action('wp_enqueue_scripts', 'znajdz_prace_z_pracapl_styles');
 
 // osadzanie styli w adminie
-function prPraca_adminStyles() {
+function znajdz_prace_z_pracapl_adminStyles() {
     $pluginDir = basename(dirname(__FILE__));
-    wp_register_style('prPracaAdmin', plugins_url($pluginDir.'/public/css/prPracaAdmin.css'), false, '2.0');
-    wp_enqueue_style('prPracaAdmin');
+    wp_register_style('znajdz_prace_z_pracapl_admin', plugins_url($pluginDir.'/public/css/znajdz_prace_z_pracapl_admin.css'), false, '2.0');
+    wp_enqueue_style('znajdz_prace_z_pracapl_admin');
 }
-add_action( 'admin_enqueue_scripts', 'prPraca_adminStyles' );
+add_action( 'admin_enqueue_scripts', 'znajdz_prace_z_pracapl_adminStyles' );
 
 // dodanie menu dla admina
-function prPraca_plugin_settings() {
+function znajdz_prace_z_pracapl_plugin_settings() {
     add_menu_page(
-        __('PrPraca', 'prPraca'),     // the title used in your HTML page
-        __('PrPraca', 'prPraca'),     // the title used for the menu item on the left menu
+        __('Find job offers with Praca.pl', 'znajdz-prace-z-pracapl'),     // the title used in your HTML page
+        __('Find job offers with Praca.pl', 'znajdz-prace-z-pracapl'),     // the title used for the menu item on the left menu
         'administrator',            // is the capability needed to add the page. You can keep it as administrator in most of the cases..
-        'prPraca_settings',         // is a unique key used for the menu item
-        'prPraca_display_settings'  // is the function name used to implement the HTML form.
+        'znajdz_prace_z_pracapl_settings',         // is a unique key used for the menu item
+        'znajdz_prace_z_pracapl_display_settings'  // is the function name used to implement the HTML form.
     );
 }
-add_action('admin_menu', 'prPraca_plugin_settings');
+add_action('admin_menu', 'znajdz_prace_z_pracapl_plugin_settings');
 
-function prPraca_display_settings() {
-    if(!empty($_POST) && !empty($_POST['prPraca'])) {
-        $prPracaOptions = $_POST['prPraca'];
-        update_option('prPraca',$prPracaOptions);
+function znajdz_prace_z_pracapl_display_settings() {
+    if(!empty($_POST) && !empty($_POST['znajdz-prace-z-pracapl'])) {
+        $prPracaOptions = $_POST['znajdz-prace-z-pracapl'];
+        update_option('znajdz-prace-z-pracapl',$prPracaOptions);
     } else {
-        $prPracaOptions = get_option('prPraca');
+        $prPracaOptions = get_option('znajdz-prace-z-pracapl');
     }
     $prView = PrPracaView::get();
     $html = $prView->renderSettingsForm($prPracaOptions);
@@ -102,8 +102,8 @@ function prPraca_display_settings() {
 }
 
 // dodanie i obsluga widzetu do sidebaru
-function prPraca_widget_show($args) {
-    $prOptions = get_option('prPraca');
+function znajdz_prace_z_pracapl_widget_show($args) {
+    $prOptions = get_option('znajdz-prace-z-pracapl');
     $title = $prOptions['sidebarWidgetTitle'];
 
 //    unset($prOptions['sidebarWidgetTitle']);
@@ -118,10 +118,10 @@ function prPraca_widget_show($args) {
     echo $after_widget;
 }
 
-function prPraca_widget_control() {
-    $options = get_option('prPraca');
-    if(!empty($_POST) && !empty($_POST['prPraca'])) {
-        $prPracaOptions = $_POST['prPraca'];
+function znajdz_prace_z_pracapl_widget_control() {
+    $options = get_option('znajdz-prace-z-pracapl');
+    if(!empty($_POST) && !empty($_POST['znajdz-prace-z-pracapl'])) {
+        $prPracaOptions = $_POST['znajdz-prace-z-pracapl'];
         if(!empty($prPracaOptions['count'])) $options['count'] = (int) $prPracaOptions['count'];
         if(isset($prPracaOptions['show'])) {
             $options['show'] = array_filter($prPracaOptions['show'], 'htmlentities');
@@ -129,7 +129,7 @@ function prPraca_widget_control() {
             $options['show'] = array();
         }
         if(isset($prPracaOptions['sidebarWidgetTitle'])) $options['sidebarWidgetTitle'] = htmlentities($prPracaOptions['sidebarWidgetTitle']);
-        update_option('prPraca',$options);
+        update_option('znajdz-prace-z-pracapl',$options);
     }
     $prView = PrPracaView::get();
     $html = $prView->renderSidebarWidgetSettingsForm($options);
@@ -137,8 +137,8 @@ function prPraca_widget_control() {
 }
 
 // shortcode
-function prPracaJobs($atts) {
-    $prOptions = get_option('prPraca');
+function znajdz_prace_z_pracapl_shortcode($atts) {
+    $prOptions = get_option('znajdz-prace-z-pracapl');
     $scAtts = shortcode_atts(array(
         'class' => '',
         'count' => $prOptions['count'],
@@ -158,4 +158,4 @@ function prPracaJobs($atts) {
     $output = PrPracaView::get()->renderprPracaJobsShortCode($prAds, $prOptions);
     return $output;
 }
-add_shortcode('prPraca', 'prPracaJobs');
+add_shortcode('znajdz-prace-z-pracapl', 'znajdz_prace_z_pracapl_shortcode');
