@@ -7,10 +7,11 @@ Stable tag: 2.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Twoja strona internetowa może być jeszcze bardziej przyjazna dla użytkownika i nowoczesna dzięki wtyczce Znajdź Pracę z Praca.pl.
 
 == Opis ==
 
-Twoja strona internetowa może być jeszcze bardziej przyjazna dla użytkownika i nowoczesna dzięki wtyczce Wordpress Znajdź Pracę z **[Praca.pl](https://www.praca.pl)**. Atrakcyjny wizualnie plugin wzbogaci wygląd Twojej witryny, a wyświetlane informacje z rynku pracy uzupełnią publikowane przez Ciebie treści o nową, aktualną perspektywą.
+Twoja strona internetowa może być jeszcze bardziej przyjazna dla użytkownika i nowoczesna dzięki wtyczce Wordpress Znajdź Pracę z Praca.pl. Atrakcyjny wizualnie plugin wzbogaci wygląd Twojej witryny, a wyświetlane informacje z rynku pracy uzupełnią publikowane przez Ciebie treści o nową, aktualną perspektywą.
 
 * Co pokazuje wtyczka WordPress Praca.pl?
 
