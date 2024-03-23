@@ -20,6 +20,5 @@ class ZnajdzPraceZPracapl_ViewRegions {
         14 => 'warmińsko-mazurskie',
         15 => 'wielkopolskie',
         16 => 'zachodniopomorskie',
-        17 => 'Poland',
     );
 }
