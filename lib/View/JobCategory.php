@@ -1,6 +1,6 @@
 <?php
 
-class PrPracaViewJobCategory {
+class ZnajdzPraceZPracapl_ViewJobCategory {
 
     public static $ITEMS = array(
         1 => 'Admin - secretarial jobs',

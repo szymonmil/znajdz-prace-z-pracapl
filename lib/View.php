@@ -2,7 +2,7 @@
 
 require_once 'WpView.php';
 
-class PrPracaView {
+class ZnajdzPraceZPracapl_View {
 
     const TYPE_WP = 'wordpress';
 
@@ -11,7 +11,7 @@ class PrPracaView {
     public static function get($type = null) {
         if(!$type) $type = self::$_type;
         switch($type) {
-            case self::TYPE_WP: return PrPracaWpView::instance();
+            case self::TYPE_WP: return ZnajdzPraceZPracapl_WpView::instance();
         }
     }
 

@@ -96,7 +96,7 @@ function znajdz_prace_z_pracapl_display_settings() {
     } else {
         $prPracaOptions = get_option('znajdz-prace-z-pracapl');
     }
-    $prView = PrPracaView::get();
+    $prView = ZnajdzPraceZPracapl_View::get();
     $html = $prView->renderSettingsForm($prPracaOptions);
     echo $html;
 }
@@ -107,9 +107,9 @@ function znajdz_prace_z_pracapl_widget_show($args) {
     $title = $prOptions['sidebarWidgetTitle'];
 
 //    unset($prOptions['sidebarWidgetTitle']);
-    $pracaClient = new PrPracaClient();
+    $pracaClient = new ZnajdzPraceZPracapl_Client();
     $prAds = $pracaClient->getPrAds($prOptions);
-    $output = PrPracaView::get()->renderSidebarWidget($prAds, $prOptions);
+    $output = ZnajdzPraceZPracapl_View::get()->renderSidebarWidget($prAds, $prOptions);
 
     extract($args);
     echo $before_widget;
@@ -131,7 +131,7 @@ function znajdz_prace_z_pracapl_widget_control() {
         if(isset($prPracaOptions['sidebarWidgetTitle'])) $options['sidebarWidgetTitle'] = htmlentities($prPracaOptions['sidebarWidgetTitle']);
         update_option('znajdz-prace-z-pracapl',$options);
     }
-    $prView = PrPracaView::get();
+    $prView = ZnajdzPraceZPracapl_View::get();
     $html = $prView->renderSidebarWidgetSettingsForm($options);
     echo $html;
 }
@@ -141,21 +141,21 @@ function znajdz_prace_z_pracapl_shortcode($atts) {
     $prOptions = get_option('znajdz-prace-z-pracapl');
     $scAtts = shortcode_atts(array(
         'class' => '',
-        'count' => $prOptions['count'],
-        'company' => $prOptions['company'],
-        'show' => implode(',', $prOptions['show'])
+        'count' => $prOptions['count'] ?? ZnajdzPraceZPracapl_WpView::OFFERS_COUNT,
+        'company' => $prOptions['company'] ?? null,
+        'show' => implode(',', $prOptions['show'] ?? [])
     ), $atts);
 
-    $prOptions['count'] = $scAtts['count'];
-    $prOptions['company'] = $scAtts['company'];
-    $prOptions['show'] = explode(',', $scAtts['show']);
+    $prOptions['count'] = $scAtts['count'] ?? ZnajdzPraceZPracapl_WpView::OFFERS_COUNT;
+    $prOptions['company'] = $scAtts['company'] ?? null;
+    $prOptions['show'] = explode(',', $scAtts['show'] ?? '');
 
     unset($prOptions['sidebarWidgetTitle']);
-    $pracaClient = new PrPracaClient();
+    $pracaClient = new ZnajdzPraceZPracapl_Client();
     $prAds = $pracaClient->getPrAds($prOptions);
 
     $prOptions['class'] = $scAtts['class'];
-    $output = PrPracaView::get()->renderprPracaJobsShortCode($prAds, $prOptions);
+    $output = ZnajdzPraceZPracapl_View::get()->renderprPracaJobsShortCode($prAds, $prOptions);
     return $output;
 }
-add_shortcode('znajdz-prace-z-pracapl', 'znajdz_prace_z_pracapl_shortcode');
+add_shortcode('znajdz_prace_z_pracapl', 'znajdz_prace_z_pracapl_shortcode');

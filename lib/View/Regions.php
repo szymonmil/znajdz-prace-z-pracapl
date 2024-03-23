@@ -1,6 +1,6 @@
 <?php
 
-class PrPracaViewRegions {
+class ZnajdzPraceZPracapl_ViewRegions {
 
     public static $ITEMS = array(
         0 => 'Other countries than Poland',

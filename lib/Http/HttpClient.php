@@ -1,8 +1,8 @@
 <?php
 
-require_once 'iHttp.php';
+require_once 'HttpInterface.php';
 
-class HttpCurl implements iHttp
+class ZnajdzPraceZPracapl_HttpClient implements ZnajdzPraceZPracapl_HttpInterface
 {
 	/**
 	 * @return array{body: array}

@@ -5,9 +5,9 @@ require_once 'View/Country.php';
 require_once 'View/JobCategory.php';
 require_once 'View/Regions.php';
 
-class PrPracaWpView implements PrPracaViewInterface {
+class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
 
-    const OFFERS_COUNT = 10;
+    public const OFFERS_COUNT = 10;
 
     public $_;
 
@@ -78,7 +78,7 @@ class PrPracaWpView implements PrPracaViewInterface {
 
                             $html .= '<div class="checkbox-list">
                                 <h3>'.$this->_('Category (optional):').'</h3>';
-                                foreach(PrPracaViewJobCategory::$ITEMS as $jcKey => $jcValue) {
+                                foreach(ZnajdzPraceZPracapl_ViewJobCategory::$ITEMS as $jcKey => $jcValue) {
                                     $checked = in_array($jcKey, $jobCategory) ? 'checked="checked"' : '';
                                     $html .= '<label><input type="checkbox" value="'.$jcKey.'" name="znajdz-prace-z-pracapl[jobcategory][]" '.$checked.'>'.$this->_($jcValue).'</label>';
                                 }
@@ -87,7 +87,7 @@ class PrPracaWpView implements PrPracaViewInterface {
                             $html .= '<div class="checkbox-list">
                                 <h3>'.$this->_('Region (optional):').'</h3>';
                                 $html .= '<div class="pr-region-main">';
-                                    foreach(PrPracaViewRegions::$ITEMS as $rKey => $rValue) {
+                                    foreach(ZnajdzPraceZPracapl_ViewRegions::$ITEMS as $rKey => $rValue) {
                                         if($rKey > 16 || $rKey == 0) {
                                             $checked = in_array($rKey, $regions) ? 'checked="checked"' : '';
                                             $html .= '<label><input type="checkbox" value="'.$rKey.'" name="znajdz-prace-z-pracapl[region][]" '.$checked.'>'.$this->_($rValue).'</label>';
@@ -95,7 +95,7 @@ class PrPracaWpView implements PrPracaViewInterface {
                                     }
                                 $html .= '</div>';
                                 $html .= '<div class="pr-region-details">';
-                                    foreach(PrPracaViewRegions::$ITEMS as $rKey => $rValue) {
+                                    foreach(ZnajdzPraceZPracapl_ViewRegions::$ITEMS as $rKey => $rValue) {
                                         if($rKey > 0 && $rKey <= 16) {
                                             $checked = in_array($rKey, $regions) ? 'checked="checked"' : '';
                                             $html .= '<label><input type="checkbox" value="'.$rKey.'" name="znajdz-prace-z-pracapl[region][]" '.$checked.'>'.$this->_($rValue).'</label>';
@@ -106,7 +106,7 @@ class PrPracaWpView implements PrPracaViewInterface {
 
                             $html .= '<div class="checkbox-list">
                                 <h3>'.$this->_('Country (optional):').'</h3>';
-                                foreach(PrPracaViewCountry::$ITEMS as $cKey => $cValue) {
+                                foreach(ZnajdzPraceZPracapl_ViewCountry::$ITEMS as $cKey => $cValue) {
                                     $checked = in_array($cKey, $country) ? 'checked="checked"' : '';
                                     $html .= '<label><input type="checkbox" value="'.$cKey.'" name="znajdz-prace-z-pracapl[country][]" '.$checked.'>'.$this->_($cValue).'</label>';
                                 }

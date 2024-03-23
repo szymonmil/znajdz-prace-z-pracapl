@@ -1,6 +1,6 @@
 <?php
 
-class PrPracaViewCountry {
+class ZnajdzPraceZPracapl_ViewCountry {
 
     public static $ITEMS = array(
         163 => 'Poland',

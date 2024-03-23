@@ -1,15 +1,15 @@
 <?php
 
-require_once 'Http/HttpCurl.php';
+require_once 'Http/HttpClient.php';
 
-class PrPracaClient {
+class ZnajdzPraceZPracapl_Client {
 
     const ADDR_GET_ADS = 'http://www.praca.pl/api/getadswp?';
 
     private $_http = null;
 
     public function __construct() {
-        $this->_http = new HttpCurl();
+        $this->_http = new ZnajdzPraceZPracapl_HttpClient();
     }
 
     /**
