@@ -38,6 +38,7 @@ Możesz filtrować ogłoszenia pod względem:
 * obszaru zawodowego,
 * ID firmy, czyli identyfikatora pracodawcy na Praca.pl – możesz zarówno wskazać konkretne firmy, których ogłoszenia mają się znaleźć na widżecie, jak i wykluczyć z niego wybranych pracodawców.
 
+
 Ponadto do widżetu możesz dodać:
 
 * daty ogłoszeń,
@@ -52,5 +53,18 @@ Ty także zadecydujesz:
 * jaka będzie wielkość wtyczki.
 
 Żeby wyświetlić plugin na swojej stronie WordPress, wejdź w zakładkę **Wygląd**, wybierz **Widgety**, a następnie aktywuj wtyczkę **Znajdź Pracę z Praca.pl**, przenosząc ją do Sidebaru.
+
+== Shortcode ==
+
+Możesz osadzić listę ofert pobieranych na podstawie ustawień określonych w panelu sterowania przez użycie "shortcode" w treści strony / postu:
+
+[znajdz_prace_z_pracapl class=”my-class” count=7 company=111 show=”city,company,date”]
+
+class – nazwa klasy CSS, która zostanie dodana do elementu obejmującego listę ogłoszeń,
+count – liczba ogłoszeń na stronie,
+company – ID pracodawcy, którego ogłoszenia zostaną wyświetlane,
+show – lista pól, które będą wyświetlane na liście ofert (city, company, date, region).
+
+Parametry: class, count, company, show są opcjonalne. Jeśli ich użyjesz, nadpiszą ustawienia wybrane w panelu ustawień wtyczki.
 
 Zachęcamy do instalacji pluginu [Znajdź Pracę z Praca.pl](https://www.praca.pl/dodatki/plugin-wordpress.html)

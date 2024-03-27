@@ -44,7 +44,7 @@ add_action('plugins_loaded', 'znajdz_prace_z_pracapl_init');
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'plugin_settings_link');
 
 function plugin_settings_link($links) {
-    $url = get_admin_url().'admin.php?page=znajdz-prace-z-pracapl_settings';
+    $url = get_admin_url().'admin.php?page=znajdz_prace_z_pracapl_settings';
     $settings_link = '<a href="'.$url.'">'.__('Settings', 'znajdz-prace-z-pracapl').'</a>';
     array_push($links, $settings_link);
     return $links;
