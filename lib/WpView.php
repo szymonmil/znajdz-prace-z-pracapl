@@ -152,6 +152,87 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
         return $html;
     }
 
+	/**
+	 * @param array{titleColor: ?string, titleFontSize: ?string} $options
+	 */
+	public function renderSettingsAppearanceForm($options)
+	{
+		$titleColor = $options['titleColor'] ?? '';
+		$titleFontSize = $options['titleFontSize'] ?? 18;
+
+        $html =
+                '<div id="prPraca" class="plugin-settings">
+                    <table id="prPracaSettings">
+                        <h2><div class="pr-icon32"> </div>'.$this->_('Appearance').'</h2>
+                        <form method="post" action="#" id="widgetSettings">
+                        	<table class="form-table" role="presentation">
+	                            <tbody>
+	                                <tr>
+	                                    <th>' . $this->_('Font size') . '</th>
+	                                    <td>
+	                                    	<input type="number" id="titleFontSizeInput" name="znzppl_appearance[titleFontSize]" list="titleFontSizeList" value="' . $titleFontSize . '">
+											    <datalist id="titleFontSizeList">
+											      <option value="12">
+											      <option value="18">
+											      <option value="24">
+											      <option value="28">
+											      <option value="32">
+											      <option value="36">
+											    </datalist>px
+									    </td>
+									</tr>
+	                                <tr>
+	                                    <th>' . $this->_('Title color') . '</th>
+	                                    <td><input type="color" id="titleColorInput" name="znzppl_appearance[titleColor]" value="' . $titleColor . '"/></td>
+									</tr>
+	                                <tr>
+	                                    <th>' . $this->_('Live preview') . '</th>
+	                                    <td>
+		                                    <p
+			                                     id="zpzppl_livePreview"
+			                                     style="color: ' . $titleColor . '; font-size: ' . $titleFontSize . 'px"
+		                                     >
+	                                     		Some example of title
+	                                     	</p>
+	                                     </td>
+									</tr>
+								</tbody>
+                            </table>
+                            <div class="submit-box">
+                                <input type="submit" name="submit" id="submit" class="button button-primary" value="'.$this->_('Save settings').'">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <script>
+				    // Pobierz elementy input
+				    var titleFontSizeInput = document.getElementById("titleFontSizeInput");
+				    var titleColorInput = document.getElementById("titleColorInput");
+				    // Pobierz element podglądu na żywo
+				    var livePreview = document.getElementById("zpzppl_livePreview");
+				
+				    // Funkcja aktualizująca podgląd na żywo
+				    function updateLivePreview() {
+				        // Pobierz wartości z inputów
+				        var titleFontSize = titleFontSizeInput.value + "px";
+				        var titleColor = titleColorInput.value;
+				        // Zaktualizuj styl elementu podglądu na żywo
+				        livePreview.style.fontSize = titleFontSize;
+				        livePreview.style.color = titleColor;
+				    }
+				
+				    // Nasłuchuj zmiany wartości w inputach
+				    titleFontSizeInput.addEventListener("input", updateLivePreview);
+				    titleColorInput.addEventListener("input", updateLivePreview);
+				
+				    // Wywołaj funkcję aktualizującą podgląd na żywo na początku
+				    updateLivePreview();
+				</script>
+                ';
+
+        return $html;
+    }
+
     public function renderSidebarWidgetSettingsForm($options = array()) {
 
         if(!$options) $options = array();

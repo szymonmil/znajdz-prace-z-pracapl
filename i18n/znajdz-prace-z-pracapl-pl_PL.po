@@ -34,6 +34,9 @@ msgstr "Znajdź pracę z Praca.pl"
 msgid "Settings"
 msgstr "Ustawienia"
 
+msgid "Appearance"
+msgstr "Wygląd"
+
 #: prPraca/prPraca.php:83 prPraca/prPraca.php:84
 msgid "Find job offers with Praca.pl"
 msgstr "Znajdź pracę z Praca.pl"

@@ -8,6 +8,8 @@
  * Text Domain: znajdz-prace-z-pracapl
 */
 
+require_once __DIR__ . '/lib/AdminSettings.php';
+
 // aktywacja pluginu
 function znajdz_prace_z_pracapl_activation() {}
 register_activation_hook(__FILE__, 'znajdz_prace_z_pracapl_activation');
@@ -78,28 +80,7 @@ function znajdz_prace_z_pracapl_adminStyles() {
 add_action( 'admin_enqueue_scripts', 'znajdz_prace_z_pracapl_adminStyles' );
 
 // dodanie menu dla admina
-function znajdz_prace_z_pracapl_plugin_settings() {
-    add_menu_page(
-        __('Find job offers with Praca.pl', 'znajdz-prace-z-pracapl'),     // the title used in your HTML page
-        __('Find job offers with Praca.pl', 'znajdz-prace-z-pracapl'),     // the title used for the menu item on the left menu
-        'administrator',            // is the capability needed to add the page. You can keep it as administrator in most of the cases..
-        'znajdz_prace_z_pracapl_settings',         // is a unique key used for the menu item
-        'znajdz_prace_z_pracapl_display_settings'  // is the function name used to implement the HTML form.
-    );
-}
-add_action('admin_menu', 'znajdz_prace_z_pracapl_plugin_settings');
-
-function znajdz_prace_z_pracapl_display_settings() {
-    if(!empty($_POST) && !empty($_POST['znajdz-prace-z-pracapl'])) {
-        $prPracaOptions = $_POST['znajdz-prace-z-pracapl'];
-        update_option('znajdz-prace-z-pracapl',$prPracaOptions);
-    } else {
-        $prPracaOptions = get_option('znajdz-prace-z-pracapl');
-    }
-    $prView = ZnajdzPraceZPracapl_View::get();
-    $html = $prView->renderSettingsForm($prPracaOptions);
-    echo $html;
-}
+new ZnajdzPraceZPracapl_AdminSettings();
 
 // dodanie i obsluga widzetu do sidebaru
 function znajdz_prace_z_pracapl_widget_show($args) {
