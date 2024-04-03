@@ -170,7 +170,14 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
 	                                <tr>
 	                                    <th>' . $this->_('Font size') . '</th>
 	                                    <td>
-	                                    	<input type="number" id="titleFontSizeInput" name="znzppl_appearance[titleFontSize]" list="titleFontSizeList" value="' . $titleFontSize . '">
+	                                    	<input
+	                                    	 type="number"
+	                                    	 id="titleFontSizeInput"
+	                                    	 name="znzppl_appearance[titleFontSize]"
+	                                    	 list="titleFontSizeList"
+	                                    	 value="' . $titleFontSize . '"
+	                                    	 max="90"
+	                                    	 >
 											    <datalist id="titleFontSizeList">
 											      <option value="12">
 											      <option value="18">
