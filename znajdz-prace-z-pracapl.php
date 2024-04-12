@@ -8,7 +8,10 @@
  * Text Domain: znajdz-prace-z-pracapl
 */
 
-require_once __DIR__ . '/lib/AdminSettings.php';
+use Pracapl\ZnajdzPraceZPracapl\AdminSettings;
+use Pracapl\ZnajdzPraceZPracapl\Repository\AppearanceSettingsRepository;
+
+require __DIR__ . '/vendor/autoload.php';
 
 // aktywacja pluginu
 function znajdz_prace_z_pracapl_activation() {}
@@ -80,7 +83,7 @@ function znajdz_prace_z_pracapl_adminStyles() {
 add_action( 'admin_enqueue_scripts', 'znajdz_prace_z_pracapl_adminStyles' );
 
 // dodanie menu dla admina
-new ZnajdzPraceZPracapl_AdminSettings();
+new AdminSettings();
 
 // dodanie i obsluga widzetu do sidebaru
 function znajdz_prace_z_pracapl_widget_show($args) {
@@ -90,7 +93,9 @@ function znajdz_prace_z_pracapl_widget_show($args) {
 //    unset($prOptions['sidebarWidgetTitle']);
     $pracaClient = new ZnajdzPraceZPracapl_Client();
     $prAds = $pracaClient->getPrAds($prOptions);
-    $output = ZnajdzPraceZPracapl_View::get()->renderSidebarWidget($prAds, $prOptions);
+    $appearanceSettings = AppearanceSettingsRepository::getSettings();
+
+    $output = ZnajdzPraceZPracapl_View::get()->renderSidebarWidget($prAds, $prOptions, $appearanceSettings);
 
     extract($args);
     echo $before_widget;

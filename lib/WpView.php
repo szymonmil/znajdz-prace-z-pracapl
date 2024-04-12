@@ -1,5 +1,7 @@
 <?php
 
+use Pracapl\ZnajdzPraceZPracapl\Dto\AppearanceSettings;
+
 require_once 'iView.php';
 require_once 'View/Country.php';
 require_once 'View/JobCategory.php';
@@ -152,13 +154,10 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
         return $html;
     }
 
-	/**
-	 * @param array{titleColor: ?string, titleFontSize: ?string} $options
-	 */
-	public function renderSettingsAppearanceForm($options)
+	public function renderSettingsAppearanceForm(AppearanceSettings $options)
 	{
-		$titleColor = $options['titleColor'] ?? '';
-		$titleFontSize = $options['titleFontSize'] ?? 18;
+		$titleColor = $options->isTitleColorEmpty() ? '' : $options->getTitleColor();
+		$titleFontSize = $options->isTitleFontSizeEmpty() ? '' : $options->getTitleFontSize();
 
         $html =
                 '<div id="prPraca" class="plugin-settings">
@@ -168,7 +167,7 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
                         	<table class="form-table" role="presentation">
 	                            <tbody>
 	                                <tr>
-	                                    <th>' . $this->_('Font size') . '</th>
+	                                    <th>' . $this->_('Title - font size') . '</th>
 	                                    <td>
 	                                    	<input
 	                                    	 type="number"
@@ -186,14 +185,18 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
 											      <option value="32">
 											      <option value="36">
 											    </datalist>px
+											    <p><a id="resetTitleFontSize">Przywróć domyślne</a></p>
 									    </td>
 									</tr>
 	                                <tr>
-	                                    <th>' . $this->_('Title color') . '</th>
-	                                    <td><input type="color" id="titleColorInput" name="znzppl_appearance[titleColor]" value="' . $titleColor . '"/></td>
+	                                    <th>' . $this->_('Title - text color') . '</th>
+	                                    <td>
+	                                        <input type="color" id="titleColorInput" name="znzppl_appearance[titleColor]" value="' . $titleColor . '"/>
+	                                        <p><a id="resetTitleColor">Przywróć domyślne</a></p>
+	                                    </td>
 									</tr>
 	                                <tr>
-	                                    <th>' . $this->_('Live preview') . '</th>
+	                                    <th>' . $this->_('Title - live preview') . '</th>
 	                                    <td>
 		                                    <p
 			                                     id="zpzppl_livePreview"
@@ -234,6 +237,10 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
 				
 				    // Wywołaj funkcję aktualizującą podgląd na żywo na początku
 				    updateLivePreview();
+                    
+                    // Czyszczenie pól
+                    document.getElementById("resetTitleFontSize").addEventListener("click", () => titleFontSizeInput.value = "");
+                    document.getElementById("resetTitleColor").addEventListener("click", () => titleColorInput.value = "#666666");
 				</script>
                 ';
 
@@ -280,8 +287,17 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
         return $html;
     }
 
-    public function renderSidebarWidget($prAds, $prOptions) {
+    public function renderSidebarWidget($prAds, $prOptions, AppearanceSettings $appearanceSettings) {
 	    $infoIconPath = plugins_url('/public/img/info.png', __DIR__ . '/../znajdz-prace-z-pracapl.php');
+
+        $titleStyle = 'style="';
+        if (!$appearanceSettings->isTitleColorEmpty()) {
+            $titleStyle .= 'color: ' . $appearanceSettings->getTitleColor() . ';';
+        }
+        if (!$appearanceSettings->isTitleFontSizeEmpty()) {
+            $titleStyle .= 'font-size: ' . $appearanceSettings->getTitleFontSize() . 'px;';
+        }
+        $titleStyle .= '"';
 
         $showCompany = $showRegion = $showCity = $showDate = false;
         if(!empty($prOptions['show'])) {
@@ -304,7 +320,9 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
                 if(is_array($prAds) && count($prAds)) {
                     foreach($prAds as $ad) {
                         $output .= '<li>';
-                            $output .= '<strong><a target="_blank" href="'.$ad['url'].'?rf=widget&utm_source=widget&utm_medium=plugin">'.$ad['title'].'</a></strong>';
+                            $output .= '<strong>
+                                <a target="_blank" href="'.$ad['url'].'?rf=widget&utm_source=widget&utm_medium=plugin" ' . $titleStyle . '>'.$ad['title'].'</a>
+                            </strong>';
                             $output .= '<div style="margin-left: 15px">';
                                 if($showCompany && !empty($ad['company'])) $output .= '<span>'.$ad['company'].'</span>, ';
 

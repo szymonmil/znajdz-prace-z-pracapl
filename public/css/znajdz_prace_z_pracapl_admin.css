@@ -1,5 +1,6 @@
 
 #prPraca {}
+    a:hover {cursor: pointer}
     #prPraca h2 { line-height: 50px; font-weight: 500; font-size: 23px; color: #464646; }
     #prPraca h4 { margin-bottom: 5px; }
     #prPraca .cf:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }

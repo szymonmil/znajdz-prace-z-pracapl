@@ -1,0 +1,9 @@
+{
+    "name": "pracapl/znajdz-prace-z-pracapl",
+    "autoload": {
+        "psr-4": {
+            "Pracapl\\ZnajdzPraceZPracapl\\": "lib/"
+        }
+    },
+    "require": {}
+}

@@ -1,6 +1,11 @@
 <?php
 
-class ZnajdzPraceZPracapl_AdminSettings
+namespace Pracapl\ZnajdzPraceZPracapl;
+
+use Pracapl\ZnajdzPraceZPracapl\Dto\AppearanceSettings;
+use ZnajdzPraceZPracapl_View;
+
+class AdminSettings
 {
 	public function __construct()
 	{
@@ -58,13 +63,15 @@ class ZnajdzPraceZPracapl_AdminSettings
 	public function displayAppearanceSettings()
 	{
 		if(!empty($_POST) && !empty($_POST['znzppl_appearance'])) {
-			$prPracaOptions = $_POST['znzppl_appearance'];
-			update_option('znzppl_appearance',$prPracaOptions);
+			$appearanceSettings = $_POST['znzppl_appearance'];
+			update_option('znzppl_appearance', $appearanceSettings);
 		} else {
-			$prPracaOptions = get_option('znzppl_appearance');
+			$appearanceSettings = get_option('znzppl_appearance');
 		}
 		$prView = ZnajdzPraceZPracapl_View::get();
-		$html = $prView->renderSettingsAppearanceForm($prPracaOptions);
+
+        $appearanceSettingsDto = new AppearanceSettings($appearanceSettings['titleFontSize'], $appearanceSettings['titleColor']);
+		$html = $prView->renderSettingsAppearanceForm($appearanceSettingsDto);
 
 		echo $html;
 	}
