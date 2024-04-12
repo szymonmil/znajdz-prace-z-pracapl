@@ -648,6 +648,24 @@ msgstr "Andora"
 msgid "Liechtenstein"
 msgstr "Liechtenstien"
 
+msgid "Job offer title"
+msgstr "Tytuł ogłoszenia"
+
+msgid "Font size"
+msgstr "Rozmiar czcionki"
+
+msgid "Text color"
+msgstr "Kolor tekstu"
+
+msgid "Job offer additional info"
+msgstr "Dodatkowe informacje o ogłoszeniu"
+
+msgid "Restore"
+msgstr "Przywróć domyślne"
+
+msgid "Saved successfully"
+msgstr "Zapisano pomyślnie"
+
 # Offer comes from
 #, fuzzy
 #~ msgid "Offer come from service"

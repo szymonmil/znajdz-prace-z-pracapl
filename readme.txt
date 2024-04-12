@@ -2,8 +2,8 @@
 Contributors: pracapl
 Tags: praca, oferty pracy, job, jobs
 Requires at least: 4.8
-Tested up to: 6.4
-Stable tag: 2.0
+Tested up to: 6.5.2
+Stable tag: 2.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -68,3 +68,39 @@ show – lista pól, które będą wyświetlane na liście ofert (city, company,
 Parametry: class, count, company, show są opcjonalne. Jeśli ich użyjesz, nadpiszą ustawienia wybrane w panelu ustawień wtyczki.
 
 Zachęcamy do instalacji pluginu [Znajdź Pracę z Praca.pl](https://www.praca.pl/dodatki/plugin-wordpress.html)
+
+== Changelog ==
+= 2.1 =
+* Dodanie możliwości zmiany wyglądu wpisów z ofertami pracy
+
+= 2.0 =
+* Odświeżona wersja pluginu
+
+= 1.2.2 =
+* Zmiana tekstów i tłumaczeń w ustawieniach pluginu
+* Dodanie w widget'cie ikony do strony Dodatki na Praca.pl
+
+= 1.2.1 =
+* Zmiana tekstów i tłumaczeń w ustawieniach pluginu
+
+= 1.2.0 =
+* Dodanie UTM oraz linku "Dowiedz się więcej"
+
+= 1.1.0 =
+* Dodanie wsparcia dla Wordpress > 4.9
+
+= 1.0.10 =
+* Dodanie wsparcia dla Wordpress 4.9
+
+= 1.0.9 =
+* Aktualizacja dokumentacji w dziale "Instalacja" odnośnie wymaganej wersji php
+
+= 1.0.8 =
+* Aktualizacja opisu pluginu
+* Nowa wersja pakietu językowego
+
+= 1.0.1 =
+* Zmiana nazwy pluginu
+
+= 1.0 =
+* Pierwsze wydanie

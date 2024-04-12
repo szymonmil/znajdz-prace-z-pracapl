@@ -158,16 +158,18 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
 	{
 		$titleColor = $options->isTitleColorEmpty() ? '' : $options->getTitleColor();
 		$titleFontSize = $options->isTitleFontSizeEmpty() ? '' : $options->getTitleFontSize();
+		$additionalInfoColor = $options->isAdditionalInfoColorEmpty() ? '' : $options->getAdditionalInfoColor();
+		$additionalInfoFontSize = $options->isAdditionalInfoFontSizeEmpty() ? '' : $options->getAdditionalInfoFontSize();
 
         $html =
                 '<div id="prPraca" class="plugin-settings">
-                    <table id="prPracaSettings">
                         <h2><div class="pr-icon32"> </div>'.$this->_('Appearance').'</h2>
                         <form method="post" action="#" id="widgetSettings">
+                            <h3>' . $this->_('Job offer title') . '</h3>
                         	<table class="form-table" role="presentation">
 	                            <tbody>
 	                                <tr>
-	                                    <th>' . $this->_('Title - font size') . '</th>
+	                                    <th>' . $this->_('Font size') . '</th>
 	                                    <td>
 	                                    	<input
 	                                    	 type="number"
@@ -185,24 +187,69 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
 											      <option value="32">
 											      <option value="36">
 											    </datalist>px
-											    <p><a id="resetTitleFontSize">Przywróć domyślne</a></p>
+											    <p><a id="resetTitleFontSize">' . $this->_('Restore') . '</a></p>
 									    </td>
 									</tr>
 	                                <tr>
-	                                    <th>' . $this->_('Title - text color') . '</th>
+	                                    <th>' . $this->_('Text color') . '</th>
 	                                    <td>
 	                                        <input type="color" id="titleColorInput" name="znzppl_appearance[titleColor]" value="' . $titleColor . '"/>
-	                                        <p><a id="resetTitleColor">Przywróć domyślne</a></p>
+	                                        <p><a id="resetTitleColor">' . $this->_('Restore') . '</a></p>
 	                                    </td>
 									</tr>
 	                                <tr>
-	                                    <th>' . $this->_('Title - live preview') . '</th>
+	                                    <th>' . $this->_('Live preview') . '</th>
 	                                    <td>
 		                                    <p
-			                                     id="zpzppl_livePreview"
+			                                     id="zpzppl_titleLivePreview"
 			                                     style="color: ' . $titleColor . '; font-size: ' . $titleFontSize . 'px"
 		                                     >
-	                                     		Some example of title
+	                                     		Przykłd
+	                                     	</p>
+	                                     </td>
+									</tr>
+								</tbody>
+                            </table>
+                            <h3>' . $this->_('Job offer additional info') . '</h3>
+                        	<table class="form-table" role="presentation">
+	                            <tbody>
+	                                <tr>
+	                                    <th>' . $this->_('Font size') . '</th>
+	                                    <td>
+	                                    	<input
+	                                    	 type="number"
+	                                    	 id="additionalInfoFontSizeInput"
+	                                    	 name="znzppl_appearance[additionalInfoFontSize]"
+	                                    	 list="additionalInfoFontSizeList"
+	                                    	 value="' . $additionalInfoFontSize . '"
+	                                    	 max="90"
+	                                    	 >
+											    <datalist id="additionalInfoFontSizeList">
+											      <option value="12">
+											      <option value="18">
+											      <option value="24">
+											      <option value="28">
+											      <option value="32">
+											      <option value="36">
+											    </datalist>px
+											    <p><a id="resetAdditionalInfoFontSize">' . $this->_('Restore') . '</a></p>
+									    </td>
+									</tr>
+	                                <tr>
+	                                    <th>' . $this->_('Text color') . '</th>
+	                                    <td>
+	                                        <input type="color" id="additionalInfoColorInput" name="znzppl_appearance[additionalInfoColor]" value="' . $additionalInfoColor . '"/>
+	                                        <p><a id="resetAdditionalInfoColor">' . $this->_('Restore') . '</a></p>
+	                                    </td>
+									</tr>
+	                                <tr>
+	                                    <th>' . $this->_('Live preview') . '</th>
+	                                    <td>
+		                                    <p
+			                                     id="zpzppl_additionalInfoLivePreview"
+			                                     style="color: ' . $additionalInfoColor . '; font-size: ' . $additionalInfoFontSize . 'px"
+		                                     >
+	                                     		Przykładowy tekst
 	                                     	</p>
 	                                     </td>
 									</tr>
@@ -213,34 +260,44 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
                             </div>
                         </form>
                     </div>
-                </div>
                 <script>
 				    // Pobierz elementy input
 				    var titleFontSizeInput = document.getElementById("titleFontSizeInput");
 				    var titleColorInput = document.getElementById("titleColorInput");
+				    var additionalInfoFontSizeInput = document.getElementById("additionalInfoFontSizeInput");
+				    var additionalInfoColorInput = document.getElementById("additionalInfoColorInput");
 				    // Pobierz element podglądu na żywo
-				    var livePreview = document.getElementById("zpzppl_livePreview");
+				    var titleLivePreview = document.getElementById("zpzppl_titleLivePreview");
+				    var additionalInfoLivePreview = document.getElementById("zpzppl_additionalInfoLivePreview");
 				
 				    // Funkcja aktualizująca podgląd na żywo
 				    function updateLivePreview() {
 				        // Pobierz wartości z inputów
 				        var titleFontSize = titleFontSizeInput.value + "px";
 				        var titleColor = titleColorInput.value;
+				        var additionalInfoFontSize = additionalInfoFontSizeInput.value + "px";
+				        var additionalInfoColor = additionalInfoColorInput.value;
 				        // Zaktualizuj styl elementu podglądu na żywo
-				        livePreview.style.fontSize = titleFontSize;
-				        livePreview.style.color = titleColor;
+				        titleLivePreview.style.fontSize = titleFontSize;
+				        titleLivePreview.style.color = titleColor;
+				        additionalInfoLivePreview.style.fontSize = additionalInfoFontSize;
+				        additionalInfoLivePreview.style.color = additionalInfoColor;
 				    }
 				
 				    // Nasłuchuj zmiany wartości w inputach
 				    titleFontSizeInput.addEventListener("input", updateLivePreview);
 				    titleColorInput.addEventListener("input", updateLivePreview);
+				    additionalInfoFontSizeInput.addEventListener("input", updateLivePreview);
+				    additionalInfoColorInput.addEventListener("input", updateLivePreview);
 				
 				    // Wywołaj funkcję aktualizującą podgląd na żywo na początku
 				    updateLivePreview();
                     
                     // Czyszczenie pól
                     document.getElementById("resetTitleFontSize").addEventListener("click", () => titleFontSizeInput.value = "");
-                    document.getElementById("resetTitleColor").addEventListener("click", () => titleColorInput.value = "#666666");
+                    document.getElementById("resetTitleColor").addEventListener("click", () => titleColorInput.value = "");
+                    document.getElementById("resetAdditionalInfoFontSize").addEventListener("click", () => additionalInfoFontSizeInput.value = "");
+                    document.getElementById("resetAdditionalInfoColor").addEventListener("click", () => additionalInfoColorInput.value = "");
 				</script>
                 ';
 
@@ -299,6 +356,15 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
         }
         $titleStyle .= '"';
 
+        $additionalInfoStyle = 'style="margin-left: 15px;margin-bottom:20px;';
+        if (!$appearanceSettings->isAdditionalInfoColorEmpty()) {
+            $additionalInfoStyle .= 'color: ' . $appearanceSettings->getAdditionalInfoColor() . ';';
+        }
+        if (!$appearanceSettings->isAdditionalInfoFontSizeEmpty()) {
+            $additionalInfoStyle .= 'font-size: ' . $appearanceSettings->getAdditionalInfoFontSize() . 'px;';
+        }
+        $additionalInfoStyle .= '"';
+
         $showCompany = $showRegion = $showCity = $showDate = false;
         if(!empty($prOptions['show'])) {
             $showCompany = in_array('company', $prOptions['show']) ? true : false;
@@ -323,7 +389,7 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
                             $output .= '<strong>
                                 <a target="_blank" href="'.$ad['url'].'?rf=widget&utm_source=widget&utm_medium=plugin" ' . $titleStyle . '>'.$ad['title'].'</a>
                             </strong>';
-                            $output .= '<div style="margin-left: 15px">';
+                            $output .= '<div  ' . $additionalInfoStyle . '>';
                                 if($showCompany && !empty($ad['company'])) $output .= '<span>'.$ad['company'].'</span>, ';
 
                                 if(($showRegion || $showCity) && !empty($ad['count']) && $ad['count'] > 1) {

@@ -11,8 +11,10 @@ class AppearanceSettingsRepository
         $appearanceSettings = get_option('znzppl_appearance');
 
         return new AppearanceSettings(
-            $appearanceSettings['titleFontSize'],
-            $appearanceSettings['titleColor']
+            $appearanceSettings['titleFontSize'] ?? null,
+            $appearanceSettings['titleColor'] ?? null,
+            $appearanceSettings['additionalInfoFontSize'] ?? null,
+            $appearanceSettings['additionalInfoColor'] ?? null
         );
     }
 }

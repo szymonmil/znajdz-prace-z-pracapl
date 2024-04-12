@@ -2,7 +2,7 @@
 
 namespace Pracapl\ZnajdzPraceZPracapl;
 
-use Pracapl\ZnajdzPraceZPracapl\Dto\AppearanceSettings;
+use Pracapl\ZnajdzPraceZPracapl\Repository\AppearanceSettingsRepository;
 use ZnajdzPraceZPracapl_View;
 
 class AdminSettings
@@ -29,15 +29,22 @@ class AdminSettings
 	 */
 	public function displaySettings()
 	{
+        $isSave = false;
+
 		if(!empty($_POST) && !empty($_POST['znajdz-prace-z-pracapl'])) {
 			$prPracaOptions = $_POST['znajdz-prace-z-pracapl'];
 			update_option('znajdz-prace-z-pracapl',$prPracaOptions);
+
+            $isSave = true;
 		} else {
 			$prPracaOptions = get_option('znajdz-prace-z-pracapl');
 		}
 		$prView = ZnajdzPraceZPracapl_View::get();
 		$html = $prView->renderSettingsForm($prPracaOptions);
 
+        if ($isSave) {
+            $this->printSuccessMessage();
+        }
 		echo $html;
 	}
 
@@ -62,17 +69,32 @@ class AdminSettings
 	 */
 	public function displayAppearanceSettings()
 	{
+        $isSave = false;
 		if(!empty($_POST) && !empty($_POST['znzppl_appearance'])) {
 			$appearanceSettings = $_POST['znzppl_appearance'];
 			update_option('znzppl_appearance', $appearanceSettings);
+
+            $isSave = true;
 		} else {
 			$appearanceSettings = get_option('znzppl_appearance');
 		}
 		$prView = ZnajdzPraceZPracapl_View::get();
 
-        $appearanceSettingsDto = new AppearanceSettings($appearanceSettings['titleFontSize'], $appearanceSettings['titleColor']);
+        $appearanceSettingsDto = AppearanceSettingsRepository::getSettings();
 		$html = $prView->renderSettingsAppearanceForm($appearanceSettingsDto);
+
+        if ($isSave) {
+            $this->printSuccessMessage();
+        }
 
 		echo $html;
 	}
+
+    private function printSuccessMessage()
+    {
+        echo '
+            <div class="notice notice-success">
+                <p>' . __('Saved successfully', 'znajdz-prace-z-pracapl') . '</p>
+            </div>';
+    }
 }
