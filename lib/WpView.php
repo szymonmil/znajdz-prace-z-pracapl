@@ -1,13 +1,14 @@
 <?php
 
+namespace Pracapl\ZnajdzPraceZPracapl;
+
+use DateTime;
 use Pracapl\ZnajdzPraceZPracapl\Dto\AppearanceSettings;
+use Pracapl\ZnajdzPraceZPracapl\View\Country;
+use Pracapl\ZnajdzPraceZPracapl\View\JobCategory;
+use Pracapl\ZnajdzPraceZPracapl\View\Regions;
 
-require_once 'iView.php';
-require_once 'View/Country.php';
-require_once 'View/JobCategory.php';
-require_once 'View/Regions.php';
-
-class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
+class WpView implements ViewInterface {
 
     public const OFFERS_COUNT = 10;
 
@@ -80,7 +81,7 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
 
                             $html .= '<div class="checkbox-list">
                                 <h3>'.$this->_('Category (optional):').'</h3>';
-                                foreach(ZnajdzPraceZPracapl_ViewJobCategory::$ITEMS as $jcKey => $jcValue) {
+                                foreach(JobCategory::$ITEMS as $jcKey => $jcValue) {
                                     $checked = in_array($jcKey, $jobCategory) ? 'checked="checked"' : '';
                                     $html .= '<label><input type="checkbox" value="'.$jcKey.'" name="znajdz-prace-z-pracapl[jobcategory][]" '.$checked.'>'.$this->_($jcValue).'</label>';
                                 }
@@ -89,7 +90,7 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
                             $html .= '<div class="checkbox-list">
                                 <h3>'.$this->_('Region (optional):').'</h3>';
                                 $html .= '<div class="pr-region-main">';
-                                    foreach(ZnajdzPraceZPracapl_ViewRegions::$ITEMS as $rKey => $rValue) {
+                                    foreach(Regions::$ITEMS as $rKey => $rValue) {
                                         if($rKey > 16 || $rKey == 0) {
                                             $checked = in_array($rKey, $regions) ? 'checked="checked"' : '';
                                             $html .= '<label><input type="checkbox" value="'.$rKey.'" name="znajdz-prace-z-pracapl[region][]" '.$checked.'>'.$this->_($rValue).'</label>';
@@ -97,7 +98,7 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
                                     }
                                 $html .= '</div>';
                                 $html .= '<div class="pr-region-details">';
-                                    foreach(ZnajdzPraceZPracapl_ViewRegions::$ITEMS as $rKey => $rValue) {
+                                    foreach(Regions::$ITEMS as $rKey => $rValue) {
                                         if($rKey > 0 && $rKey <= 16) {
                                             $checked = in_array($rKey, $regions) ? 'checked="checked"' : '';
                                             $html .= '<label><input type="checkbox" value="'.$rKey.'" name="znajdz-prace-z-pracapl[region][]" '.$checked.'>'.$this->_($rValue).'</label>';
@@ -108,7 +109,7 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
 
                             $html .= '<div class="checkbox-list">
                                 <h3>'.$this->_('Country (optional):').'</h3>';
-                                foreach(ZnajdzPraceZPracapl_ViewCountry::$ITEMS as $cKey => $cValue) {
+                                foreach(Country::$ITEMS as $cKey => $cValue) {
                                     $checked = in_array($cKey, $country) ? 'checked="checked"' : '';
                                     $html .= '<label><input type="checkbox" value="'.$cKey.'" name="znajdz-prace-z-pracapl[country][]" '.$checked.'>'.$this->_($cValue).'</label>';
                                 }
@@ -197,17 +198,6 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
 	                                        <p><a id="resetTitleColor">' . $this->_('Restore') . '</a></p>
 	                                    </td>
 									</tr>
-	                                <tr>
-	                                    <th>' . $this->_('Live preview') . '</th>
-	                                    <td>
-		                                    <p
-			                                     id="zpzppl_titleLivePreview"
-			                                     style="color: ' . $titleColor . '; font-size: ' . $titleFontSize . 'px"
-		                                     >
-	                                     		Przykłd
-	                                     	</p>
-	                                     </td>
-									</tr>
 								</tbody>
                             </table>
                             <h3>' . $this->_('Job offer additional info') . '</h3>
@@ -242,17 +232,6 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
 	                                        <p><a id="resetAdditionalInfoColor">' . $this->_('Restore') . '</a></p>
 	                                    </td>
 									</tr>
-	                                <tr>
-	                                    <th>' . $this->_('Live preview') . '</th>
-	                                    <td>
-		                                    <p
-			                                     id="zpzppl_additionalInfoLivePreview"
-			                                     style="color: ' . $additionalInfoColor . '; font-size: ' . $additionalInfoFontSize . 'px"
-		                                     >
-	                                     		Przykładowy tekst
-	                                     	</p>
-	                                     </td>
-									</tr>
 								</tbody>
                             </table>
                             <div class="submit-box">
@@ -260,45 +239,6 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
                             </div>
                         </form>
                     </div>
-                <script>
-				    // Pobierz elementy input
-				    var titleFontSizeInput = document.getElementById("titleFontSizeInput");
-				    var titleColorInput = document.getElementById("titleColorInput");
-				    var additionalInfoFontSizeInput = document.getElementById("additionalInfoFontSizeInput");
-				    var additionalInfoColorInput = document.getElementById("additionalInfoColorInput");
-				    // Pobierz element podglądu na żywo
-				    var titleLivePreview = document.getElementById("zpzppl_titleLivePreview");
-				    var additionalInfoLivePreview = document.getElementById("zpzppl_additionalInfoLivePreview");
-				
-				    // Funkcja aktualizująca podgląd na żywo
-				    function updateLivePreview() {
-				        // Pobierz wartości z inputów
-				        var titleFontSize = titleFontSizeInput.value + "px";
-				        var titleColor = titleColorInput.value;
-				        var additionalInfoFontSize = additionalInfoFontSizeInput.value + "px";
-				        var additionalInfoColor = additionalInfoColorInput.value;
-				        // Zaktualizuj styl elementu podglądu na żywo
-				        titleLivePreview.style.fontSize = titleFontSize;
-				        titleLivePreview.style.color = titleColor;
-				        additionalInfoLivePreview.style.fontSize = additionalInfoFontSize;
-				        additionalInfoLivePreview.style.color = additionalInfoColor;
-				    }
-				
-				    // Nasłuchuj zmiany wartości w inputach
-				    titleFontSizeInput.addEventListener("input", updateLivePreview);
-				    titleColorInput.addEventListener("input", updateLivePreview);
-				    additionalInfoFontSizeInput.addEventListener("input", updateLivePreview);
-				    additionalInfoColorInput.addEventListener("input", updateLivePreview);
-				
-				    // Wywołaj funkcję aktualizującą podgląd na żywo na początku
-				    updateLivePreview();
-                    
-                    // Czyszczenie pól
-                    document.getElementById("resetTitleFontSize").addEventListener("click", () => titleFontSizeInput.value = "");
-                    document.getElementById("resetTitleColor").addEventListener("click", () => titleColorInput.value = "");
-                    document.getElementById("resetAdditionalInfoFontSize").addEventListener("click", () => additionalInfoFontSizeInput.value = "");
-                    document.getElementById("resetAdditionalInfoColor").addEventListener("click", () => additionalInfoColorInput.value = "");
-				</script>
                 ';
 
         return $html;
@@ -345,7 +285,7 @@ class ZnajdzPraceZPracapl_WpView implements ZnajdzPraceZPracapl_ViewInterface {
     }
 
     public function renderSidebarWidget($prAds, $prOptions, AppearanceSettings $appearanceSettings) {
-	    $infoIconPath = plugins_url('/public/img/info.png', __DIR__ . '/../znajdz-prace-z-pracapl.php');
+	    $infoIconPath = zpzppl_get_asset_path(('/public/img/info.png'));
 
         $titleStyle = 'style="';
         if (!$appearanceSettings->isTitleColorEmpty()) {

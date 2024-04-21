@@ -1,6 +1,8 @@
 <?php
 
-interface ZnajdzPraceZPracapl_HttpInterface
+namespace Pracapl\ZnajdzPraceZPracapl\Http;
+
+interface HttpInterface
 {
 	public function goToUrl($url, array $httpParams = array());
 }

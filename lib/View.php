@@ -1,8 +1,8 @@
 <?php
 
-require_once 'WpView.php';
+namespace Pracapl\ZnajdzPraceZPracapl;
 
-class ZnajdzPraceZPracapl_View {
+class View {
 
     const TYPE_WP = 'wordpress';
 
@@ -11,7 +11,7 @@ class ZnajdzPraceZPracapl_View {
     public static function get($type = null) {
         if(!$type) $type = self::$_type;
         switch($type) {
-            case self::TYPE_WP: return ZnajdzPraceZPracapl_WpView::instance();
+            case self::TYPE_WP: return WpView::instance();
         }
     }
 

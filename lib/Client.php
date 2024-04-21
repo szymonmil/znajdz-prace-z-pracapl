@@ -1,15 +1,17 @@
 <?php
 
-require_once 'Http/HttpClient.php';
+namespace Pracapl\ZnajdzPraceZPracapl;
 
-class ZnajdzPraceZPracapl_Client {
+use Pracapl\ZnajdzPraceZPracapl\Http\HttpClient;
+
+class Client {
 
     const ADDR_GET_ADS = 'http://www.praca.pl/api/getadswp?';
 
     private $_http = null;
 
     public function __construct() {
-        $this->_http = new ZnajdzPraceZPracapl_HttpClient();
+        $this->_http = new HttpClient();
     }
 
     /**

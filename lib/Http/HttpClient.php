@@ -1,8 +1,8 @@
 <?php
 
-require_once 'HttpInterface.php';
+namespace Pracapl\ZnajdzPraceZPracapl\Http;
 
-class ZnajdzPraceZPracapl_HttpClient implements ZnajdzPraceZPracapl_HttpInterface
+class HttpClient implements HttpInterface
 {
 	/**
 	 * @return array{body: array}

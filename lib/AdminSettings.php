@@ -2,8 +2,11 @@
 
 namespace Pracapl\ZnajdzPraceZPracapl;
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 use Pracapl\ZnajdzPraceZPracapl\Repository\AppearanceSettingsRepository;
-use ZnajdzPraceZPracapl_View;
 
 class AdminSettings
 {
@@ -11,6 +14,7 @@ class AdminSettings
 	{
 		add_action('admin_menu', array(&$this, 'addPluginSettings'));
 		add_action('admin_menu', array(&$this, 'addPluginAppearanceSettings'));
+        add_action('admin_enqueue_scripts', array(&$this, 'addAppearanceSiteJavascript'));
 	}
 
 	public function addPluginSettings()
@@ -19,7 +23,7 @@ class AdminSettings
 			__('Find job offers with Praca.pl', 'znajdz-prace-z-pracapl'),
 			__('Find job offers with Praca.pl', 'znajdz-prace-z-pracapl'),
 			'administrator',
-			'znajdz_prace_z_pracapl_settings',
+			'zpzppl_settings',
 			array(&$this, 'displaySettings')
 		);
 	}
@@ -32,36 +36,36 @@ class AdminSettings
         $isSave = false;
 
 		if(!empty($_POST) && !empty($_POST['znajdz-prace-z-pracapl'])) {
-			$prPracaOptions = $_POST['znajdz-prace-z-pracapl'];
+			$prPracaOptions = sanitize_post($_POST['znajdz-prace-z-pracapl'], 'db');;
 			update_option('znajdz-prace-z-pracapl',$prPracaOptions);
 
             $isSave = true;
 		} else {
 			$prPracaOptions = get_option('znajdz-prace-z-pracapl');
 		}
-		$prView = ZnajdzPraceZPracapl_View::get();
+		$prView = View::get();
 		$html = $prView->renderSettingsForm($prPracaOptions);
 
         if ($isSave) {
             $this->printSuccessMessage();
         }
-		echo $html;
+		echo HtmlSanitizer::sanitizeHtml($html);
 	}
 
 	public function addPluginAppearanceSettings()
 	{
 		add_submenu_page(
-			'znajdz_prace_z_pracapl_settings',
+			'zpzppl_settings',
 			__('Appearance', 'znajdz-prace-z-pracapl'),
 			__('Appearance', 'znajdz-prace-z-pracapl'),
 			'administrator',
-			'znajdz_prace_z_pracapl_appearance_settings',
+			'zpzppl_appearance_settings',
 			array(&$this, 'displayAppearanceSettings')
 		);
 
 		// Change name of first submenu title
 		global $submenu;
-		$submenu['znajdz_prace_z_pracapl_settings'][0][0] = __('Settings', 'znajdz-prace-z-pracapl');
+		$submenu['zpzppl_settings'][0][0] = __('Settings', 'znajdz-prace-z-pracapl');
 	}
 
 	/**
@@ -70,15 +74,14 @@ class AdminSettings
 	public function displayAppearanceSettings()
 	{
         $isSave = false;
+
 		if(!empty($_POST) && !empty($_POST['znzppl_appearance'])) {
-			$appearanceSettings = $_POST['znzppl_appearance'];
+			$appearanceSettings = sanitize_post($_POST['znzppl_appearance'], 'db');
 			update_option('znzppl_appearance', $appearanceSettings);
 
             $isSave = true;
-		} else {
-			$appearanceSettings = get_option('znzppl_appearance');
 		}
-		$prView = ZnajdzPraceZPracapl_View::get();
+		$prView = View::get();
 
         $appearanceSettingsDto = AppearanceSettingsRepository::getSettings();
 		$html = $prView->renderSettingsAppearanceForm($appearanceSettingsDto);
@@ -87,14 +90,26 @@ class AdminSettings
             $this->printSuccessMessage();
         }
 
-		echo $html;
+		echo HtmlSanitizer::sanitizeHtml($html);
 	}
+
+    public function addAppearanceSiteJavascript($hook)
+    {
+        if (!is_page('zpzppl_appearance_settings')) {
+            return;
+        }
+
+        wp_enqueue_script(
+            'zpzppl_appearance_settings',
+            zpzppl_get_asset_path('/public/js/adminAppearanceSettings.js')
+        );
+    }
 
     private function printSuccessMessage()
     {
-        echo '
+        echo HtmlSanitizer::sanitizeHtml('
             <div class="notice notice-success">
                 <p>' . __('Saved successfully', 'znajdz-prace-z-pracapl') . '</p>
-            </div>';
+            </div>');
     }
 }

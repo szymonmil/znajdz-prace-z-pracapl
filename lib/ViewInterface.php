@@ -1,8 +1,8 @@
 <?php
 
-use Pracapl\ZnajdzPraceZPracapl\Dto\AppearanceSettings;
+namespace Pracapl\ZnajdzPraceZPracapl;
 
-interface ZnajdzPraceZPracapl_ViewInterface {
+interface ViewInterface {
     public function renderSettingsForm($options = array());
     public function renderSidebarWidgetSettingsForm($options = array());
     public function renderprPracaJobsShortCode($prAds, $prOptions);

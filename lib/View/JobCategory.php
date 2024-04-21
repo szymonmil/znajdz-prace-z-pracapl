@@ -1,6 +1,8 @@
 <?php
 
-class ZnajdzPraceZPracapl_ViewJobCategory {
+namespace Pracapl\ZnajdzPraceZPracapl\View;
+
+class JobCategory {
 
     public static $ITEMS = array(
         1 => 'Admin - secretarial jobs',

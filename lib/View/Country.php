@@ -1,6 +1,8 @@
 <?php
 
-class ZnajdzPraceZPracapl_ViewCountry {
+namespace Pracapl\ZnajdzPraceZPracapl\View;
+
+class Country {
 
     public static $ITEMS = array(
         163 => 'Poland',

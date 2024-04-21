@@ -3,8 +3,8 @@ Contributors: pracapl
 Tags: praca, oferty pracy, job, jobs
 Requires at least: 4.8
 Tested up to: 6.5.2
-Stable tag: 2.1
-Requires PHP: 7.4
+Stable tag: 2.2
+Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Twoja strona internetowa może być jeszcze bardziej przyjazna dla użytkownika i nowoczesna dzięki wtyczce Znajdź Pracę z Praca.pl.
@@ -104,3 +104,15 @@ Zachęcamy do instalacji pluginu [Znajdź Pracę z Praca.pl](https://www.praca.p
 
 = 1.0 =
 * Pierwsze wydanie
+
+== External services / Użycie zewnętrznych serwisów ==
+
+Plugin wykorzystuje API udostępnianie przez serwis Praca.pl działający pod adresem: https://www.praca.pl/, w celu pobrania najnowyszch ofert pracy.
+Żadne dane użytkowników nie są przesyłane do zewnętrznego serwisu.
+Polityka prywatności Praca.pl: https://www.praca.pl/polityka-prywatnosci.html
+Regulamin Praca.pl: https://www.praca.pl/regulamin.html
+
+Plugin uses API provided by service Praca.pl available under https://www.praca.pl/ in order to fetch newest job offers.
+None of users data are sent to external service.
+Privacy police of Praca.pl: https://www.praca.pl/polityka-prywatnosci.html
+Terms of use of Praca.pl: https://www.praca.pl/regulamin.html
