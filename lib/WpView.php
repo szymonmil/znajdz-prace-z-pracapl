@@ -320,7 +320,7 @@ class WpView implements ViewInterface {
 
         $output = '<div id="prWidgetSitebar">';
 			if ($showCredentials) {
-				$output .= '<div>'.$this->_('Job offers from service').' <a href="https://www.praca.pl" title="Praca.pl">Praca.pl</a></div>';
+				$output .= '<div class="zpzppl-offers-list-title">'.$this->_('Job offers from service').' <a href="https://www.praca.pl" title="Praca.pl">Praca.pl</a></div>';
 			}
             $output .= '<ul>';
                 if(is_array($prAds) && count($prAds)) {
@@ -329,7 +329,7 @@ class WpView implements ViewInterface {
                             $output .= '<strong>
                                 <a target="_blank" href="'.$ad['url'].'?rf=widget&utm_source=widget&utm_medium=plugin" ' . $titleStyle . '>'.$ad['title'].'</a>
                             </strong>';
-                            $output .= '<div  ' . $additionalInfoStyle . '>';
+                            $output .= '<div  ' . $additionalInfoStyle . ' >';
                                 if($showCompany && !empty($ad['company'])) $output .= '<span>'.$ad['company'].'</span>, ';
 
                                 if(($showRegion || $showCity) && !empty($ad['count']) && $ad['count'] > 1) {
@@ -346,7 +346,7 @@ class WpView implements ViewInterface {
                                     $output .= '<span style="white-space:nowrap;">'.$dateAd->format('Y-m-d').'</span>, ';
                                 }
 
-                                $output = substr(trim($output),0,-1);
+                                $output = trim($output, ', ');
                             $output .= '</div>';
                         $output .= '</li>';
                     }
@@ -382,7 +382,7 @@ class WpView implements ViewInterface {
 
         $output = '<div id="prPracaJobsShortcode" '.$mainClass.'>';
 			if ($showCredentials) {
-				$output .= '<div>'.$this->_('Job offers from service').' <a href="https://www.praca.pl" title="Praca.pl">Praca.pl</a></div>';
+				$output .= '<div class="zpzppl-offers-list-title">'.$this->_('Job offers from service').' <a href="https://www.praca.pl" title="Praca.pl">Praca.pl</a></div>';
 			}
             if(is_array($prAds) && count($prAds)) {
                 foreach($prAds as $ad) {
@@ -404,7 +404,7 @@ class WpView implements ViewInterface {
                                 $dateAd = new DateTime($ad['date']);
                                 $output .= '<span style="white-space:nowrap;">'.$dateAd->format('Y-m-d').'</span>, ';
                             }
-                            $output = substr(trim($output),0,-1);
+                            $output = trim($output, ', ');
                         $output .= '</div>';
                     $output .= '</div>';
                 }
