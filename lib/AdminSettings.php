@@ -10,6 +10,9 @@ use Pracapl\ZnajdzPraceZPracapl\Repository\AppearanceSettingsRepository;
 
 class AdminSettings
 {
+    public const SETTINGS_PAGE_NONCE = 'settings-page';
+    public const APPEARANCE_SETTINGS_PAGE_NONCE = 'appearance-settings-page';
+
 	public function __construct()
 	{
 		add_action('admin_menu', array(&$this, 'addPluginSettings'));
@@ -36,6 +39,8 @@ class AdminSettings
         $isSave = false;
 
 		if(!empty($_POST) && !empty($_POST['znajdz-prace-z-pracapl'])) {
+            check_admin_referer(self::SETTINGS_PAGE_NONCE);
+
 			$prPracaOptions = sanitize_post($_POST['znajdz-prace-z-pracapl'], 'db');;
 			update_option('znajdz-prace-z-pracapl',$prPracaOptions);
 
@@ -76,6 +81,8 @@ class AdminSettings
         $isSave = false;
 
 		if(!empty($_POST) && !empty($_POST['znzppl_appearance'])) {
+            check_admin_referer(self::APPEARANCE_SETTINGS_PAGE_NONCE);
+
 			$appearanceSettings = sanitize_post($_POST['znzppl_appearance'], 'db');
 			update_option('znzppl_appearance', $appearanceSettings);
 
@@ -101,7 +108,9 @@ class AdminSettings
 
         wp_enqueue_script(
             'zpzppl_appearance_settings',
-            zpzppl_get_asset_path('/public/js/adminAppearanceSettings.js')
+            zpzppl_get_asset_path('/public/js/adminAppearanceSettings.js'),
+            [],
+            '2.2'
         );
     }
 

@@ -1,5 +1,7 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 __('Admin - secretarial jobs', 'znajdz-prace-z-pracapl');
 __('Public Administration / Civil Service', 'znajdz-prace-z-pracapl');
 __('Architecture', 'znajdz-prace-z-pracapl');

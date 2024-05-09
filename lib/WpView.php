@@ -12,8 +12,6 @@ class WpView implements ViewInterface {
 
     public const OFFERS_COUNT = 10;
 
-    public $_;
-
     private static $_instance = null;
 
     public static function instance() {
@@ -53,65 +51,65 @@ class WpView implements ViewInterface {
         $html =
                 '<div id="prPraca" class="plugin-settings">
                     <div id="prPracaSettings">
-                        <h2><div class="pr-icon32"> </div>'.$this->_('Settings').'</h2>
-                        <p class="prPracaInfoBox">'.$this->_('To display the plugin on your website, go to the "Appearance" bookmark and then click on "Widgets".  Activate the "Jobs from Praca.pl" wigdet, for example by dragging and dropping it in the Sidebar.').'</p>
+                        <h2><div class="pr-icon32"> </div>'.__('Settings', 'znajdz-prace-z-pracapl').'</h2>
+                        <p class="prPracaInfoBox">'.__('To display the plugin on your website, go to the "Appearance" bookmark and then click on "Widgets".  Activate the "Jobs from Praca.pl" wigdet, for example by dragging and dropping it in the Sidebar.', 'znajdz-prace-z-pracapl').'</p>
                         <form method="post" action="#" id="widgetSettings">
                             <input type="hidden" value="'.$prPracaSidebarWidgetTitle.'" name="znajdz-prace-z-pracapl[sidebarWidgetTitle]">';
                             $html .= '<div>
-                                <h3>'.$this->_('Search params').'</h3>
+                                <h3>'.__('Search params', 'znajdz-prace-z-pracapl').'</h3>
 
-                                    <h4>'.$this->_('Phrase (optional):').'</h4>
+                                    <h4>'.__('Phrase (optional):', 'znajdz-prace-z-pracapl').'</h4>
                                     <label><input type="text" value="'.$searchPhrase.'" name="znajdz-prace-z-pracapl[phrase]"></label>
-                                    <div>'.$this->_('Position, company, keyword.').'</div>
+                                    <div>'.__('Position, company, keyword.', 'znajdz-prace-z-pracapl').'</div>
 
-                                    <h4>'.$this->_('City (optional):').'</h4>
+                                    <h4>'.__('City (optional):', 'znajdz-prace-z-pracapl').'</h4>
                                     <label><input type="text" value="'.$searchCity.'" name="znajdz-prace-z-pracapl[city]"></label>
-                                    <div>'.$this->_('Provide the name of the city.').'</div>
+                                    <div>'.__('Provide the name of the city.', 'znajdz-prace-z-pracapl').'</div>
 
-                                    <h4>'.$this->_('Company ID (optional):').'</h4>
+                                    <h4>'.__('Company ID (optional):', 'znajdz-prace-z-pracapl').'</h4>
                                     <label><input type="text" value="'.$searchCompany.'" name="znajdz-prace-z-pracapl[company]"></label>
-                                    <div>'.$this->_('Current job offers from the specified employer on Praca.pl will be displayed.').'</div>
-                                    <div>'.$this->_('You can provide several company IDs, separating them with a semicolon, e.g. 1234;1234').'</div>
+                                    <div>'.__('Current job offers from the specified employer on Praca.pl will be displayed.', 'znajdz-prace-z-pracapl').'</div>
+                                    <div>'.__('You can provide several company IDs, separating them with a semicolon, e.g. 1234;1234', 'znajdz-prace-z-pracapl').'</div>
 
-                                    <h4>'.$this->_('Company ID to exclude (optional):').'</h4>
+                                    <h4>'.__('Company ID to exclude (optional):', 'znajdz-prace-z-pracapl').'</h4>
                                     <label><input type="text" value="'.$searchECompany.'" name="znajdz-prace-z-pracapl[ecompany]"></label>
-                                    <div>'.$this->_('Job offers from the specified employer on Praca.pl will not be displayed.').'</div>
-                                    <div>'.$this->_('You can provide several company IDs, separating them with a semicolon, e.g. 1234;1234').'</div>
+                                    <div>'.__('Job offers from the specified employer on Praca.pl will not be displayed.', 'znajdz-prace-z-pracapl').'</div>
+                                    <div>'.__('You can provide several company IDs, separating them with a semicolon, e.g. 1234;1234', 'znajdz-prace-z-pracapl').'</div>
                                 </div>';
 
                             $html .= '<div class="checkbox-list">
-                                <h3>'.$this->_('Category (optional):').'</h3>';
-                                foreach(JobCategory::$ITEMS as $jcKey => $jcValue) {
+                                <h3>'.__('Category (optional):', 'znajdz-prace-z-pracapl').'</h3>';
+                                foreach(JobCategory::items() as $jcKey => $jcValue) {
                                     $checked = in_array($jcKey, $jobCategory) ? 'checked="checked"' : '';
-                                    $html .= '<label><input type="checkbox" value="'.$jcKey.'" name="znajdz-prace-z-pracapl[jobcategory][]" '.$checked.'>'.$this->_($jcValue).'</label>';
+                                    $html .= '<label><input type="checkbox" value="'.$jcKey.'" name="znajdz-prace-z-pracapl[jobcategory][]" '.$checked.'>'.$jcValue.'</label>';
                                 }
                             $html .= '</div>';
 
                             $html .= '<div class="checkbox-list">
-                                <h3>'.$this->_('Region (optional):').'</h3>';
+                                <h3>'.__('Region (optional):', 'znajdz-prace-z-pracapl').'</h3>';
                                 $html .= '<div class="pr-region-main">';
-                                    foreach(Regions::$ITEMS as $rKey => $rValue) {
+                                    foreach(Regions::items() as $rKey => $rValue) {
                                         if($rKey > 16 || $rKey == 0) {
                                             $checked = in_array($rKey, $regions) ? 'checked="checked"' : '';
-                                            $html .= '<label><input type="checkbox" value="'.$rKey.'" name="znajdz-prace-z-pracapl[region][]" '.$checked.'>'.$this->_($rValue).'</label>';
+                                            $html .= '<label><input type="checkbox" value="'.$rKey.'" name="znajdz-prace-z-pracapl[region][]" '.$checked.'>'.$rValue.'</label>';
                                         }
                                     }
                                 $html .= '</div>';
                                 $html .= '<div class="pr-region-details">';
-                                    foreach(Regions::$ITEMS as $rKey => $rValue) {
+                                    foreach(Regions::items() as $rKey => $rValue) {
                                         if($rKey > 0 && $rKey <= 16) {
                                             $checked = in_array($rKey, $regions) ? 'checked="checked"' : '';
-                                            $html .= '<label><input type="checkbox" value="'.$rKey.'" name="znajdz-prace-z-pracapl[region][]" '.$checked.'>'.$this->_($rValue).'</label>';
+                                            $html .= '<label><input type="checkbox" value="'.$rKey.'" name="znajdz-prace-z-pracapl[region][]" '.$checked.'>'.$rValue.'</label>';
                                         }
                                     }
                                 $html .= '</div>';
                             $html .= '</div>';
 
                             $html .= '<div class="checkbox-list">
-                                <h3>'.$this->_('Country (optional):').'</h3>';
-                                foreach(Country::$ITEMS as $cKey => $cValue) {
+                                <h3>'.__('Country (optional):', 'znajdz-prace-z-pracapl').'</h3>';
+                                foreach(Country::items() as $cKey => $cValue) {
                                     $checked = in_array($cKey, $country) ? 'checked="checked"' : '';
-                                    $html .= '<label><input type="checkbox" value="'.$cKey.'" name="znajdz-prace-z-pracapl[country][]" '.$checked.'>'.$this->_($cValue).'</label>';
+                                    $html .= '<label><input type="checkbox" value="'.$cKey.'" name="znajdz-prace-z-pracapl[country][]" '.$checked.'>'.$cValue.'</label>';
                                 }
                             $html .= '</div>';
 
@@ -120,15 +118,15 @@ class WpView implements ViewInterface {
                             $checkedShowCity = in_array('city', $show) ? 'checked="checked"' : '';
                             $checkedShowRegion = in_array('region', $show) ? 'checked="checked"' : '';
                             $html .= '<div class="checkbox-list">
-                                <h3>'.$this->_('Display:').'</h3>
-                                <label><input type="checkbox" value="date" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowDate.'>'.$this->_('job date').'</label>
-                                <label><input type="checkbox" value="company" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowCompany.'>'.$this->_('employer\'s name').'</label>
-                                <label><input type="checkbox" value="city" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowCity.'>'.$this->_('city').'</label>
-                                <label><input type="checkbox" value="region" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowRegion.'>'.$this->_('region').'</label>
+                                <h3>'.__('Display:', 'znajdz-prace-z-pracapl').'</h3>
+                                <label><input type="checkbox" value="date" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowDate.'>'.__('job date', 'znajdz-prace-z-pracapl').'</label>
+                                <label><input type="checkbox" value="company" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowCompany.'>'.__('employer\'s name', 'znajdz-prace-z-pracapl').'</label>
+                                <label><input type="checkbox" value="city" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowCity.'>'.__('city', 'znajdz-prace-z-pracapl').'</label>
+                                <label><input type="checkbox" value="region" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowRegion.'>'.__('region', 'znajdz-prace-z-pracapl').'</label>
                             </div>';
 
                             $html .= '<div>
-                                <h3>'.$this->_('Number of displayed jobs:').'</h3>
+                                <h3>'.__('Number of displayed jobs:', 'znajdz-prace-z-pracapl').'</h3>
                                 <input type="text" value="'.$searchCount.'" name="znajdz-prace-z-pracapl[count]">
                             </div>';
 
@@ -139,17 +137,19 @@ class WpView implements ViewInterface {
 
 	                        $showCredentialsChecked = $showCredentials ? 'checked="checked"' : '';
                             $html .= '<div>
-                                <h3>'.$this->_('Show credentials:').' <input type="checkbox" name="znajdz-prace-z-pracapl[showCredentials]" ' . $showCredentialsChecked . '></h3>
+                                <h3>'.__('Show credentials:', 'znajdz-prace-z-pracapl').' <input type="checkbox" name="znajdz-prace-z-pracapl[showCredentials]" ' . $showCredentialsChecked . '></h3>
                                
                             </div>';
 
+                            $html .= wp_nonce_field(AdminSettings::SETTINGS_PAGE_NONCE, '_wpnonce', true, false);
+
                             $html .= '<div class="submit-box">
-                                <input type="submit" name="submit" id="submit" class="button button-primary" value="'.$this->_('Save settings').'">
+                                <input type="submit" name="submit" id="submit" class="button button-primary" value="'.__('Save settings', 'znajdz-prace-z-pracapl').'">
                             </div>';
 
                         $html .= '</form>
                     </div>
-                    <div><p>' . $this->_('Need technical support with plugin installation? Contact us at:') . ' plugin-wp@praca.pl</p></div>
+                    <div><p>' . __('Need technical support with plugin installation? Contact us at:', 'znajdz-prace-z-pracapl') . ' plugin-wp@praca.pl</p></div>
                 </div>';
 
         return $html;
@@ -164,13 +164,13 @@ class WpView implements ViewInterface {
 
         $html =
                 '<div id="prPraca" class="plugin-settings">
-                        <h2><div class="pr-icon32"> </div>'.$this->_('Appearance').'</h2>
+                        <h2><div class="pr-icon32"> </div>'.__('Appearance', 'znajdz-prace-z-pracapl').'</h2>
                         <form method="post" action="#" id="widgetSettings">
-                            <h3>' . $this->_('Job offer title') . '</h3>
+                            <h3>' . __('Job offer title', 'znajdz-prace-z-pracapl') . '</h3>
                         	<table class="form-table" role="presentation">
 	                            <tbody>
 	                                <tr>
-	                                    <th>' . $this->_('Font size') . '</th>
+	                                    <th>' . __('Font size', 'znajdz-prace-z-pracapl') . '</th>
 	                                    <td>
 	                                    	<input
 	                                    	 type="number"
@@ -188,23 +188,23 @@ class WpView implements ViewInterface {
 											      <option value="32">
 											      <option value="36">
 											    </datalist>px
-											    <p><a id="resetTitleFontSize">' . $this->_('Restore') . '</a></p>
+											    <p><a id="resetTitleFontSize">' . __('Restore', 'znajdz-prace-z-pracapl') . '</a></p>
 									    </td>
 									</tr>
 	                                <tr>
-	                                    <th>' . $this->_('Text color') . '</th>
+	                                    <th>' . __('Text color', 'znajdz-prace-z-pracapl') . '</th>
 	                                    <td>
 	                                        <input type="color" id="titleColorInput" name="znzppl_appearance[titleColor]" value="' . $titleColor . '"/>
-	                                        <p><a id="resetTitleColor">' . $this->_('Restore') . '</a></p>
+	                                        <p><a id="resetTitleColor">' . __('Restore', 'znajdz-prace-z-pracapl') . '</a></p>
 	                                    </td>
 									</tr>
 								</tbody>
                             </table>
-                            <h3>' . $this->_('Job offer additional info') . '</h3>
+                            <h3>' . __('Job offer additional info', 'znajdz-prace-z-pracapl') . '</h3>
                         	<table class="form-table" role="presentation">
 	                            <tbody>
 	                                <tr>
-	                                    <th>' . $this->_('Font size') . '</th>
+	                                    <th>' . __('Font size', 'znajdz-prace-z-pracapl') . '</th>
 	                                    <td>
 	                                    	<input
 	                                    	 type="number"
@@ -222,20 +222,21 @@ class WpView implements ViewInterface {
 											      <option value="32">
 											      <option value="36">
 											    </datalist>px
-											    <p><a id="resetAdditionalInfoFontSize">' . $this->_('Restore') . '</a></p>
+											    <p><a id="resetAdditionalInfoFontSize">' . __('Restore', 'znajdz-prace-z-pracapl') . '</a></p>
 									    </td>
 									</tr>
 	                                <tr>
-	                                    <th>' . $this->_('Text color') . '</th>
+	                                    <th>' . __('Text color', 'znajdz-prace-z-pracapl') . '</th>
 	                                    <td>
 	                                        <input type="color" id="additionalInfoColorInput" name="znzppl_appearance[additionalInfoColor]" value="' . $additionalInfoColor . '"/>
-	                                        <p><a id="resetAdditionalInfoColor">' . $this->_('Restore') . '</a></p>
+	                                        <p><a id="resetAdditionalInfoColor">' . __('Restore', 'znajdz-prace-z-pracapl') . '</a></p>
 	                                    </td>
 									</tr>
 								</tbody>
-                            </table>
-                            <div class="submit-box">
-                                <input type="submit" name="submit" id="submit" class="button button-primary" value="'.$this->_('Save settings').'">
+                            </table>'
+                            . wp_nonce_field(AdminSettings::APPEARANCE_SETTINGS_PAGE_NONCE, '_wpnonce', true, false) .                
+                            '<div class="submit-box">
+                                <input type="submit" name="submit" id="submit" class="button button-primary" value="'.__('Save settings', 'znajdz-prace-z-pracapl').'">
                             </div>
                         </form>
                     </div>
@@ -259,7 +260,7 @@ class WpView implements ViewInterface {
             '<div id="prPraca" class="widget-settings">
                 <div id="prPracaWidgetSettings">';
                     $html .= '<div>
-                        <div>'.$this->_('Title:').'</div>
+                        <div>'.__('Title:', 'znajdz-prace-z-pracapl').'</div>
                         <input type="text" value="'.$prPracaSidebarWidgetTitle.'" name="znajdz-prace-z-pracapl[sidebarWidgetTitle]">
                     </div>';
                     $checkedShowDate = in_array('date', $show) ? 'checked="checked"' : '';
@@ -267,15 +268,17 @@ class WpView implements ViewInterface {
                     $checkedShowCity = in_array('city', $show) ? 'checked="checked"' : '';
                     $checkedShowRegion = in_array('region', $show) ? 'checked="checked"' : '';
                     $html .= '<div class="checkbox-list">
-                        <span>'.$this->_('Display:').'</span>
-                        <label><input type="checkbox" value="date" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowDate.'>'.$this->_('job date').'</label>
-                        <label><input type="checkbox" value="company" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowCompany.'>'.$this->_('employer\'s name').'</label>
-                        <label><input type="checkbox" value="city" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowCity.'>'.$this->_('city').'</label>
-                        <label><input type="checkbox" value="region" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowRegion.'>'.$this->_('region').'</label>
+                        <span>'.__('Display:', 'znajdz-prace-z-pracapl').'</span>
+                        <label><input type="checkbox" value="date" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowDate.'>'.__('job date', 'znajdz-prace-z-pracapl').'</label>
+                        <label><input type="checkbox" value="company" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowCompany.'>'.__('employer\'s name', 'znajdz-prace-z-pracapl').'</label>
+                        <label><input type="checkbox" value="city" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowCity.'>'.__('city', 'znajdz-prace-z-pracapl').'</label>
+                        <label><input type="checkbox" value="region" name="znajdz-prace-z-pracapl[show][]" '.$checkedShowRegion.'>'.__('region', 'znajdz-prace-z-pracapl').'</label>
                     </div>';
 
+                    $html .= wp_nonce_field('widget-settings-form', '_wpnonce', true, false);
+
                     $html .= '<div>
-                        <span>'.$this->_('Number of displayed jobs:').'</span>
+                        <span>'.__('Number of displayed jobs:', 'znajdz-prace-z-pracapl').'</span>
                         <input class="count" type="text" value="'.$searchCount.'" name="znajdz-prace-z-pracapl[count]">
                     </div>';
                 $html .= '</div>
@@ -320,7 +323,7 @@ class WpView implements ViewInterface {
 
         $output = '<div id="prWidgetSitebar">';
 			if ($showCredentials) {
-				$output .= '<div class="zpzppl-offers-list-title">'.$this->_('Job offers from service').' <a href="https://www.praca.pl" title="Praca.pl">Praca.pl</a></div>';
+				$output .= '<div class="zpzppl-offers-list-title">'.__('Job offers from service', 'znajdz-prace-z-pracapl').' <a href="https://www.praca.pl" title="Praca.pl">Praca.pl</a></div>';
 			}
             $output .= '<ul>';
                 if(is_array($prAds) && count($prAds)) {
@@ -333,7 +336,7 @@ class WpView implements ViewInterface {
                                 if($showCompany && !empty($ad['company'])) $output .= '<span>'.$ad['company'].'</span>, ';
 
                                 if(($showRegion || $showCity) && !empty($ad['count']) && $ad['count'] > 1) {
-                                    $output .= '<span>'.$ad['count'] . ' ' . $this->_('regions').'</span>, ';
+                                    $output .= '<span>'.$ad['count'] . ' ' . __('regions', 'znajdz-prace-z-pracapl').'</span>, ';
                                 } else {
                                     $place = array();
                                     if($showRegion && !empty($ad['region'])) $place[] = $ad['region'];
@@ -351,7 +354,7 @@ class WpView implements ViewInterface {
                         $output .= '</li>';
                     }
                 } else {
-                    $output .= '<li>'.$this->_('There are no job offers').'</li>';
+                    $output .= '<li>'.__('There are no job offers', 'znajdz-prace-z-pracapl').'</li>';
                 }
             $output .= '</ul>';
 			if ($showCredentials) {
@@ -382,7 +385,7 @@ class WpView implements ViewInterface {
 
         $output = '<div id="prPracaJobsShortcode" '.$mainClass.'>';
 			if ($showCredentials) {
-				$output .= '<div class="zpzppl-offers-list-title">'.$this->_('Job offers from service').' <a href="https://www.praca.pl" title="Praca.pl">Praca.pl</a></div>';
+				$output .= '<div class="zpzppl-offers-list-title">'.__('Job offers from service', 'znajdz-prace-z-pracapl').' <a href="https://www.praca.pl" title="Praca.pl">Praca.pl</a></div>';
 			}
             if(is_array($prAds) && count($prAds)) {
                 foreach($prAds as $ad) {
@@ -392,7 +395,7 @@ class WpView implements ViewInterface {
                             if($showCompany && !empty($ad['company'])) $output .= '<span>'.$ad['company'].'</span>, ';
 
                             if(($showRegion || $showCity) && !empty($ad['count']) && $ad['count'] > 1) {
-                                $output .= '<span>'.$ad['count'] . ' ' . $this->_('regions').'</span>, ';
+                                $output .= '<span>'.$ad['count'] . ' ' . __('regions', 'znajdz-prace-z-pracapl').'</span>, ';
                             } else {
                                 $place = array();
                                 if($showRegion && !empty($ad['region'])) $place[] = $ad['region'];
@@ -409,7 +412,7 @@ class WpView implements ViewInterface {
                     $output .= '</div>';
                 }
             } else {
-                $output .= '<div>'.$this->_('There are no job offers').'</div>';
+                $output .= '<div>'.__('There are no job offers', 'znajdz-prace-z-pracapl').'</div>';
             }
         $output .= '</div>';
 

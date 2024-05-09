@@ -121,18 +121,23 @@ function zpzppl_get_asset_path(string $pathFromBaseDir): string
 
 function zpzppl_widget_control() {
     $options = get_option('znajdz-prace-z-pracapl');
-    $postData = sanitize_post($_POST['znajdz-prace-z-pracapl'], 'db');
 
-    if(!empty($_POST) && !empty($postData)) {
-        $prPracaOptions = $postData;
-        if(!empty($prPracaOptions['count'])) $options['count'] = (int) $prPracaOptions['count'];
-        if(isset($prPracaOptions['show'])) {
-            $options['show'] = array_filter($prPracaOptions['show'], 'htmlentities');
-        } else {
-            $options['show'] = array();
+    if(!empty($_POST)) {
+        check_admin_referer('widget-settings-form');
+
+        $postData = sanitize_post($_POST['znajdz-prace-z-pracapl'], 'db');
+
+        if (!empty($postData)) {
+            $prPracaOptions = $postData;
+            if(!empty($prPracaOptions['count'])) $options['count'] = (int) $prPracaOptions['count'];
+            if(isset($prPracaOptions['show'])) {
+                $options['show'] = array_filter($prPracaOptions['show'], 'htmlentities');
+            } else {
+                $options['show'] = array();
+            }
+            if(isset($prPracaOptions['sidebarWidgetTitle'])) $options['sidebarWidgetTitle'] = htmlentities($prPracaOptions['sidebarWidgetTitle']);
+            update_option('znajdz-prace-z-pracapl',$options);
         }
-        if(isset($prPracaOptions['sidebarWidgetTitle'])) $options['sidebarWidgetTitle'] = htmlentities($prPracaOptions['sidebarWidgetTitle']);
-        update_option('znajdz-prace-z-pracapl',$options);
     }
     $prView = View::get();
     $html = $prView->renderSidebarWidgetSettingsForm($options);
