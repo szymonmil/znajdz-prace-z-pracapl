@@ -2,8 +2,8 @@
 Contributors: pracapl
 Tags: praca, oferty pracy, job, jobs
 Requires at least: 4.8
-Tested up to: 6.5.2
-Stable tag: 2.2
+Tested up to: 6.5.3
+Stable tag: 2.2.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -70,6 +70,9 @@ Parametry: class, count, company, show są opcjonalne. Jeśli ich użyjesz, nadp
 Zachęcamy do instalacji pluginu [Znajdź Pracę z Praca.pl](https://www.praca.pl/dodatki/plugin-wordpress.html)
 
 == Changelog ==
+= 2.2.1 =
+* Poprawki
+
 = 2.1 =
 * Dodanie możliwości zmiany wyglądu wpisów z ofertami pracy
 

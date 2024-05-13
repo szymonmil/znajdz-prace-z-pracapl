@@ -130,17 +130,6 @@ class WpView implements ViewInterface {
                                 <input type="text" value="'.$searchCount.'" name="znajdz-prace-z-pracapl[count]">
                             </div>';
 
-						    $showCredentials = false;
-						    if(isset($options['showCredentials'])) {
-							    $showCredentials = (bool) $options['showCredentials'];
-						    }
-
-	                        $showCredentialsChecked = $showCredentials ? 'checked="checked"' : '';
-                            $html .= '<div>
-                                <h3>'.__('Show credentials:', 'znajdz-prace-z-pracapl').' <input type="checkbox" name="znajdz-prace-z-pracapl[showCredentials]" ' . $showCredentialsChecked . '></h3>
-                               
-                            </div>';
-
                             $html .= wp_nonce_field(AdminSettings::SETTINGS_PAGE_NONCE, '_wpnonce', true, false);
 
                             $html .= '<div class="submit-box">
@@ -316,15 +305,8 @@ class WpView implements ViewInterface {
             $showDate = in_array('date', $prOptions['show']) ? true : false;
         }
 
-	    $showCredentials = false;
-	    if(isset($prOptions['showCredentials'])) {
-		    $showCredentials = (bool) $prOptions['showCredentials'];
-	    }
-
         $output = '<div id="prWidgetSitebar">';
-			if ($showCredentials) {
-				$output .= '<div class="zpzppl-offers-list-title">'.__('Job offers from service', 'znajdz-prace-z-pracapl').' <a href="https://www.praca.pl" title="Praca.pl">Praca.pl</a></div>';
-			}
+            $output .= '<div class="zpzppl-offers-list-title">'.__('Job offers from service', 'znajdz-prace-z-pracapl').' <a href="https://www.praca.pl" title="Praca.pl">Praca.pl</a></div>';
             $output .= '<ul>';
                 if(is_array($prAds) && count($prAds)) {
                     foreach($prAds as $ad) {
@@ -357,17 +339,17 @@ class WpView implements ViewInterface {
                     $output .= '<li>'.__('There are no job offers', 'znajdz-prace-z-pracapl').'</li>';
                 }
             $output .= '</ul>';
-			if ($showCredentials) {
-				$output .= '<div id="prWidgetSidebar-moreInfo">
-					<a href="https://www.praca.pl/dodatki/plugin-wordpress.html"><img src="' . $infoIconPath . '" title="Oferty pracy z Praca.pl" alt="Portal Praca.pl" /></a>
-				</div>';
-			}
+            $output .= '<div id="prWidgetSidebar-moreInfo">
+                <a href="https://www.praca.pl/dodatki/plugin-wordpress.html"><img src="' . $infoIconPath . '" title="Oferty pracy z Praca.pl" alt="Portal Praca.pl" /></a>
+            </div>';
         $output .= '</div>';
 
         return $output;
     }
 
-    public function renderprPracaJobsShortCode($prAds, $prOptions) {
+    public function renderprPracaJobsShortCode($prAds, $prOptions)
+    {
+        $infoIconPath = zpzppl_get_asset_path(('/public/img/info.png'));
 
         $showCompany = $showRegion = $showCity = $showDate = false;
         if(!empty($prOptions['show'])) {
@@ -378,15 +360,8 @@ class WpView implements ViewInterface {
         }
         $mainClass = empty($prOptions['class']) ? '' : 'class="'.$prOptions['class'].'"';
 
-	    $showCredentials = false;
-	    if(isset($prOptions['showCredentials'])) {
-		    $showCredentials = (bool) $prOptions['showCredentials'];
-	    }
-
         $output = '<div id="prPracaJobsShortcode" '.$mainClass.'>';
-			if ($showCredentials) {
-				$output .= '<div class="zpzppl-offers-list-title">'.__('Job offers from service', 'znajdz-prace-z-pracapl').' <a href="https://www.praca.pl" title="Praca.pl">Praca.pl</a></div>';
-			}
+            $output .= '<div class="zpzppl-offers-list-title">'.__('Job offers from service', 'znajdz-prace-z-pracapl').' <a href="https://www.praca.pl" title="Praca.pl">Praca.pl</a></div>';
             if(is_array($prAds) && count($prAds)) {
                 foreach($prAds as $ad) {
                     $output .= '<div>';
@@ -414,6 +389,9 @@ class WpView implements ViewInterface {
             } else {
                 $output .= '<div>'.__('There are no job offers', 'znajdz-prace-z-pracapl').'</div>';
             }
+        $output .= '<div id="prWidgetSidebar-moreInfo">
+                <a href="https://www.praca.pl/dodatki/plugin-wordpress.html"><img src="' . $infoIconPath . '" title="Oferty pracy z Praca.pl" alt="Portal Praca.pl" /></a>
+            </div>';
         $output .= '</div>';
 
         return $output;
