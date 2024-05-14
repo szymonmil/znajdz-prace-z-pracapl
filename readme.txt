@@ -13,23 +13,23 @@ Twoja strona internetowa może być jeszcze bardziej przyjazna dla użytkownika 
 
 Twoja strona internetowa może być jeszcze bardziej przyjazna dla użytkownika i nowoczesna dzięki wtyczce Wordpress Znajdź Pracę z Praca.pl. Atrakcyjny wizualnie plugin wzbogaci wygląd Twojej witryny, a wyświetlane informacje z rynku pracy uzupełnią publikowane przez Ciebie treści o nową, aktualną perspektywą.
 
-* Co pokazuje wtyczka WordPress Praca.pl?
+* **Co pokazuje wtyczka WordPress Praca.pl?**
 
 Jest to nowoczesny i przejrzysty plugin WordPress, który wyświetla **informacje o najnowszych ogłoszeniach o pracę**. [Wtyczkę Znajdź Pracę z Praca.pl](https://www.praca.pl/dodatki/plugin-wordpress.html) cechuje wysoki poziom personalizacji. Oznacza to, że w łatwy sposób możesz ją dostosować do własnej witryny tak, by współgrała z contentem i wizją Twojego miejsca w sieci. Poniżej znajdziesz wyjaśnienie, jakie możesz ustawić parametry wtyczki.
 
-* Do kogo skierowana jest wtyczka do WordPress Znajdź Pracę z Praca.pl?
+* **Do kogo skierowana jest wtyczka do WordPress Znajdź Pracę z Praca.pl?**
 
 Wtyczka Znajdz Pracę z Praca.pl to ciekawa propozycja skierowana przede wszystkim do pracodawców, instytucji, szkół i uczelni, organizacji, portali tematycznych, serwisów branżowych, a także administratorów stron www.
 
-Odbiorcami jej treści są z kolei wszystkie osoby aktywne zawodowo, poszukujące pracy, stażu czy praktyk, osoby dopiero wkraczające na ścieżkę zawodową, studenci i uczniowie oraz wszyscy, którzy są zainteresowani sytuacją na rynku pracy, bieżącą sytuacją w danym regionie czy mieście bądź w wybranej branży. Wtyczka pozwala na wyświetlanie ściśle wyselekcjonowanych informacji, przez co można ją łatwo dostosować do** potrzeb wybranej grupy docelowej i tematyki witryny**, na której zostaje umieszczona.
+Odbiorcami jej treści są z kolei wszystkie osoby aktywne zawodowo, poszukujące pracy, stażu czy praktyk, osoby dopiero wkraczające na ścieżkę zawodową, studenci i uczniowie oraz wszyscy, którzy są zainteresowani sytuacją na rynku pracy, bieżącą sytuacją w danym regionie czy mieście bądź w wybranej branży. Wtyczka pozwala na wyświetlanie ściśle wyselekcjonowanych informacji, przez co można ją łatwo dostosować do **potrzeb wybranej grupy docelowej i tematyki witryny**, na której zostaje umieszczona.
 
-* Czy warto zainstalować wtyczkę z ofertami pracy?
+* **Czy warto zainstalować wtyczkę z ofertami pracy?**
 
 Estetyczna wtyczka z ofertami pracy to rozwiązanie, które pozwala wyjść naprzeciw potrzebom użytkowników, którzy coraz bardziej cenią sobie wielowymiarowe interakcje w sieci. Wtyczka WordPress dodaje różnorodności stronie i tym samym **wzbogaca doświadczenie użytkownika**. Co więcej, dzięki wtyczce Znajdź Pracę z Praca.pl masz szansę zaproponować osobom odwiedzającym Twoją witrynę istotne dla nich informacje, budując przy tym wizerunek przyjaznego miejsca w sieci.
 
 == Konfiguracja ==
 
-Zaletą wtyczki jest jej prostota. Żeby korzystać z atutów pluginu na swojej stronie internetowej, nie musisz mieć żadnych zaawansowanych umiejętności programistycznych. W **Ustawieniach **wtyczki zdecydujesz, w jaki sposób będą selekcjonowane informacje, które na nią trafią.
+Zaletą wtyczki jest jej prostota. Żeby korzystać z atutów pluginu na swojej stronie internetowej, nie musisz mieć żadnych zaawansowanych umiejętności programistycznych. W **Ustawieniach** wtyczki zdecydujesz, w jaki sposób będą selekcjonowane informacje, które na nią trafią.
 
 Możesz filtrować ogłoszenia pod względem:
 
@@ -110,12 +110,12 @@ Zachęcamy do instalacji pluginu [Znajdź Pracę z Praca.pl](https://www.praca.p
 
 == External services / Użycie zewnętrznych serwisów ==
 
-Plugin wykorzystuje API udostępnianie przez serwis Praca.pl działający pod adresem: https://www.praca.pl/, w celu pobrania najnowyszch ofert pracy.
+Plugin wykorzystuje API udostępnianie przez serwis Praca.pl działający pod adresem: [https://www.praca.pl](https://www.praca.pl/), w celu pobrania najnowyszch ofert pracy.
 Żadne dane użytkowników nie są przesyłane do zewnętrznego serwisu.
-Polityka prywatności Praca.pl: https://www.praca.pl/polityka-prywatnosci.html
-Regulamin Praca.pl: https://www.praca.pl/regulamin.html
+Polityka prywatności Praca.pl: [https://www.praca.pl/polityka-prywatnosci.html](https://www.praca.pl/polityka-prywatnosci.html)
+Regulamin Praca.pl: [https://www.praca.pl/regulamin.html](https://www.praca.pl/regulamin.html)
 
-Plugin uses API provided by service Praca.pl available under https://www.praca.pl/ in order to fetch newest job offers.
+Plugin uses API provided by service Praca.pl available under [https://www.praca.pl](https://www.praca.pl/) in order to fetch newest job offers.
 None of users data are sent to external service.
-Privacy police of Praca.pl: https://www.praca.pl/polityka-prywatnosci.html
-Terms of use of Praca.pl: https://www.praca.pl/regulamin.html
+Privacy police of Praca.pl: [https://www.praca.pl/polityka-prywatnosci.html](https://www.praca.pl/polityka-prywatnosci.html)
+Terms of use of Praca.pl: [https://www.praca.pl/regulamin.html](https://www.praca.pl/regulamin.html)
