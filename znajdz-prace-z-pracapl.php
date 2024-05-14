@@ -2,7 +2,7 @@
 /*
  * Plugin Name: Znajdż Pracę z Praca.pl
  * Description: Twoja strona internetowa może być jeszcze bardziej przyjazna dla użytkownika i nowoczesna dzięki wtyczce Wordpress Znajdź Pracę z Praca.pl. Atrakcyjny wizualnie plugin wzbogaci wygląd Twojej witryny, a wyświetlane informacje z rynku pracy uzupełnią publikowane przez Ciebie treści o nową, aktualną perspektywą.
- * Version: 2.2.1
+ * Version: 2.2.2
  * Author: Praca.pl sp. z o.o.
  * Author URI: https://www.praca.pl
  * Text Domain: znajdz-prace-z-pracapl
