@@ -2,74 +2,79 @@
 Contributors: pracapl
 Tags: praca, oferty pracy, job, jobs
 Requires at least: 4.8
-Tested up to: 6.5.3
-Stable tag: 2.2.2
+Tested up to: 6.6.1
+Stable tag: 2.2.3
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Twoja strona internetowa może być jeszcze bardziej przyjazna dla użytkownika i nowoczesna dzięki wtyczce Znajdź Pracę z Praca.pl.
+You can make your website even more user-friendly and up-to-date with the newest plugin ‘Find A Job With Praca.pl’.
 
-== Opis ==
+== Description ==
 
-Twoja strona internetowa może być jeszcze bardziej przyjazna dla użytkownika i nowoczesna dzięki wtyczce Wordpress Znajdź Pracę z Praca.pl. Atrakcyjny wizualnie plugin wzbogaci wygląd Twojej witryny, a wyświetlane informacje z rynku pracy uzupełnią publikowane przez Ciebie treści o nową, aktualną perspektywą.
+You can make your website even more user-friendly and up-to-date with the newest plugin ‘Find A Job With Praca.pl’. This visually appealing plugin will enhance the look of your website. On top of that, the displayed information from the job market will be compatible with the content you publish everyday on your site or blog.
 
-* **Co pokazuje wtyczka WordPress Praca.pl?**
+* **What does the WordPress plugin Praca.pl show?**
 
-Jest to nowoczesny i przejrzysty plugin WordPress, który wyświetla **informacje o najnowszych ogłoszeniach o pracę**. [Wtyczkę Znajdź Pracę z Praca.pl](https://www.praca.pl/dodatki/plugin-wordpress.html) cechuje wysoki poziom personalizacji. Oznacza to, że w łatwy sposób możesz ją dostosować do własnej witryny tak, by współgrała z contentem i wizją Twojego miejsca w sieci. Poniżej znajdziesz wyjaśnienie, jakie możesz ustawić parametry wtyczki.
+The WordPress plugin from Praca.pl is easy to use and it displays information about the latest job ads in a very clear and sophisticated way. The plugin [Find A Job With Praca.pl](https://www.praca.pl/dodatki/plugin-wordpress.html)  is characterized by a high level of personalization. This means that you can easily customize it to match the content that you publish everyday on your website. Below, you can find an explanation of how you can set and change each of the plugin parameters.
 
-* **Do kogo skierowana jest wtyczka do WordPress Znajdź Pracę z Praca.pl?**
+* **Who is the target audience for the WordPress plugin ‘Find A Job With Praca.pl’?**
 
-Wtyczka Znajdz Pracę z Praca.pl to ciekawa propozycja skierowana przede wszystkim do pracodawców, instytucji, szkół i uczelni, organizacji, portali tematycznych, serwisów branżowych, a także administratorów stron www.
+The ‘Find A Job With Praca.pl’ plugin is an interesting proposition addressed primarily to employers, institutions, schools and universities, organizations, thematic portals, industry services, as well as website administrators.
 
-Odbiorcami jej treści są z kolei wszystkie osoby aktywne zawodowo, poszukujące pracy, stażu czy praktyk, osoby dopiero wkraczające na ścieżkę zawodową, studenci i uczniowie oraz wszyscy, którzy są zainteresowani sytuacją na rynku pracy, bieżącą sytuacją w danym regionie czy mieście bądź w wybranej branży. Wtyczka pozwala na wyświetlanie ściśle wyselekcjonowanych informacji, przez co można ją łatwo dostosować do **potrzeb wybranej grupy docelowej i tematyki witryny**, na której zostaje umieszczona.
+The recipients of its content are all professionally active people looking for a job, internship or apprenticeship, students and pupils and everyone who is curious about the state of the job market in a given region, city or in a specific industry. The plugin allows you to display strictly selected information, which is why it can be easily adapted to your audience and to the content that you publish on your website.
 
-* **Czy warto zainstalować wtyczkę z ofertami pracy?**
+* **Why is it worth it to install a plugin with job ads?**
 
-Estetyczna wtyczka z ofertami pracy to rozwiązanie, które pozwala wyjść naprzeciw potrzebom użytkowników, którzy coraz bardziej cenią sobie wielowymiarowe interakcje w sieci. Wtyczka WordPress dodaje różnorodności stronie i tym samym **wzbogaca doświadczenie użytkownika**. Co więcej, dzięki wtyczce Znajdź Pracę z Praca.pl masz szansę zaproponować osobom odwiedzającym Twoją witrynę istotne dla nich informacje, budując przy tym wizerunek przyjaznego miejsca w sieci.
+An aesthetic job ads plugin is a solution that allows you to meet the needs of users who increasingly value multidimensional interactions on the web. The WordPress plugin adds diversity to the website and thus enriches the user experience. What's more, thanks to the ‘Find A Job With Praca.pl’ plugin, you can provide your website users with information that may be important to them while building the image of a friendly place on the web.
 
-== Konfiguracja ==
+== Configuration ==
 
-Zaletą wtyczki jest jej prostota. Żeby korzystać z atutów pluginu na swojej stronie internetowej, nie musisz mieć żadnych zaawansowanych umiejętności programistycznych. W **Ustawieniach** wtyczki zdecydujesz, w jaki sposób będą selekcjonowane informacje, które na nią trafią.
+The great advantage of the plugin is its simplicity. You don't need any advanced programming skills to use the plugin on your website and enjoy the benefits it brings.
 
-Możesz filtrować ogłoszenia pod względem:
+The plugin settings allows you to determine which information will be displayed to your audience.
 
-* słowa kluczowego np. nazwy zawodu lub stanowiska,
-* lokalizacji, w tym miejscowości, regionu i kraju,
-* obszaru zawodowego,
-* ID firmy, czyli identyfikatora pracodawcy na Praca.pl – możesz zarówno wskazać konkretne firmy, których ogłoszenia mają się znaleźć na widżecie, jak i wykluczyć z niego wybranych pracodawców.
+You can filter ads by:
+
+* job title, name of profession,
+* location, including city, region and country,
+* professional area,
+* company ID, i.e. employer's identifier on Praca.pl. The widget can either include specific companies or exclude certain employers.
 
 
-Ponadto do widżetu możesz dodać:
+In addition, you can add to the widget:
 
-* daty ogłoszeń,
-* nazwy pracodawców,
-* miasto, którego dotyczy oferta,
-* region, którego dotyczy oferta.
+* dates of ads,
+* names of employers,
+* city to which the offer applies,
+* region to which the offer applies.
 
-Ty także zadecydujesz:
+You will also decide:
 
-* ile informacji o ogłoszeniach znajdzie się na wtyczce,
-* jaka będzie szata graficzna wtyczki,
-* jaka będzie wielkość wtyczki.
+* how much information about the ads will be included in the plugin,
+* what the graphic design of the plugin will be,
+* what will be the size of the plugin.
 
-Żeby wyświetlić plugin na swojej stronie WordPress, wejdź w zakładkę **Wygląd**, wybierz **Widgety**, a następnie aktywuj wtyczkę **Znajdź Pracę z Praca.pl**, przenosząc ją do Sidebaru.
+To display the plugin on your WordPress site, go to the Appearance tab, select Widgets, and then activate the Find A Job With Praca.pl plugin by moving it to the Sidebar.
 
 == Shortcode ==
 
-Możesz osadzić listę ofert pobieranych na podstawie ustawień określonych w panelu sterowania przez użycie "shortcode" w treści strony / postu:
+You can embed a list of job offers downloaded based on the settings specified in the control panel by using a “shortcode” in the content of the page / post:
 
 [znajdz_prace_z_pracapl class=”my-class” count=7 company=111 show=”city,company,date”]
 
-class – nazwa klasy CSS, która zostanie dodana do elementu obejmującego listę ogłoszeń,
-count – liczba ogłoszeń na stronie,
-company – ID pracodawcy, którego ogłoszenia zostaną wyświetlane,
-show – lista pól, które będą wyświetlane na liście ofert (city, company, date, region).
+* class – the name of the CSS class that will be added to the element containing the list of ads,
+* count – the number of ads on the page,
+* company – the ID of the employer whose ads will be displayed,
+* show – a list of fields that will be displayed in the list of offers (city, company, date, region).
 
-Parametry: class, count, company, show są opcjonalne. Jeśli ich użyjesz, nadpiszą ustawienia wybrane w panelu ustawień wtyczki.
+The parameters: class, count, company, show are optional. If you use them, they will override the settings selected in the plugin settings panel.
 
-Zachęcamy do instalacji pluginu [Znajdź Pracę z Praca.pl](https://www.praca.pl/dodatki/plugin-wordpress.html)
+We encourage you to install the [Find A Job With Praca.pl](https://www.praca.pl/dodatki/plugin-wordpress.html)!
 
 == Changelog ==
+= 2.2.3 =
+* Add Spanish translation and improve English translation
+
 = 2.2.2 =
 * Zmiana stylowania w pliku readme.txt
 
@@ -111,12 +116,7 @@ Zachęcamy do instalacji pluginu [Znajdź Pracę z Praca.pl](https://www.praca.p
 = 1.0 =
 * Pierwsze wydanie
 
-== External services / Użycie zewnętrznych serwisów ==
-
-Plugin wykorzystuje API udostępnianie przez serwis Praca.pl działający pod adresem: [https://www.praca.pl](https://www.praca.pl/), w celu pobrania najnowyszch ofert pracy.
-Żadne dane użytkowników nie są przesyłane do zewnętrznego serwisu.
-Polityka prywatności Praca.pl: [https://www.praca.pl/polityka-prywatnosci.html](https://www.praca.pl/polityka-prywatnosci.html)
-Regulamin Praca.pl: [https://www.praca.pl/regulamin.html](https://www.praca.pl/regulamin.html)
+== External services ==
 
 Plugin uses API provided by service Praca.pl available under [https://www.praca.pl](https://www.praca.pl/) in order to fetch newest job offers.
 None of users data are sent to external service.

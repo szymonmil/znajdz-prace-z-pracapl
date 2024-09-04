@@ -76,7 +76,7 @@ class Country
             68 => __('United Kingdom', 'znajdz-prace-z-pracapl'),
             69 => __('Italy', 'znajdz-prace-z-pracapl'),
             70 => __('United Arab Emirates', 'znajdz-prace-z-pracapl'),
-            71 => __('Other/World', 'znajdz-prace-z-pracapl'),
+            71 => __('The remaining others', 'znajdz-prace-z-pracapl'),
             72 => __('Cyprus', 'znajdz-prace-z-pracapl'),
             73 => __('Iceland', 'znajdz-prace-z-pracapl'),
             74 => __('Luxembourg', 'znajdz-prace-z-pracapl'),

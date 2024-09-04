@@ -52,7 +52,7 @@ msgstr ""
 "z Praca.pl\", na przykład przenosząc go do Sidebar'u."
 
 #: prPraca/lib/WpView.php:58
-msgid "Search params"
+msgid "Search parameters"
 msgstr "Parametry wyszukiwania"
 
 #: prPraca/lib/WpView.php:60
@@ -74,19 +74,19 @@ msgstr "ID firmy (opcjonalne):"
 msgid "Position, company, keyword."
 msgstr "Stanowisko, firma, słowo kluczowe."
 
-msgid "Provide the name of the city."
+msgid "Enter the name of the city."
 msgstr "Podaj nazwę miasta."
 
-msgid "Current job offers from the specified employer on Praca.pl will be displayed."
+msgid "Current job ads from the indicated employer from the Praca.pl service will be displayed."
 msgstr "Będą wyświetlane aktualne oferty pracy wskazanego pracodawcy z serwisu Praca.pl."
 
-msgid "Job offers from the specified employer on Praca.pl will not be displayed."
+msgid "Job ads from the indicated employer from the Praca.pl service will not be displayed."
 msgstr "Nie będą wyświetlane oferty pracy wskazanego pracodawcy z serwisu Praca.pl."
 
-msgid "Need technical support with plugin installation? Contact us at:"
+msgid "Do you need technical support for plugin installation? Contact us:"
 msgstr "Potrzebujesz pomocy technicznej w instalacji wtyczki? Napisz na nas na adres:"
 
-msgid "You can provide several company IDs, separating them with a semicolon, e.g. 1234;1234"
+msgid "You can enter several IDs, separating them with a semicolon, e.g.: 1234;1234"
 msgstr "Możesz podać kilka ID, oddzielając je średnikiem np.: 1234;1234"
 
 #: prPraca/lib/WpView.php:70
@@ -94,7 +94,7 @@ msgid "Company ID to exclude (optional):"
 msgstr "ID firmy do wykluczenia (opcjonalne):"
 
 #: prPraca/lib/WpView.php:76
-msgid "Category (optional):"
+msgid "Professional area (optional):"
 msgstr "Obszar zawodowy (opcjonalne):"
 
 #: prPraca/lib/WpView.php:84
@@ -113,7 +113,7 @@ msgid "Show credentials:"
 msgstr "Wyświetlaj informacje o autorze pluginu:"
 
 #: prPraca/lib/WpView.php:117 prPraca/lib/WpView.php:163
-msgid "job date"
+msgid "Job advertisement date"
 msgstr "datę ogłoszenia"
 
 #: prPraca/lib/WpView.php:118 prPraca/lib/WpView.php:164
@@ -121,19 +121,19 @@ msgid "employer's name"
 msgstr "nazwę pracodawcy"
 
 #: prPraca/lib/WpView.php:119 prPraca/lib/WpView.php:165
-msgid "city"
+msgid "City"
 msgstr "miasto"
 
 #: prPraca/lib/WpView.php:120 prPraca/lib/WpView.php:166
-msgid "region"
-msgstr "region"
+msgid "Region"
+msgstr "Region"
 
 #: prPraca/lib/WpView.php:124 prPraca/lib/WpView.php:170
 msgid "Number of displayed jobs:"
 msgstr "Liczba wyświetlanych ogłoszeń:"
 
 #: prPraca/lib/WpView.php:129
-msgid "Save settings"
+msgid "Save the changes"
 msgstr "Zapisz zmiany"
 
 #: prPraca/lib/WpView.php:154
@@ -141,7 +141,7 @@ msgid "Title:"
 msgstr "Tytuł:"
 
 #: prPraca/lib/WpView.php:190 prPraca/lib/WpView.php:238
-msgid "Job offers from service"
+msgid "The job ads come from the website:"
 msgstr "Oferty pochodzą z serwisu"
 
 #: prPraca/lib/WpView.php:200 prPraca/lib/WpView.php:247
@@ -157,7 +157,7 @@ msgid "More on Praca.pl"
 msgstr "Dowiedz się więcej"
 
 #: prPraca/i18n/static.php:3
-msgid "Admin - secretarial jobs"
+msgid "Office administration"
 msgstr "Administracja biurowa"
 
 #: prPraca/i18n/static.php:4
@@ -185,11 +185,11 @@ msgid "Education / Science / Trainings"
 msgstr "Edukacja / Nauka / Szkolenia"
 
 #: prPraca/i18n/static.php:10
-msgid "Power industry / Electronics"
+msgid "Energy / Electronics"
 msgstr "Energetyka / Elektronika"
 
 #: prPraca/i18n/static.php:11
-msgid "Pharmacy / Biotechnology"
+msgid "Pharmaceutics / Biotechnology"
 msgstr "Farmaceutyka / Biotechnologia"
 
 #: prPraca/i18n/static.php:12
@@ -197,7 +197,7 @@ msgid "Finance / Banking"
 msgstr "Finanse / Bankowość"
 
 #: prPraca/i18n/static.php:13
-msgid "Franchising"
+msgid "Franchise"
 msgstr "Franczyza"
 
 #: prPraca/i18n/static.php:14
@@ -213,11 +213,11 @@ msgid "Human Resources"
 msgstr "Human Resources / Kadry"
 
 #: prPraca/i18n/static.php:17
-msgid "IT / Administration"
+msgid "Informatics / Administration"
 msgstr "Informatyka  / Administracja"
 
 #: prPraca/i18n/static.php:18
-msgid "IT / Programming"
+msgid "Informatics / Programming"
 msgstr "Informatyka / Programowanie"
 
 #: prPraca/i18n/static.php:19
@@ -237,7 +237,7 @@ msgid "Quality Control"
 msgstr "Kontrola jakości"
 
 #: prPraca/i18n/static.php:23
-msgid "Cosmetics / Caring"
+msgid "Cosmetics / Body Care"
 msgstr "Kosmetyka / Pielęgnacja"
 
 #: prPraca/i18n/static.php:24
@@ -257,31 +257,31 @@ msgid "Media / Art / Entertainment"
 msgstr "Media / Sztuka / Rozrywka"
 
 #: prPraca/i18n/static.php:28
-msgid "Medicine / Healthcare"
+msgid "Medicine / Health Care"
 msgstr "Medycyna / Opieka zdrowotna"
 
 #: prPraca/i18n/static.php:29
-msgid "Motorization"
+msgid "Automotive"
 msgstr "Motoryzacja"
 
 #: prPraca/i18n/static.php:30
-msgid "Real estates"
+msgid "Real estate"
 msgstr "Nieruchomości"
 
 #: prPraca/i18n/static.php:31
-msgid "Security"
+msgid "Protection of people and property security services"
 msgstr "Ochrona osób i mienia"
 
 #: prPraca/i18n/static.php:32
-msgid "NGOs / Volunteer jobs"
+msgid "Non-governmental organizations / Volunteering"
 msgstr "Organizacje pozarządowe / Wolontariat"
 
 #: prPraca/i18n/static.php:33
-msgid "Phisical job"
+msgid "Handwork Physical Work"
 msgstr "Praca fizyczna"
 
 #: prPraca/i18n/static.php:34
-msgid "Practice / Trainings"
+msgid "Internship"
 msgstr "Praktyki / Staż"
 
 #: prPraca/i18n/static.php:35
@@ -297,7 +297,7 @@ msgid "Agriculture / Environmental Protection"
 msgstr "Rolnictwo / Ochrona środowiska"
 
 #: prPraca/i18n/static.php:38
-msgid "Maintenance / Technology / Installation"
+msgid "Machine Service / Technology / Assembly "
 msgstr "Serwis / Technika / Montaż"
 
 #: prPraca/i18n/static.php:39
@@ -317,11 +317,11 @@ msgid "Translation"
 msgstr "Tłumaczenia"
 
 #: prPraca/i18n/static.php:43
-msgid "Transport / Spedition"
+msgid "Transport / Forwarding"
 msgstr "Transport / Spedycja"
 
 #: prPraca/i18n/static.php:44
-msgid "Tourism / Hotels"
+msgid "Tourism / Hotel industry"
 msgstr "Turystyka / Hotelarstwo"
 
 #: prPraca/i18n/static.php:45
@@ -329,7 +329,7 @@ msgid "Insurance"
 msgstr "Ubezpieczenia"
 
 #: prPraca/i18n/static.php:46
-msgid "Purchasing"
+msgid "Shopping"
 msgstr "Zakupy"
 
 #: prPraca/i18n/static.php:48 prPraca/i18n/static.php:128
@@ -613,7 +613,7 @@ msgid "United Arab Emirates"
 msgstr "Zjednoczone Emiraty Arabskie"
 
 #: prPraca/i18n/static.php:120
-msgid "Other/World"
+msgid "The remaining others"
 msgstr "Pozostałe"
 
 #: prPraca/i18n/static.php:121
